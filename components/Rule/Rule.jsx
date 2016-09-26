@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router";
-export default class Right extends React.Component{
+export default class Rule extends React.Component{
 	constructor(){
 		super();
 	}
@@ -10,10 +10,10 @@ export default class Right extends React.Component{
 			    <div className="sidebar pull-left">
 			        <ul className="nav nav-sidebar" id="side-menu">
 			           <li className="nav-header">
-			                <Link to="/right" onlyActiveOnIndex={true} activeClassName="cur">设置评分规则</Link>
+			                <Link to="/Rule" onlyActiveOnIndex={true} activeClassName="cur">设置评分规则</Link>
 			           </li>
 			           <li className="nav-header">
-			                <Link to='/right/2' activeClassName="cur">设置评分列表</Link>
+			                <Link to='/Rule/2' activeClassName="cur">设置评分列表</Link>
 			           </li>
 			        </ul>
 			    </div>

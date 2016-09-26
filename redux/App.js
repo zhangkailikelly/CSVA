@@ -30,12 +30,12 @@ class App extends React.Component{
                       <nav className="HeaderB">
                         <ul className="list-inline" id="topNav">
                             <li>
-                              <Link to='/left' activeClassName="active">
+                              <Link to='/stadium' activeClassName="active">
                                 场馆管理
                               </Link>
                             </li>
                             <li>
-                              <Link to='/right' activeClassName="active">
+                              <Link to='/Rule' activeClassName="active">
                                 评分设置
                               </Link>
                             </li>

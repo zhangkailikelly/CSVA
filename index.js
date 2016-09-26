@@ -13,13 +13,20 @@ import reducers from './redux/reducer/reduce.js';
 //路由组件
 import ReactRouter,{Router,Route,IndexRedirect,Link,hashHistory,IndexRoute} from "react-router";
 //展示组件
-import Left from "./components/Left.jsx";
-import Right from "./components/Right.jsx";
-import LeftListOne from "./components/LeftListOne.jsx";
-import LeftListTwo from "./components/LeftListTwo.jsx";
-import LeftListThree from "./components/LeftListThree.jsx";
-import RightListOne from "./components/RightListOne.jsx";
-import RightListTwo from "./components/RightListTwo.jsx";
+//左上
+import Stadium from "./components/Stadium/Stadium.jsx";
+//右上
+import Rule from "./components/Rule/Rule.jsx";
+//左1
+import StadiumList from "./components/Stadium/StadiumList.jsx";
+//左2
+import StadiumInfo from "./components/Stadium/StadiumInfo.jsx";
+//左3
+import StadiumData from "./components/Stadium/StadiumData.jsx";
+//右1
+import RuleAdd from "./components/Rule/RuleAdd.jsx";
+//右2
+import RuleList from "./components/Rule/RuleList.jsx";
 
 
 
@@ -31,15 +38,15 @@ let rootElement=document.getElementById('box');
 		<Provider store={store}>
 			<Router history={hashHistory}>
 				<Route path="/" component={App}>
-					<IndexRedirect  to="/left"/>
-					<Route path="/left" component={Left}>
-						<IndexRoute component={LeftListOne}/>
-        			    <Route path="/left/2" component={LeftListTwo}/>
-					    <Route path="/left/3" component={LeftListThree}/>
+					<IndexRedirect  to="/stadium"/>
+					<Route path="/stadium" component={Stadium}>
+						<IndexRoute component={StadiumList}/>
+        			    <Route path="/stadium/2" component={StadiumInfo}/>
+					    <Route path="/stadium/3" component={StadiumData}/>
 					 </Route>
-					<Route path="/right" component={Right}>
-						<IndexRoute component={RightListOne}/>
-						<Route path="/right/2" component={RightListTwo}/>
+					<Route path="/Rule" component={Rule}>
+						<IndexRoute component={RuleAdd}/>
+						<Route path="/Rule/2" component={RuleList}/>
 					</Route>
 				</Route>
 			</Router>

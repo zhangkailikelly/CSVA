@@ -15,49 +15,55 @@ webpackJsonp([0],{
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _App = __webpack_require__(195);
+	var _App = __webpack_require__(199);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _reduce = __webpack_require__(263);
+	var _reduce = __webpack_require__(269);
 
 	var _reduce2 = _interopRequireDefault(_reduce);
 
-	var _reactRouter = __webpack_require__(196);
+	var _reactRouter = __webpack_require__(200);
 
 	var _reactRouter2 = _interopRequireDefault(_reactRouter);
 
-	var _Left = __webpack_require__(264);
+	var _Stadium = __webpack_require__(270);
 
-	var _Left2 = _interopRequireDefault(_Left);
+	var _Stadium2 = _interopRequireDefault(_Stadium);
 
-	var _Right = __webpack_require__(265);
+	var _Rule = __webpack_require__(271);
 
-	var _Right2 = _interopRequireDefault(_Right);
+	var _Rule2 = _interopRequireDefault(_Rule);
 
-	var _LeftListOne = __webpack_require__(266);
+	var _StadiumList = __webpack_require__(272);
 
-	var _LeftListOne2 = _interopRequireDefault(_LeftListOne);
+	var _StadiumList2 = _interopRequireDefault(_StadiumList);
 
-	var _LeftListTwo = __webpack_require__(268);
+	var _StadiumInfo = __webpack_require__(274);
 
-	var _LeftListTwo2 = _interopRequireDefault(_LeftListTwo);
+	var _StadiumInfo2 = _interopRequireDefault(_StadiumInfo);
 
-	var _LeftListThree = __webpack_require__(269);
+	var _StadiumData = __webpack_require__(275);
 
-	var _LeftListThree2 = _interopRequireDefault(_LeftListThree);
+	var _StadiumData2 = _interopRequireDefault(_StadiumData);
 
-	var _RightListOne = __webpack_require__(270);
+	var _RuleAdd = __webpack_require__(276);
 
-	var _RightListOne2 = _interopRequireDefault(_RightListOne);
+	var _RuleAdd2 = _interopRequireDefault(_RuleAdd);
 
-	var _RightListTwo = __webpack_require__(271);
+	var _RuleList = __webpack_require__(277);
 
-	var _RightListTwo2 = _interopRequireDefault(_RightListTwo);
+	var _RuleList2 = _interopRequireDefault(_RuleList);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//注入reduce
+
+	//右1
+
+	//左2
+
+	//右上
 
 	//路由组件
 
@@ -68,7 +74,14 @@ webpackJsonp([0],{
 	var store = (0, _redux.createStore)(_reduce2.default);
 	//根元素
 
+	//右2
+
+	//左3
+
+	//左1
+
 	//展示组件
+	//左上
 
 	//将子reduce合并成一个主reduce传进createStore()内
 
@@ -85,19 +98,19 @@ webpackJsonp([0],{
 			_react2.default.createElement(
 				_reactRouter.Route,
 				{ path: '/', component: _App2.default },
-				_react2.default.createElement(_reactRouter.IndexRedirect, { to: '/left' }),
+				_react2.default.createElement(_reactRouter.IndexRedirect, { to: '/stadium' }),
 				_react2.default.createElement(
 					_reactRouter.Route,
-					{ path: '/left', component: _Left2.default },
-					_react2.default.createElement(_reactRouter.IndexRoute, { component: _LeftListOne2.default }),
-					_react2.default.createElement(_reactRouter.Route, { path: '/left/2', component: _LeftListTwo2.default }),
-					_react2.default.createElement(_reactRouter.Route, { path: '/left/3', component: _LeftListThree2.default })
+					{ path: '/stadium', component: _Stadium2.default },
+					_react2.default.createElement(_reactRouter.IndexRoute, { component: _StadiumList2.default }),
+					_react2.default.createElement(_reactRouter.Route, { path: '/stadium/2', component: _StadiumInfo2.default }),
+					_react2.default.createElement(_reactRouter.Route, { path: '/stadium/3', component: _StadiumData2.default })
 				),
 				_react2.default.createElement(
 					_reactRouter.Route,
-					{ path: '/right', component: _Right2.default },
-					_react2.default.createElement(_reactRouter.IndexRoute, { component: _RightListOne2.default }),
-					_react2.default.createElement(_reactRouter.Route, { path: '/right/2', component: _RightListTwo2.default })
+					{ path: '/Rule', component: _Rule2.default },
+					_react2.default.createElement(_reactRouter.IndexRoute, { component: _RuleAdd2.default }),
+					_react2.default.createElement(_reactRouter.Route, { path: '/Rule/2', component: _RuleList2.default })
 				)
 			)
 		)
@@ -105,7 +118,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 195:
+/***/ 199:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -120,19 +133,19 @@ webpackJsonp([0],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(196);
+	var _reactRouter = __webpack_require__(200);
 
 	var _reactRouter2 = _interopRequireDefault(_reactRouter);
 
 	var _reactRedux = __webpack_require__(186);
 
-	__webpack_require__(257);
+	__webpack_require__(263);
 
-	var _user = __webpack_require__(261);
+	var _user = __webpack_require__(267);
 
 	var _user2 = _interopRequireDefault(_user);
 
-	var _exit = __webpack_require__(262);
+	var _exit = __webpack_require__(268);
 
 	var _exit2 = _interopRequireDefault(_exit);
 
@@ -221,7 +234,7 @@ webpackJsonp([0],{
 	                null,
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
-	                  { to: "/left", activeClassName: "active" },
+	                  { to: "/stadium", activeClassName: "active" },
 	                  "场馆管理"
 	                )
 	              ),
@@ -230,7 +243,7 @@ webpackJsonp([0],{
 	                null,
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
-	                  { to: "/right", activeClassName: "active" },
+	                  { to: "/Rule", activeClassName: "active" },
 	                  "评分设置"
 	                )
 	              )
@@ -269,16 +282,16 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 257:
+/***/ 263:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(258);
+	var content = __webpack_require__(264);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(260)(content, {});
+	var update = __webpack_require__(266)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -296,10 +309,10 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 258:
+/***/ 264:
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(259)();
+	exports = module.exports = __webpack_require__(265)();
 	// imports
 
 
@@ -311,7 +324,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 259:
+/***/ 265:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -367,7 +380,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 260:
+/***/ 266:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -620,21 +633,21 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 261:
+/***/ 267:
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,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"
 
 /***/ },
 
-/***/ 262:
+/***/ 268:
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5MzcyYzVkMS1mNTkwLTQ2NTItYjcwZS1lODU0OTYxN2E5ZWEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUIxMjlFODQ2REI3MTFFNjlEOUNEOTJFOEFFQjU4NkUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUIxMjlFODM2REI3MTFFNjlEOUNEOTJFOEFFQjU4NkUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplM2UxNGMwZS0zNzNmLTRmZjEtYWQ3Yi1jOWU4NWVlMmE0NTYiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpjZTVlNDNmYS05ZmY0LTExNzktYjdjZC1iMzY3MTRhZDY0MTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6m9tAvAAAB2UlEQVR42oyUTyhEURTG3/xpmkkUqSmhWFmwIFv2LJSFBSULzYpkMyVKSinFwkqkMBMlFkMmCxuZWKBYKDtSGiNRyL8ZPN/lezpz52Xm1K/Ofeecr/PuOe85TdM0srAOvsxf2wWu//KdRqb5hV8BWoCD5wZQK+KFIvZjUtAFQiABIhRuZGwTLAhRJRQGd2AdeP5URLvTZro9gk/6w6CHvnr9By131dKRgjcMjoEt+q8gDCpBCZgDT4zFwBD9F+DUBYMMXoIC0Ar8NhdfBNqAD5yyZtyuQzW9MyYM5DD9AHOvgNd67sY1Kuo4vVJ1rWDDyG5RkOTwAuAAHBncLWkxrZMmECdNWiyi1e4a4hAC/aBKK4qLnLgWU8PqBfNWgtxDH/Cm7VSmObSzm3U+uYfbWtv7WhfN4JqX36zFNrTabYP7Uw26uMwmz9mmXA5S4B10g5qfNxYJbrE2wRwEu5mrus+z28NBJpyDfNAOymyE1LJ3crFPWDNpJ5hgcALs0E+CNU5eveISP0dlh2CUfsru05vSLviegspGQB999cO41XLDdh06wAwTlkEx6OA5Chbp9/JbnwUfYAV47AQt8oRfYWZavYh7c/ljPwv/gj9Xy/bAsTi/6cXfAgwAb0wSYS52+aUAAAAASUVORK5CYII="
 
 /***/ },
 
-/***/ 263:
+/***/ 269:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -653,7 +666,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 264:
+/***/ 270:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -668,7 +681,7 @@ webpackJsonp([0],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(196);
+	var _reactRouter = __webpack_require__(200);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -678,16 +691,16 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Left = function (_React$Component) {
-		_inherits(Left, _React$Component);
+	var Stadium = function (_React$Component) {
+		_inherits(Stadium, _React$Component);
 
-		function Left() {
-			_classCallCheck(this, Left);
+		function Stadium() {
+			_classCallCheck(this, Stadium);
 
-			return _possibleConstructorReturn(this, (Left.__proto__ || Object.getPrototypeOf(Left)).call(this));
+			return _possibleConstructorReturn(this, (Stadium.__proto__ || Object.getPrototypeOf(Stadium)).call(this));
 		}
 
-		_createClass(Left, [{
+		_createClass(Stadium, [{
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
@@ -704,7 +717,7 @@ webpackJsonp([0],{
 								{ className: "nav-header" },
 								_react2.default.createElement(
 									_reactRouter.Link,
-									{ to: "/left", onlyActiveOnIndex: true, activeClassName: "cur" },
+									{ to: "/stadium", onlyActiveOnIndex: true, activeClassName: "cur" },
 									"场馆列表",
 									_react2.default.createElement("span", { className: "pull-right glyphicon glyphicon-menu-right", "aria-hidden": "true" })
 								)
@@ -714,7 +727,7 @@ webpackJsonp([0],{
 								{ className: "nav-header" },
 								_react2.default.createElement(
 									_reactRouter.Link,
-									{ to: "/left/2", activeClassName: "cur" },
+									{ to: "/stadium/2", activeClassName: "cur" },
 									"场馆信息",
 									_react2.default.createElement("span", { className: "pull-right glyphicon glyphicon-menu-right", "aria-hidden": "true" })
 								)
@@ -724,7 +737,7 @@ webpackJsonp([0],{
 								{ className: "nav-header" },
 								_react2.default.createElement(
 									_reactRouter.Link,
-									{ to: "/left/3", activeClassName: "cur" },
+									{ to: "/stadium/3", activeClassName: "cur" },
 									"运营数据",
 									_react2.default.createElement("span", { className: "pull-right glyphicon glyphicon-menu-right", "aria-hidden": "true" })
 								)
@@ -740,15 +753,15 @@ webpackJsonp([0],{
 			}
 		}]);
 
-		return Left;
+		return Stadium;
 	}(_react2.default.Component);
 
-	exports.default = Left;
+	exports.default = Stadium;
 	;
 
 /***/ },
 
-/***/ 265:
+/***/ 271:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -763,7 +776,7 @@ webpackJsonp([0],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(196);
+	var _reactRouter = __webpack_require__(200);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -773,16 +786,16 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Right = function (_React$Component) {
-		_inherits(Right, _React$Component);
+	var Rule = function (_React$Component) {
+		_inherits(Rule, _React$Component);
 
-		function Right() {
-			_classCallCheck(this, Right);
+		function Rule() {
+			_classCallCheck(this, Rule);
 
-			return _possibleConstructorReturn(this, (Right.__proto__ || Object.getPrototypeOf(Right)).call(this));
+			return _possibleConstructorReturn(this, (Rule.__proto__ || Object.getPrototypeOf(Rule)).call(this));
 		}
 
-		_createClass(Right, [{
+		_createClass(Rule, [{
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
@@ -799,7 +812,7 @@ webpackJsonp([0],{
 								{ className: "nav-header" },
 								_react2.default.createElement(
 									_reactRouter.Link,
-									{ to: "/right", onlyActiveOnIndex: true, activeClassName: "cur" },
+									{ to: "/Rule", onlyActiveOnIndex: true, activeClassName: "cur" },
 									"设置评分规则"
 								)
 							),
@@ -808,7 +821,7 @@ webpackJsonp([0],{
 								{ className: "nav-header" },
 								_react2.default.createElement(
 									_reactRouter.Link,
-									{ to: "/right/2", activeClassName: "cur" },
+									{ to: "/Rule/2", activeClassName: "cur" },
 									"设置评分列表"
 								)
 							)
@@ -823,15 +836,15 @@ webpackJsonp([0],{
 			}
 		}]);
 
-		return Right;
+		return Rule;
 	}(_react2.default.Component);
 
-	exports.default = Right;
+	exports.default = Rule;
 	;
 
 /***/ },
 
-/***/ 266:
+/***/ 272:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -848,7 +861,7 @@ webpackJsonp([0],{
 
 	var _reactDom = __webpack_require__(34);
 
-	var _LeftListOneSearch = __webpack_require__(267);
+	var _LeftListOneSearch = __webpack_require__(273);
 
 	var _LeftListOneSearch2 = _interopRequireDefault(_LeftListOneSearch);
 
@@ -860,16 +873,35 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var LeftListOne = function (_React$Component) {
-		_inherits(LeftListOne, _React$Component);
+	var LeftListOne = function (_Component) {
+		_inherits(LeftListOne, _Component);
 
 		function LeftListOne() {
 			_classCallCheck(this, LeftListOne);
 
-			return _possibleConstructorReturn(this, (LeftListOne.__proto__ || Object.getPrototypeOf(LeftListOne)).call(this));
+			var _this2 = _possibleConstructorReturn(this, (LeftListOne.__proto__ || Object.getPrototypeOf(LeftListOne)).call(this));
+
+			_this2.state = {
+				data: []
+			};
+			return _this2;
 		}
 
 		_createClass(LeftListOne, [{
+			key: "componentDidMount",
+			value: function componentDidMount() {
+				var _this = this;
+
+				$.ajax({
+					url: "http://139.129.131.105:8802/api/dailys",
+					type: "GET",
+					dataType: '',
+					success: function success(data) {
+						console.log(data);
+					}
+				});
+			}
+		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
@@ -881,14 +913,14 @@ webpackJsonp([0],{
 		}]);
 
 		return LeftListOne;
-	}(_react2.default.Component);
+	}(_react.Component);
 
 	exports.default = LeftListOne;
 	;
 
 /***/ },
 
-/***/ 267:
+/***/ 273:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1082,7 +1114,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 268:
+/***/ 274:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1105,16 +1137,16 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var LeftListOne = function (_React$Component) {
-		_inherits(LeftListOne, _React$Component);
+	var StadiumInfo = function (_React$Component) {
+		_inherits(StadiumInfo, _React$Component);
 
-		function LeftListOne() {
-			_classCallCheck(this, LeftListOne);
+		function StadiumInfo() {
+			_classCallCheck(this, StadiumInfo);
 
-			return _possibleConstructorReturn(this, (LeftListOne.__proto__ || Object.getPrototypeOf(LeftListOne)).call(this));
+			return _possibleConstructorReturn(this, (StadiumInfo.__proto__ || Object.getPrototypeOf(StadiumInfo)).call(this));
 		}
 
-		_createClass(LeftListOne, [{
+		_createClass(StadiumInfo, [{
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
@@ -1129,15 +1161,15 @@ webpackJsonp([0],{
 			}
 		}]);
 
-		return LeftListOne;
+		return StadiumInfo;
 	}(_react2.default.Component);
 
-	exports.default = LeftListOne;
+	exports.default = StadiumInfo;
 	;
 
 /***/ },
 
-/***/ 269:
+/***/ 275:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1160,16 +1192,16 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var LeftListThree = function (_React$Component) {
-		_inherits(LeftListThree, _React$Component);
+	var StadiumData = function (_React$Component) {
+		_inherits(StadiumData, _React$Component);
 
-		function LeftListThree() {
-			_classCallCheck(this, LeftListThree);
+		function StadiumData() {
+			_classCallCheck(this, StadiumData);
 
-			return _possibleConstructorReturn(this, (LeftListThree.__proto__ || Object.getPrototypeOf(LeftListThree)).call(this));
+			return _possibleConstructorReturn(this, (StadiumData.__proto__ || Object.getPrototypeOf(StadiumData)).call(this));
 		}
 
-		_createClass(LeftListThree, [{
+		_createClass(StadiumData, [{
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
@@ -1184,15 +1216,15 @@ webpackJsonp([0],{
 			}
 		}]);
 
-		return LeftListThree;
+		return StadiumData;
 	}(_react2.default.Component);
 
-	exports.default = LeftListThree;
+	exports.default = StadiumData;
 	;
 
 /***/ },
 
-/***/ 270:
+/***/ 276:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1215,16 +1247,16 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var RightListOne = function (_React$Component) {
-	  _inherits(RightListOne, _React$Component);
+	var RuleAdd = function (_React$Component) {
+	  _inherits(RuleAdd, _React$Component);
 
-	  function RightListOne() {
-	    _classCallCheck(this, RightListOne);
+	  function RuleAdd() {
+	    _classCallCheck(this, RuleAdd);
 
-	    return _possibleConstructorReturn(this, (RightListOne.__proto__ || Object.getPrototypeOf(RightListOne)).call(this));
+	    return _possibleConstructorReturn(this, (RuleAdd.__proto__ || Object.getPrototypeOf(RuleAdd)).call(this));
 	  }
 
-	  _createClass(RightListOne, [{
+	  _createClass(RuleAdd, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      $('.mydate').datetimepicker({
@@ -1356,15 +1388,15 @@ webpackJsonp([0],{
 	    }
 	  }]);
 
-	  return RightListOne;
+	  return RuleAdd;
 	}(_react2.default.Component);
 
-	exports.default = RightListOne;
+	exports.default = RuleAdd;
 	;
 
 /***/ },
 
-/***/ 271:
+/***/ 277:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1379,10 +1411,6 @@ webpackJsonp([0],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Paging = __webpack_require__(272);
-
-	var _Paging2 = _interopRequireDefault(_Paging);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1391,13 +1419,13 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var RightListTwo = function (_React$Component) {
-		_inherits(RightListTwo, _React$Component);
+	var RuleList = function (_React$Component) {
+		_inherits(RuleList, _React$Component);
 
-		function RightListTwo() {
-			_classCallCheck(this, RightListTwo);
+		function RuleList() {
+			_classCallCheck(this, RuleList);
 
-			var _this = _possibleConstructorReturn(this, (RightListTwo.__proto__ || Object.getPrototypeOf(RightListTwo)).call(this));
+			var _this = _possibleConstructorReturn(this, (RuleList.__proto__ || Object.getPrototypeOf(RuleList)).call(this));
 
 			_this.state = {
 				currentPage: 1,
@@ -1411,7 +1439,7 @@ webpackJsonp([0],{
 			return _this;
 		}
 
-		_createClass(RightListTwo, [{
+		_createClass(RuleList, [{
 			key: "componentDidMount",
 			value: function componentDidMount() {
 
@@ -1535,189 +1563,16 @@ webpackJsonp([0],{
 								})
 							)
 						)
-					),
-					_react2.default.createElement(_Paging2.default, { _this: this })
-				);
-			}
-		}]);
-
-		return RightListTwo;
-	}(_react2.default.Component);
-
-	exports.default = RightListTwo;
-	;
-
-/***/ },
-
-/***/ 272:
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Paging = function (_React$Component) {
-		_inherits(Paging, _React$Component);
-
-		function Paging() {
-			_classCallCheck(this, Paging);
-
-			return _possibleConstructorReturn(this, (Paging.__proto__ || Object.getPrototypeOf(Paging)).call(this));
-		}
-
-		_createClass(Paging, [{
-			key: "first",
-			value: function first() {
-				var _this = this.props._this;
-				var dataPage = _this.state.dataPage;
-				_this.setState({ currentPage: 1, data: _this.state.datas.slice(0, dataPage) });
-			}
-		}, {
-			key: "prev",
-			value: function prev() {
-				var _this = this.props._this;
-				var dataPage = _this.state.dataPage;
-				if (_this.state.currentPage > 1) {
-					var prevPage = --_this.state.currentPage;
-					_this.setState({
-						data: _this.state.datas.slice((prevPage - 1) * dataPage, prevPage * dataPage),
-						currentPage: prevPage
-					});
-				}
-			}
-		}, {
-			key: "next",
-			value: function next() {
-				var _this = this.props._this;
-				var dataPage = _this.state.dataPage;
-				if (_this.state.currentPage < _this.state.allPage) {
-					_this.setState({
-						data: _this.state.datas.slice(_this.state.currentPage * dataPage, (_this.state.currentPage + 1) * dataPage),
-						currentPage: ++_this.state.currentPage
-
-					});
-				}
-			}
-		}, {
-			key: "last",
-			value: function last() {
-				var _this = this.props._this;
-				var dataPage = _this.state.dataPage;
-				var lastPage = _this.state.datas.length % dataPage == 0 ? _this.state.datas.length - dataPage : Math.floor(_this.state.datas.length / dataPage) * dataPage;
-				_this.setState({
-					currentPage: _this.state.allPage,
-					data: _this.state.datas.slice(lastPage)
-				});
-			}
-		}, {
-			key: "render",
-			value: function render() {
-				return _react2.default.createElement(
-					"div",
-					{ className: "page clearfix", style: { display: this.props._this.state.display } },
-					_react2.default.createElement(
-						"div",
-						{ className: "pageCCon" },
-						_react2.default.createElement(
-							"p",
-							{ className: "pull-left MR" },
-							_react2.default.createElement(
-								"span",
-								null,
-								"第 ",
-								this.props._this.state.currentPage,
-								" 页"
-							),
-							"  ",
-							_react2.default.createElement(
-								"span",
-								null,
-								"每页 ",
-								this.props._this.state.dataPage,
-								" 条数据"
-							),
-							"  ",
-							_react2.default.createElement(
-								"span",
-								null,
-								"共 ",
-								this.props._this.state.allPage,
-								" 页"
-							),
-							"  ",
-							_react2.default.createElement(
-								"span",
-								null,
-								"共 ",
-								this.props._this.state.allData,
-								" 条数据"
-							)
-						),
-						_react2.default.createElement(
-							"ul",
-							{ className: "pull-right list-inline", id: "paginationUL" },
-							_react2.default.createElement(
-								"li",
-								{ onClick: this.first.bind(this) },
-								_react2.default.createElement(
-									"a",
-									{ name: "first", id: "firstPathBtn" },
-									"首页"
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ onClick: this.prev.bind(this) },
-								_react2.default.createElement(
-									"a",
-									{ name: "prev", id: "prevPageBtn" },
-									"上一页"
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ onClick: this.next.bind(this) },
-								_react2.default.createElement(
-									"a",
-									{ name: "next", id: "nextPageBtn" },
-									"下一页"
-								)
-							),
-							_react2.default.createElement(
-								"li",
-								{ onClick: this.last.bind(this) },
-								_react2.default.createElement(
-									"a",
-									{ name: "last", id: "lastPageBtn" },
-									"尾页"
-								)
-							)
-						)
 					)
 				);
 			}
 		}]);
 
-		return Paging;
+		return RuleList;
 	}(_react2.default.Component);
 
-	exports.default = Paging;
+	exports.default = RuleList;
+	;
 
 /***/ }
 

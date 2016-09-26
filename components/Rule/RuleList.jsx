@@ -1,6 +1,5 @@
 import React from "react";
-import Paging from "./Paging.jsx";
-export default class RightListTwo extends React.Component{
+export default class RuleList extends React.Component{
 	constructor(){
 		super();
 		this.state={
@@ -76,7 +75,6 @@ export default class RightListTwo extends React.Component{
      				</tbody>
    			       </table>
    				</div>
-				<Paging {...{_this:this}}/>
 			</div>
 
 

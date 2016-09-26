@@ -1,5 +1,5 @@
 import React from "react";
-export default class RightListOne extends React.Component{
+export default class RuleAdd extends React.Component{
 	constructor(){
 		super();
 	}

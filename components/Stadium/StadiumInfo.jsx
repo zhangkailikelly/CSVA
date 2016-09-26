@@ -1,5 +1,5 @@
 import React from "react";
-export default class LeftListOne extends React.Component{
+export default class StadiumInfo extends React.Component{
 	constructor(){
 		super();
 	}
