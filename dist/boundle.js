@@ -994,7 +994,7 @@ webpackJsonp([0],{
 									null,
 									_react2.default.createElement(
 										"td",
-										null,
+										{ style: { width: '945px' } },
 										"没有数据"
 									)
 								) : Data.map(function (index, i) {

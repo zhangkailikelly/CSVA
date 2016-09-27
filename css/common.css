@@ -144,7 +144,7 @@ select{width:180px;height:30px;border:1px solid #dedcdc;}
 .blackTotal td span{font-size:16px;}
 .table{border-top:1px solid #dad9d9;border-bottom: 1px solid #dad9d9;}
 /* .tbodyLeft tbody tr td{text-align: left;} */
-.table tbody{max-height:420px;overflow: auto;display:block;}
+.table tbody{max-height:420px;max-width:945px;overflow: auto;display:block;}
 .table tbody tr td{color:#666;font-size:12px;}
 .table tbody a{cursor:pointer;}
 .tabelH{font-size:15px;color:#404040;}

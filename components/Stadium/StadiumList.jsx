@@ -40,7 +40,7 @@ class StadiumList extends Component{
 						</thead>
 						<tbody>
 							{
-								Data.length==0?(<tr><td>没有数据</td></tr>):Data.map(function(index,i){
+								Data.length==0?(<tr><td style={{width:'945px'}}>没有数据</td></tr>):Data.map(function(index,i){
 								return (
 									<tr key={i}>
 										<td style={{width:'150px'}}>{index.name}</td>
