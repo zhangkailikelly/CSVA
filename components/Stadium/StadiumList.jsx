@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import {Link} from 'react-router';
 import {render} from "react-dom";
 import {connect} from 'react-redux';
 import * as action from '../../redux/actions/actions.js';
@@ -10,7 +11,7 @@ class StadiumList extends Component{
 	componentDidMount(){
 		const {dispatch}=this.props;
 		$.ajax({
-		url:"http://139.129.131.105:8802/api/stadiums?filter[fields][name]=true&filter[fields][city]=true&filter[fields][mainUnit]=true&filter[fields][buildDate]=true&filter[fields][state]=true",
+		url:"http://139.129.131.105:8802/api/stadiums",
 		data:"",
 		type:"GET",
 		dataType:'JSON',
@@ -49,8 +50,8 @@ class StadiumList extends Component{
 										<td style={{width:'115px'}}>{index.mainUnit}</td>
 										<td style={{width:'165px'}}>{index.buildDate}</td>
 										<td style={{width:'290px'}}>
-											<span className="auditBtn"><a name=''>审核</a></span> | 
-							                <span className="auditViewBtn"><a name=''>查看运营数据</a></span> | 
+										<span className="auditBtn"><Link to="/stadium/2" onClick={()=>{dispatch(action.check(index))}}>审核</Link></span> | 
+										<span className="auditViewBtn"><Link to="/stadium/3">查看运营数据</Link></span> | 
 							                <span className="auditCountBtn"><a name=''>查看数据统计</a></span>
 										</td>
 									</tr>
@@ -97,7 +98,7 @@ function filter(filters,data,type){
 function select(store){
 	return {
 		searchs:store.search,
-		Data:filter(store.search,store.data.stadium,store.search.type)
+		Data:filter(store.search,store.data.stadium,store.search.type),
 	}
 }
 export default connect(select)(StadiumList);

@@ -16,8 +16,17 @@ const data=function(state={},action){
 		return state;
 	}
 }
+const checkData=function(state={},action){
+	switch(action.type){
+		case "CHECK_DATA":
+		return Object.assign({},state,action.datas);
+		default:
+		return state;
+	}
+}
 const reducer = combineReducers({
   data,
-  search
+  search,
+  checkData
 })
 export default reducer;

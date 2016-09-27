@@ -6,3 +6,7 @@ export function search(obj){
 export function stadiumData(data) {
 	return {type:"STADIUM_DATA",obj:data}
 }
+//点击审核获取数据
+export function check(data){
+	return {type:"CHECK_DATA",datas:data}
+}
