@@ -2,7 +2,7 @@ import React from "react";
 import YHRC from "../../images/SF1.png";
 import MFRC from "../../images/SF2.png";
 import YHJE from "../../images/SF3.png";
-export default class StadiumInfo extends React.Component{
+export default class StadiumDataCount extends React.Component{
 	constructor(){
 		super();
 	}

@@ -22,6 +22,10 @@ import StadiumList from "./components/Stadium/StadiumList.jsx";
 //左2
 import StadiumInfo from "./components/Stadium/StadiumInfo.jsx";
 //左3
+import StadiumDataCount from "./components/Stadium/StadiumDataCount.jsx";
+//日常数据
+import DailyData from "./components/Stadium/DailyData.jsx";
+
 import StadiumData from "./components/Stadium/StadiumData.jsx";
 //右1
 import RuleAdd from "./components/Rule/RuleAdd.jsx";
@@ -43,6 +47,8 @@ let rootElement=document.getElementById('box');
 						<IndexRoute component={StadiumList}/>
         			    <Route path="/stadium/2" component={StadiumInfo}/>
 					    <Route path="/stadium/3" component={StadiumData}/>
+					    <Route path="/stadium/4" component={StadiumDataCount}/>
+					    <Route path="/stadium/5" component={DailyData}/>
 					 </Route>
 					<Route path="/Rule" component={Rule}>
 						<IndexRoute component={RuleAdd}/>

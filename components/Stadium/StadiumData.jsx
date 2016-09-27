@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router';
 import daily from "../../images/YY1.png";
 import sport from "../../images/YY2.png";
 import service from "../../images/YY3.png";
@@ -15,7 +16,7 @@ export default class StadiumData extends React.Component{
 				<div className="YYData animated fadeInDown clearfix">
 				  <div className="YYDataCon">
 				    <p className="pull-left"><img src={daily} /></p>
-				    <span className="yiji">日常数据</span>
+				    <span className="yiji"><Link to="/stadium/5">日常数据</Link></span>
 				  </div>
 				  <div className="YYDataCon">
 				    <p className="pull-left"><img src={sport} /></p>

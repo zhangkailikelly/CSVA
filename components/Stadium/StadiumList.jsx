@@ -50,9 +50,9 @@ class StadiumList extends Component{
 										<td style={{width:'115px'}}>{index.mainUnit}</td>
 										<td style={{width:'165px'}}>{index.buildDate}</td>
 										<td style={{width:'290px'}}>
-										<span className="auditBtn"><Link to="/stadium/2" onClick={()=>{dispatch(action.check(index))}}>审核</Link></span> | 
-										<span className="auditViewBtn"><Link to="/stadium/3">查看运营数据</Link></span> | 
-							                <span className="auditCountBtn"><a name=''>查看数据统计</a></span>
+											<span className="auditBtn"><Link to="/stadium/2" onClick={()=>{dispatch(action.check(index))}}>审核</Link></span> | 
+										    <span className="auditViewBtn"><Link to="/stadium/3">查看运营数据</Link></span> | 
+							                <span className="auditCountBtn"><Link to="/stadium/4">查看数据统计</Link></span>
 										</td>
 									</tr>
 								)
