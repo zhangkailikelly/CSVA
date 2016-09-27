@@ -56,20 +56,21 @@ export default class RuleList extends React.Component{
     			    <table className="table tableColor tablebor NoMB" id="ruleTable">
     				  <thead  className="tabelH">
      					 <tr>
-      						<th>规则名称</th>
-      						<th>起始时间</th>
-      						<th>结束时间</th>
-      						<th>是否为当前规则</th>
-      						<th>操作</th>
+      						<th style={{width:'160px'}}>规则名称</th>
+      						<th style={{width:'165px'}}>起始时间</th>
+      						<th style={{width:'180px'}}>结束时间</th>
+      						<th style={{width:'250px'}}>是否为当前规则</th>
+      						<th style={{width:'190px'}}>操作</th>
      					 </tr>
      				 </thead>
      				 <tbody>
          				{this.state.data.map(function(index,i){
          					return (<tr key={i}>
-         						<td>{index.rule}</td>
-         						<td>{index.start}</td>
-         						<td>{index.end}</td>
-            				<td><span className="viewDataBtn"><a name='<%= o.id %>'>查看运营数据</a></span></td>
+         						<td style={{width:'160px'}}>{index.rule}</td>
+         						<td style={{width:'165px'}}>{index.start}</td>
+         						<td style={{width:'180px'}}>{index.end}</td>
+         						<td style={{width:'250px'}}></td>
+            				<td style={{width:'190px'}}><span className="viewDataBtn"><a name='<%= o.id %>'>查看运营数据</a></span></td>
          					</tr>)
          				})}
      				</tbody>

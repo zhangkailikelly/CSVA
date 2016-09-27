@@ -12,7 +12,7 @@ export default class LeftListOne extends Component{
 		var _this=this;
 		
 	$.ajax({
-		url:"http://139.129.131.105:8802/api/dailys",
+		url:"http://139.129.131.105:8802/api/stadiums",
 		type:"GET",
 		dataType:'',
 		success:function(data){
@@ -25,8 +25,7 @@ export default class LeftListOne extends Component{
 	render(){
 		return (
 			<div>
-			<Search/>
-			   		
+			<Search />
 			</div>
 				)
 	}
