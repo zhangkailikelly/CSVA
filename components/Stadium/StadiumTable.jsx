@@ -1,91 +1,61 @@
 import React from "react";
 import {render} from "react-dom";
-import {Table, Column, Cell} from 'fixed-data-table';
 export default class StadiumTable extends React.Component {
     constructor (props) {
         super(props)
-        // P.S: 仅能在构造函数中设置 state
-        // 在其他地方绝不能使用 this.state.XXX = XXX
-        // 只能使用 this.setState({ XXX: XXX })
-        this.state = { rows: [
-            ['a1', 'b1', 'c1'],
-            ['a2', 'b2', 'c2'],
-            ['a3', 'b3', 'c3']
-            // .... and more
-        ] }
 
     } 
+    	componentDidMount(){
+		const {dispatch}=this.props;
+		$.ajax({
+		url:"http://139.129.131.105:8802/api/stadiums?filter[fields][name]=true&filter[fields][city]=true&filter[fields][mainUnit]=true&filter[fields][buildDate]=true&filter[fields][state]=true",
+		data:"",
+		type:"GET",
+		dataType:'JSON',
+		success:function(data){
+		dispatch(action.stadiumData({stadium:data}))
+			}
+		})
+		
+	}
 	render(){
 		return (
-			<Table
-	            rowHeight={50}
-	            rowsCount={resData.length}
-	            width={1000}
-	            height={1000}
-	            headerHeight={50}>
-	          
-	            <Column
-	                header={<Cell>场馆名称</Cell>}
-	                cell={({rowIndex, ...props}) => (
-	                    <Cell {...props}>
-	                      {rowIndex.name}
-	                    </Cell>
-	                 )}
-	                width={100}
-	            />
-
-	            <Column
-	                header={<Cell>所在城市</Cell>}
-	                cell={({rowIndex, ...props}) => (
-	                    <Cell {...props}>
-	                      {rowIndex.city}
-	                    </Cell>
-	                 )}
-	                width={100}
-	            />
-
-	            <Column
-	                header={<Cell>运营单位</Cell>}
-	                cell={({rowIndex, ...props}) => (
-	                    <Cell {...props}>
-	                      {rowIndex.mainUnit}
-	                    </Cell>
-	                 )}
-	                width={100}
-	            />
-
-	            <Column
-	                header={<Cell>提交时间</Cell>}
-	                cell={({rowIndex, ...props}) => (
-	                    <Cell {...props}>
-	                      {rowIndex.buildDate}
-	                    </Cell>
-	                 )}
-	                width={100}
-	            />
-
-	            <Column
-	                header={<Cell>审核状态</Cell>}
-	                cell={({rowIndex, ...props}) => (
-	                    <Cell {...props}>
-	                      {rowIndex.state}
-	                    </Cell>
-	                 )}
-	                width={100}
-	            />
-
-	            <Column
-	                header={<Cell>操作</Cell>}
-	                cell={({rowIndex, ...props}) => (
-	                    <Cell {...props}>
-	                      <span className="auditBtn"><a>审核</a></span> | 
-	                      <span className="auditViewBtn"><a>查看运营数据</a></span> | 
-	                      <span className="auditCountBtn"><a>查看数据统计</a></span>
-	                    </Cell>
-	                 )}
-	                width={260}
-	            />
-	        </Table>
+			<div>
+			    <div id="ruleWrap"  className="table-responsive normal mLR tbodyLeft" style={{marginTop:"20px"}}>
+	    			<table className="table tableColor tablebor NoMB" id="ruleTable">
+						<thead className="tabelH">
+							<tr>
+								<th style={{width:'150px'}}>场馆名称</th>
+								<th style={{width:'115px'}}>所在城市</th>
+								<th style={{width:'120px'}}>审核状态</th>
+								<th style={{width:'115px'}}>运营单位名称</th>
+								<th style={{width:'165px'}}>提交时间</th>
+								<th style={{width:'290px'}}>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							{
+								Data.map(function(index,i){
+								return (
+									<tr key={i}>
+										<td style={{width:'150px'}}>{index.name}</td>
+										<td style={{width:'115px'}}>{index.city}</td>
+										<td style={{width:'120px'}}>{index.state}</td>
+										<td style={{width:'115px'}}>{index.mainUnit}</td>
+										<td style={{width:'165px'}}>{index.buildDate}</td>
+										<td style={{width:'290px'}}>
+											<span className="auditBtn"><a name=''>审核</a></span> | 
+							                <span className="auditViewBtn"><a name=''>查看运营数据</a></span> | 
+							                <span className="auditCountBtn"><a name=''>查看数据统计</a></span>
+										</td>
+									</tr>
+								)
+							})
+							}
+						</tbody>
+				    </table>
+				</div>
+			</div>  
 		)
 	}
 }

@@ -2,16 +2,12 @@ import React,{Component} from "react";
 import {render} from "react-dom";
 import {connect} from 'react-redux';
 import * as action from '../../redux/actions/actions.js';
-import Search from './LeftListOneSearch.jsx';
+import Search from './StadiumListSearch.jsx';
 class StadiumList extends Component{
 	constructor(){
 		super();
 	}
-
 	componentDidMount(){
-		var _this=this;
-		
-	$.ajax({
 		const {dispatch}=this.props;
 		$.ajax({
 		url:"http://139.129.131.105:8802/api/stadiums?filter[fields][name]=true&filter[fields][city]=true&filter[fields][mainUnit]=true&filter[fields][buildDate]=true&filter[fields][state]=true",
@@ -28,34 +24,44 @@ class StadiumList extends Component{
 		const {dispatch,Data}=this.props;
 		return (
 			<div>
-			<Search search={(obj)=>{dispatch(action.search(obj))}}/>
-{/******************表格*********************/}
-			<table>
-				<thead>
-					<tr>
-						<th>场馆名称</th>
-						<th>所在城市</th>
-						<th>审核状态</th>
-						<th>运营单位名称</th>
-					</tr>
-				</thead>
-				<tbody>
-					{
-						Data.map(function(index,i){
-						return (
-					<tr key={i}>
-					<td>{index.name}</td>
-					<td>{index.city}</td>
-					<td>{index.state}</td>
-					<td>{index.mainUnit}</td>
-					</tr>
-							)
-					})
-					}
-				</tbody>
-			</table>
+				<Search search={(obj)=>{dispatch(action.search(obj))}}/>
+	            {/******************表格*********************/}
+	            <div id="ruleWrap"  className="table-responsive normal mLR tbodyLeft" style={{marginTop:"20px"}}>
+	    			<table className="table tableColor tablebor NoMB" id="ruleTable">
+						<thead className="tabelH">
+							<tr>
+								<th style={{width:'150px'}}>场馆名称</th>
+								<th style={{width:'115px'}}>所在城市</th>
+								<th style={{width:'120px'}}>审核状态</th>
+								<th style={{width:'115px'}}>运营单位名称</th>
+								<th style={{width:'165px'}}>提交时间</th>
+								<th style={{width:'290px'}}>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							{
+								Data.length==0?(<tr><td>没有数据</td></tr>):Data.map(function(index,i){
+								return (
+									<tr key={i}>
+										<td style={{width:'150px'}}>{index.name}</td>
+										<td style={{width:'115px'}}>{index.city}</td>
+										<td style={{width:'120px'}}>{index.state}</td>
+										<td style={{width:'115px'}}>{index.mainUnit}</td>
+										<td style={{width:'165px'}}>{index.buildDate}</td>
+										<td style={{width:'290px'}}>
+											<span className="auditBtn"><a name=''>审核</a></span> | 
+							                <span className="auditViewBtn"><a name=''>查看运营数据</a></span> | 
+							                <span className="auditCountBtn"><a name=''>查看数据统计</a></span>
+										</td>
+									</tr>
+								)
+							})
+							}
+						</tbody>
+				    </table>
+				</div>
 			</div>
-				)
+		)
 	}
 };
 //筛选符合条件的

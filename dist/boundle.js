@@ -39,35 +39,19 @@ webpackJsonp([0],{
 
 	var _StadiumList2 = _interopRequireDefault(_StadiumList);
 
-<<<<<<< HEAD
-	var _StadiumInfo = __webpack_require__(268);
+	var _StadiumInfo = __webpack_require__(269);
 
 	var _StadiumInfo2 = _interopRequireDefault(_StadiumInfo);
 
-	var _StadiumData = __webpack_require__(269);
+	var _StadiumData = __webpack_require__(270);
 
 	var _StadiumData2 = _interopRequireDefault(_StadiumData);
 
-	var _RuleAdd = __webpack_require__(273);
+	var _RuleAdd = __webpack_require__(274);
 
 	var _RuleAdd2 = _interopRequireDefault(_RuleAdd);
 
-	var _RuleList = __webpack_require__(274);
-=======
-	var _StadiumInfo = __webpack_require__(275);
-
-	var _StadiumInfo2 = _interopRequireDefault(_StadiumInfo);
-
-	var _StadiumData = __webpack_require__(276);
-
-	var _StadiumData2 = _interopRequireDefault(_StadiumData);
-
-	var _RuleAdd = __webpack_require__(277);
-
-	var _RuleAdd2 = _interopRequireDefault(_RuleAdd);
-
-	var _RuleList = __webpack_require__(278);
->>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
+	var _RuleList = __webpack_require__(275);
 
 	var _RuleList2 = _interopRequireDefault(_RuleList);
 
@@ -665,13 +649,8 @@ webpackJsonp([0],{
 
 /***/ },
 
-<<<<<<< HEAD
 /***/ 263:
-/***/ function(module, exports) {
-=======
-/***/ 269:
 /***/ function(module, exports, __webpack_require__) {
->>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 
 	'use strict';
 
@@ -906,19 +885,15 @@ webpackJsonp([0],{
 
 	var _reactDom = __webpack_require__(34);
 
-<<<<<<< HEAD
-	var _LeftListOneSearch = __webpack_require__(267);
-=======
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(273);
+	var _actions = __webpack_require__(267);
 
 	var action = _interopRequireWildcard(_actions);
 
-	var _LeftListOneSearch = __webpack_require__(274);
->>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
+	var _StadiumListSearch = __webpack_require__(268);
 
-	var _LeftListOneSearch2 = _interopRequireDefault(_LeftListOneSearch);
+	var _StadiumListSearch2 = _interopRequireDefault(_StadiumListSearch);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -945,12 +920,8 @@ webpackJsonp([0],{
 				var dispatch = this.props.dispatch;
 
 				$.ajax({
-<<<<<<< HEAD
-					url: "http://139.129.131.105:8802/api/stadiums",
-=======
 					url: "http://139.129.131.105:8802/api/stadiums?filter[fields][name]=true&filter[fields][city]=true&filter[fields][mainUnit]=true&filter[fields][buildDate]=true&filter[fields][state]=true",
 					data: "",
->>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 					type: "GET",
 					dataType: 'JSON',
 					success: function success(data) {
@@ -968,69 +939,129 @@ webpackJsonp([0],{
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_LeftListOneSearch2.default, { search: function search(obj) {
+					_react2.default.createElement(_StadiumListSearch2.default, { search: function search(obj) {
 							dispatch(action.search(obj));
 						} }),
 					_react2.default.createElement(
-						"table",
-						null,
+						"div",
+						{ id: "ruleWrap", className: "table-responsive normal mLR tbodyLeft", style: { marginTop: "20px" } },
 						_react2.default.createElement(
-							"thead",
-							null,
+							"table",
+							{ className: "table tableColor tablebor NoMB", id: "ruleTable" },
 							_react2.default.createElement(
-								"tr",
-								null,
+								"thead",
+								{ className: "tabelH" },
 								_react2.default.createElement(
-									"th",
-									null,
-									"场馆名称"
-								),
-								_react2.default.createElement(
-									"th",
-									null,
-									"所在城市"
-								),
-								_react2.default.createElement(
-									"th",
-									null,
-									"审核状态"
-								),
-								_react2.default.createElement(
-									"th",
-									null,
-									"运营单位名称"
-								)
-							)
-						),
-						_react2.default.createElement(
-							"tbody",
-							null,
-							Data.map(function (index, i) {
-								return _react2.default.createElement(
 									"tr",
-									{ key: i },
+									null,
 									_react2.default.createElement(
-										"td",
-										null,
-										index.name
+										"th",
+										{ style: { width: '150px' } },
+										"场馆名称"
 									),
 									_react2.default.createElement(
-										"td",
-										null,
-										index.city
+										"th",
+										{ style: { width: '115px' } },
+										"所在城市"
 									),
 									_react2.default.createElement(
-										"td",
-										null,
-										index.state
+										"th",
+										{ style: { width: '120px' } },
+										"审核状态"
 									),
 									_react2.default.createElement(
-										"td",
-										null,
-										index.mainUnit
+										"th",
+										{ style: { width: '115px' } },
+										"运营单位名称"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '165px' } },
+										"提交时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '290px' } },
+										"操作"
 									)
-								);
-							})
+								)
+							),
+							_react2.default.createElement(
+								"tbody",
+								null,
+								Data.length == 0 ? _react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement(
+										"td",
+										null,
+										"没有数据"
+									)
+								) : Data.map(function (index, i) {
+									return _react2.default.createElement(
+										"tr",
+										{ key: i },
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '150px' } },
+											index.name
+										),
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '115px' } },
+											index.city
+										),
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '120px' } },
+											index.state
+										),
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '115px' } },
+											index.mainUnit
+										),
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '165px' } },
+											index.buildDate
+										),
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '290px' } },
+											_react2.default.createElement(
+												"span",
+												{ className: "auditBtn" },
+												_react2.default.createElement(
+													"a",
+													{ name: "" },
+													"审核"
+												)
+											),
+											" |",
+											_react2.default.createElement(
+												"span",
+												{ className: "auditViewBtn" },
+												_react2.default.createElement(
+													"a",
+													{ name: "" },
+													"查看运营数据"
+												)
+											),
+											" |",
+											_react2.default.createElement(
+												"span",
+												{ className: "auditCountBtn" },
+												_react2.default.createElement(
+													"a",
+													{ name: "" },
+													"查看数据统计"
+												)
+											)
+										)
+									);
+								})
+							)
 						)
 					)
 				);
@@ -1081,10 +1112,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-<<<<<<< HEAD
 /***/ 267:
-=======
-/***/ 273:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1094,19 +1122,18 @@ webpackJsonp([0],{
 	});
 	exports.search = search;
 	exports.stadiumData = stadiumData;
-	//左1搜索按钮
+	//场馆列表搜索按钮
 	function search(obj) {
 		return { type: "STADIUM_SEARCH", objs: Object.assign(obj, { type: "search" }) };
 	}
-	//左1获取数据
+	//场馆列表获取数据
 	function stadiumData(data) {
 		return { type: "STADIUM_DATA", obj: data };
 	}
 
 /***/ },
 
-/***/ 274:
->>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
+/***/ 268:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1311,11 +1338,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-<<<<<<< HEAD
-/***/ 268:
-=======
-/***/ 275:
->>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
+/***/ 269:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1549,11 +1572,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-<<<<<<< HEAD
-/***/ 269:
-=======
-/***/ 276:
->>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
+/***/ 270:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1568,15 +1587,15 @@ webpackJsonp([0],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _YY = __webpack_require__(270);
+	var _YY = __webpack_require__(271);
 
 	var _YY2 = _interopRequireDefault(_YY);
 
-	var _YY3 = __webpack_require__(271);
+	var _YY3 = __webpack_require__(272);
 
 	var _YY4 = _interopRequireDefault(_YY3);
 
-	var _YY5 = __webpack_require__(272);
+	var _YY5 = __webpack_require__(273);
 
 	var _YY6 = _interopRequireDefault(_YY5);
 
@@ -1713,32 +1732,28 @@ webpackJsonp([0],{
 
 /***/ },
 
-<<<<<<< HEAD
-/***/ 270:
+/***/ 271:
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5MzcyYzVkMS1mNTkwLTQ2NTItYjcwZS1lODU0OTYxN2E5ZWEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDg3RTQ1RUU2RjI1MTFFNjk1MTNDNjcyMTNGQjhBOTIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDg3RTQ1RUQ2RjI1MTFFNjk1MTNDNjcyMTNGQjhBOTIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowYmRlYzM5Yi0wOGJlLTQ2ZWUtYWE5ZC0zZGNjZGMzNGI4ZWIiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpmODMwZGYzMS1hZjE2LTExNzktOTRmYy04ZjM2MGIzYmEzYzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6DRte9AAAEaklEQVR42tSZ2U9TQRSHT28vdMOWRRSXKIiAmEjcog8uJEbjFrfogw/6plET9cEl8R8wPqC4JRhNjA9qfNEHTVwSt7gmoBJcoiYiLkGoCFZAWopdPOf2lFy10LvRXg/5haadmfPduTNnZs5Y7rbsBp2WjZrPqkCNQ41Aufj3HlQb6jPqBeoB6h7qhx6nosZ6NtQ61AbUIpR1kLKZqBxUGZelngqjbqHOoi6igmoBBJXlHahdqPeoc6glSaAHMqqzmNto4jYdQwW+FPUSdQg1Boyz0dzmS/ZhGLgdVYO6hiqGobNi9lHDPnWBj+TJtA1SZ+TrEfvWBD4B9RA1E1Jv09l3kVrwsajbqImQPiPfd5hFEbgTdQVVCOm3QmZxKgE/gpoG5jFiOZoMfBlqM5jPNjFbQnAKQcfAvHZcHiaFv8JQsYnBJ8jDsiDbe+xJNYlTzId5Bfuh2L1CaZW98V6Pg6/jpTepjXHNkWTIWu+cA1aLDWyCR2mVUai1cvCNSmuWuNdIEiwZuqAFiwgFjhnS56+BZ2qqboyD0356oRbHemy4fQqIggOC4U74HnyrpiqxZhN4pcatqS4b5Zwt/fcG6iCKfyq3xJUEPtdIIHfGOLBZswff1FvzICeTVvQotPrrtLiZR++73Cjosa65MNG9GsLRIDxtPwyBUHtsgbDmQKlnLfRFfsK7zktQ4Jwlfe8LvoPesE+Lq3ICLzEC2mb1QNGw2DmAIsUkz3po6KgBu5gLU3O3Sb/HQuAIfJDYG2n112regBF4gSFbOfcqCbgn5EWwXPBkFmJ8Xgn5OAkJmiahKNiloUT2K+KH9uArzXObxrhbL3SerRwBK6RJ9vbHBWjquto/dAg6EO6A+o5j8LzjJISivdJvLf7HEImGtbrMEvVCWzGel3jWSJ+/9DyC7l9fUC2QZ58MubYyCZqGDPU46cm3KnCJI3F8N+ryS+Bdenp9fNYiaWj0RbrgY/cN/jYKr3xncLgU4UM0QygS6C8ffwCd9pPAvXrA4xGisfNy/zAgi0RDUtQYImsncGq9VGsLH7qvQYbggrbe56lcvxoJnNbb5Vpb0LiA6LU3IqcfVCcQKRaHLA5DKGh+0NBSYQ8InBKQYbX7lZnDdxvWfRR5atsOKC1OrPcpjlPW9JbSWip7RmGbfWqKU9rEF4/jlDVdrKTWfe++dB/hzsoPEpdonoH5jRgvysEpAFf9B+AHmfWPU/4JiOWqzWrEVpMoPUFPssPE4DvjvZ0ok0X56dMmhD6DujpQJkv+ZA0mgiaW7f8c1hMU9KMoQ/PJBNCfmMWvBJysGbUgzZO1iRmaE6ZHklSklFV9GqDr2feAHZfsDsjLDZxKIfRJ9ukdNCGloCEKQVt46/t+CIGpbcqBb5WHPT3g8lA5hbfARm4PWrlNavu60kpqb5bp8FgNsdswug6/ydtMtRbmuhu4rWpuW9VhWYvR3ft5Ft3TV/K4nAyxBDzdUWbFD7aorzzRXkPsDpPOAD49r+m3AAMAYmspJcoNNJIAAAAASUVORK5CYII="
 
 /***/ },
 
-/***/ 271:
+/***/ 272:
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5MzcyYzVkMS1mNTkwLTQ2NTItYjcwZS1lODU0OTYxN2E5ZWEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUJBM0ZCNTQ2RjI1MTFFNkE4QTdEMUFDMjU2QjIyRUQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUJBM0ZCNTM2RjI1MTFFNkE4QTdEMUFDMjU2QjIyRUQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowYmRlYzM5Yi0wOGJlLTQ2ZWUtYWE5ZC0zZGNjZGMzNGI4ZWIiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpmODMwZGYzMS1hZjE2LTExNzktOTRmYy04ZjM2MGIzYmEzYzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6t2FgNAAADhElEQVR42tSZ30sUURTHj9OiaSIG0m/K1AqNrCQK1Fwys1/0UAn1YG+aBtVD/RmV9Ast+/VgQoT5UPQDU6PMoB5EkrJILSNwDcGIMgt1+57mbE6L6dyZdXb2C18Ed+45n7l75+y5d6L8ZdVkU4lwnjgTXgzPgWfJ59/hz/BH+CXcAj+Gv9hJGmURPAYugovhLfAMxfGjcCNcA9fBP1UBNMXrY+FjcDd8Hd5mAZpkzFaJ0SMxY6cLfDvcAZ+CF1LotEBidkiOkIHPhCvhe3AqTZ9SJUel5LQFPlcepkPknDhXq+S2BJ4CP4XXkfPKktxLVcEXwU1wGoVPnLtZWEyBx8G34WQKv5KFJc4M+Gl4LblHzHJmKvAdcCm5TyXCNiE4l6Cz5F6dM5ZJLagMpboYPMVYlgO9Soz89C5QDrc/myg3ncijWcMZGUPh6yS68czM1X1yA8OBbEWWoFneldahWTw2KcHs1fPhvX+GyT8OWO8v5W/5JfNjMlCay9FURiN923uiq80qGZm11iP9dIFjK3UNSnPJZn2mW98CAR3FmF8lArMmMrjXYmuqrtVLiA4CWgP0o1dEN7Gu/cpRmNXL4LmOQC/H8iwt0KEbsBGqf24n2kZ+qtIdAd+9Xl8eTR12oVnpDL7MEXC/rAlPSFZlGoPPcwS8/oVes70ZRHs22I2WxOAJjoB3+Yguo1MeA3xhJtG+7PFSqq54jZxU+wei6iZ95jfhh6s4Dw+rNXoG/+o4fFUD0a8RopwV4zVdTd+4HPpCslwuWOyGs7A7iy4kOv9AZdQA3+q7sPZ8vGwGlL/0Lp7xN/BO2wAqvYp9dWpy/BBpamFwPoAcjSBoZn3C4Hxq2hhB4HxsMhioQzURBF5j3HPekm2R28WMdUbwYfhEBICfFNZ/dvlVsmFW70G6+52AZrbKv1tVwwd8J0fgu2pzcMep2T4amO3gGWfx+fQVFy6Ra8ETqv3nztpdBM0shyfqDoM1BO+Ce10A3SssQ2bAWZ/gfEsPa2gfxnxhIbPggYE5cFsYoNskd89kG4nJ5JMA1Q5CX5Scvql2QFOJS1CZtL7d0wjMsfkMvNxY9uyAG0vlKvh4iNuDPonJse+r7DlV9AOuIP1tGL8Of2ixJR6VscUSq0Jim5bH4izxu/da8WzSzx95XWaQfn7N7yjjAxtbuF8etNekv8PkPcCgna/ptwADAE7VwrT+6mvOAAAAAElFTkSuQmCC"
 
 /***/ },
 
-/***/ 272:
+/***/ 273:
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5MzcyYzVkMS1mNTkwLTQ2NTItYjcwZS1lODU0OTYxN2E5ZWEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkJGQUNFQzM2RjI1MTFFNjk4RDhEMTcwMjVCNzM2RTMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NkJGQUNFQzI2RjI1MTFFNjk4RDhEMTcwMjVCNzM2RTMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowYmRlYzM5Yi0wOGJlLTQ2ZWUtYWE5ZC0zZGNjZGMzNGI4ZWIiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpmODMwZGYzMS1hZjE2LTExNzktOTRmYy04ZjM2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"
 
 /***/ },
 
-/***/ 273:
-=======
-/***/ 277:
->>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
+/***/ 274:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1910,11 +1925,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-<<<<<<< HEAD
-/***/ 274:
-=======
-/***/ 278:
->>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
+/***/ 275:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1933,7 +1944,7 @@ webpackJsonp([0],{
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(273);
+	var _actions = __webpack_require__(267);
 
 	var action = _interopRequireWildcard(_actions);
 
@@ -2046,40 +2057,24 @@ webpackJsonp([0],{
 										{ key: i },
 										_react2.default.createElement(
 											"td",
-<<<<<<< HEAD
 											{ style: { width: '160px' } },
-											index.rule
-										),
-										_react2.default.createElement(
-											"td",
-											{ style: { width: '165px' } },
-											index.start
-										),
-										_react2.default.createElement(
-											"td",
-											{ style: { width: '180px' } },
-											index.end
-=======
-											null,
 											index.name
 										),
 										_react2.default.createElement(
 											"td",
-											null,
+											{ style: { width: '165px' } },
 											index.startDate
 										),
 										_react2.default.createElement(
 											"td",
-											null,
+											{ style: { width: '180px' } },
 											index.endDate
 										),
 										_react2.default.createElement(
 											"td",
-											null,
+											{ style: { width: '250px' } },
 											index.isCurrent == 2 ? "否" : "是"
->>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 										),
-										_react2.default.createElement("td", { style: { width: '250px' } }),
 										_react2.default.createElement(
 											"td",
 											{ style: { width: '190px' } },
