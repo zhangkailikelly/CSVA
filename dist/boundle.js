@@ -39,6 +39,7 @@ webpackJsonp([0],{
 
 	var _StadiumList2 = _interopRequireDefault(_StadiumList);
 
+<<<<<<< HEAD
 	var _StadiumInfo = __webpack_require__(268);
 
 	var _StadiumInfo2 = _interopRequireDefault(_StadiumInfo);
@@ -52,6 +53,21 @@ webpackJsonp([0],{
 	var _RuleAdd2 = _interopRequireDefault(_RuleAdd);
 
 	var _RuleList = __webpack_require__(274);
+=======
+	var _StadiumInfo = __webpack_require__(275);
+
+	var _StadiumInfo2 = _interopRequireDefault(_StadiumInfo);
+
+	var _StadiumData = __webpack_require__(276);
+
+	var _StadiumData2 = _interopRequireDefault(_StadiumData);
+
+	var _RuleAdd = __webpack_require__(277);
+
+	var _RuleAdd2 = _interopRequireDefault(_RuleAdd);
+
+	var _RuleList = __webpack_require__(278);
+>>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 
 	var _RuleList2 = _interopRequireDefault(_RuleList);
 
@@ -169,6 +185,8 @@ webpackJsonp([0],{
 	  _createClass(App, [{
 	    key: "render",
 	    value: function render() {
+	      var dispatch = this.props.dispatch;
+
 	      return _react2.default.createElement(
 	        "div",
 	        null,
@@ -647,21 +665,48 @@ webpackJsonp([0],{
 
 /***/ },
 
+<<<<<<< HEAD
 /***/ 263:
 /***/ function(module, exports) {
+=======
+/***/ 269:
+/***/ function(module, exports, __webpack_require__) {
+>>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
-	var reducer = function reducer() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
-	  var action = arguments[1];
 
-	  return action;
+	var _redux = __webpack_require__(172);
+
+	var search = function search() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+		var action = arguments[1];
+
+		switch (action.type) {
+			case "STADIUM_SEARCH":
+				return Object.assign({}, state, action.objs);
+			default:
+				return state;
+		}
 	};
+	var data = function data() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+		var action = arguments[1];
 
+		switch (action.type) {
+			case 'STADIUM_DATA':
+				return Object.assign({}, state, action.obj);
+			default:
+				return state;
+		}
+	};
+	var reducer = (0, _redux.combineReducers)({
+		data: data,
+		search: search
+	});
 	exports.default = reducer;
 
 /***/ },
@@ -861,9 +906,21 @@ webpackJsonp([0],{
 
 	var _reactDom = __webpack_require__(34);
 
+<<<<<<< HEAD
 	var _LeftListOneSearch = __webpack_require__(267);
+=======
+	var _reactRedux = __webpack_require__(186);
+
+	var _actions = __webpack_require__(273);
+
+	var action = _interopRequireWildcard(_actions);
+
+	var _LeftListOneSearch = __webpack_require__(274);
+>>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 
 	var _LeftListOneSearch2 = _interopRequireDefault(_LeftListOneSearch);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -873,54 +930,183 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var LeftListOne = function (_Component) {
-		_inherits(LeftListOne, _Component);
+	var StadiumList = function (_Component) {
+		_inherits(StadiumList, _Component);
 
-		function LeftListOne() {
-			_classCallCheck(this, LeftListOne);
+		function StadiumList() {
+			_classCallCheck(this, StadiumList);
 
-			var _this2 = _possibleConstructorReturn(this, (LeftListOne.__proto__ || Object.getPrototypeOf(LeftListOne)).call(this));
-
-			_this2.state = {
-				data: []
-			};
-			return _this2;
+			return _possibleConstructorReturn(this, (StadiumList.__proto__ || Object.getPrototypeOf(StadiumList)).call(this));
 		}
 
-		_createClass(LeftListOne, [{
+		_createClass(StadiumList, [{
 			key: "componentDidMount",
 			value: function componentDidMount() {
-				var _this = this;
+				var dispatch = this.props.dispatch;
 
 				$.ajax({
+<<<<<<< HEAD
 					url: "http://139.129.131.105:8802/api/stadiums",
+=======
+					url: "http://139.129.131.105:8802/api/stadiums?filter[fields][name]=true&filter[fields][city]=true&filter[fields][mainUnit]=true&filter[fields][buildDate]=true&filter[fields][state]=true",
+					data: "",
+>>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 					type: "GET",
-					dataType: '',
+					dataType: 'JSON',
 					success: function success(data) {
-						console.log(data);
+						dispatch(action.stadiumData({ stadium: data }));
 					}
 				});
 			}
 		}, {
 			key: "render",
 			value: function render() {
+				var _props = this.props;
+				var dispatch = _props.dispatch;
+				var Data = _props.Data;
+
 				return _react2.default.createElement(
 					"div",
 					null,
-					_react2.default.createElement(_LeftListOneSearch2.default, null)
+					_react2.default.createElement(_LeftListOneSearch2.default, { search: function search(obj) {
+							dispatch(action.search(obj));
+						} }),
+					_react2.default.createElement(
+						"table",
+						null,
+						_react2.default.createElement(
+							"thead",
+							null,
+							_react2.default.createElement(
+								"tr",
+								null,
+								_react2.default.createElement(
+									"th",
+									null,
+									"场馆名称"
+								),
+								_react2.default.createElement(
+									"th",
+									null,
+									"所在城市"
+								),
+								_react2.default.createElement(
+									"th",
+									null,
+									"审核状态"
+								),
+								_react2.default.createElement(
+									"th",
+									null,
+									"运营单位名称"
+								)
+							)
+						),
+						_react2.default.createElement(
+							"tbody",
+							null,
+							Data.map(function (index, i) {
+								return _react2.default.createElement(
+									"tr",
+									{ key: i },
+									_react2.default.createElement(
+										"td",
+										null,
+										index.name
+									),
+									_react2.default.createElement(
+										"td",
+										null,
+										index.city
+									),
+									_react2.default.createElement(
+										"td",
+										null,
+										index.state
+									),
+									_react2.default.createElement(
+										"td",
+										null,
+										index.mainUnit
+									)
+								);
+							})
+						)
+					)
 				);
 			}
 		}]);
 
-		return LeftListOne;
+		return StadiumList;
 	}(_react.Component);
 
-	exports.default = LeftListOne;
 	;
+	//筛选符合条件的
+	function filter(filters, data, type) {
+		var arr = [];
+		//没有数据或者数据小于1条均不符合要求
+		if (data && data.length) {
+			//状态数据转换
+			data = data.map(function (index) {
+				if (index.state == 0) index.state = "不限";
+				if (index.state == 1) index.state = "正在审核";
+				if (index.state == 2) index.state = "审核通过";
+				if (index.state == 3) index.state = "审核不通过";
+				return index;
+			});
+			if (type == 'search') {
+				data.map(function (index) {
+					if (filters.state == 0) filters.state = "不限";
+					if (filters.state == 1) filters.state = "正在审核";
+					if (filters.state == 2) filters.state = "审核通过";
+					if (filters.state == 3) filters.state = "审核不通过";
+					if (index.name == filters.cgName && index.city == filters.locaCity && index.state == filters.state && index.mainUnit == filters.department) {
+						arr.push(index);
+					}
+				});
+			} else {
+				arr = data;
+			}
+		}
+		return arr;
+	}
+	//过滤store
+	function select(store) {
+		return {
+			searchs: store.search,
+			Data: filter(store.search, store.data.stadium, store.search.type)
+		};
+	}
+	exports.default = (0, _reactRedux.connect)(select)(StadiumList);
 
 /***/ },
 
+<<<<<<< HEAD
 /***/ 267:
+=======
+/***/ 273:
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.search = search;
+	exports.stadiumData = stadiumData;
+	//左1搜索按钮
+	function search(obj) {
+		return { type: "STADIUM_SEARCH", objs: Object.assign(obj, { type: "search" }) };
+	}
+	//左1获取数据
+	function stadiumData(data) {
+		return { type: "STADIUM_DATA", obj: data };
+	}
+
+/***/ },
+
+/***/ 274:
+>>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -955,6 +1141,17 @@ webpackJsonp([0],{
 		}
 
 		_createClass(Search, [{
+			key: "search",
+			value: function search() {
+				var obj = {
+					cgName: this.refs.cgName.value.trim(),
+					locaCity: this.refs.locaCity.value,
+					state: this.refs.state.value,
+					department: this.refs.department.value.trim()
+				};
+				this.props.search(obj);
+			}
+		}, {
 			key: "render",
 			value: function render() {
 				return _react2.default.createElement(
@@ -996,7 +1193,7 @@ webpackJsonp([0],{
 										null,
 										"场馆名称:"
 									),
-									_react2.default.createElement("input", { type: "text", className: "leastInput searchInput", placeholder: "宁夏" })
+									_react2.default.createElement("input", { ref: "cgName", type: "text", className: "leastInput searchInput", placeholder: "宁夏" })
 								),
 								_react2.default.createElement(
 									"div",
@@ -1008,20 +1205,20 @@ webpackJsonp([0],{
 									),
 									_react2.default.createElement(
 										"select",
-										{ className: "pull-left" },
+										{ className: "pull-left", ref: "locaCity" },
 										_react2.default.createElement(
 											"option",
-											{ value: 1 },
+											null,
 											"北京"
 										),
 										_react2.default.createElement(
 											"option",
-											{ value: 2 },
+											null,
 											"上海"
 										),
 										_react2.default.createElement(
 											"option",
-											{ value: 3 },
+											null,
 											"广州"
 										)
 									)
@@ -1036,25 +1233,25 @@ webpackJsonp([0],{
 									),
 									_react2.default.createElement(
 										"select",
-										{ className: "pull-left" },
+										{ className: "pull-left", ref: "state" },
 										_react2.default.createElement(
 											"option",
-											null,
+											{ value: 0 },
 											"不限"
 										),
 										_react2.default.createElement(
 											"option",
-											null,
+											{ value: 1 },
 											"正在审核"
 										),
 										_react2.default.createElement(
 											"option",
-											null,
+											{ value: 2 },
 											"审核通过"
 										),
 										_react2.default.createElement(
 											"option",
-											null,
+											{ value: 3 },
 											"审核不通过"
 										)
 									)
@@ -1071,7 +1268,7 @@ webpackJsonp([0],{
 										null,
 										"运营单位名称:"
 									),
-									_react2.default.createElement("input", { type: "text", className: "leastInput searchInput" })
+									_react2.default.createElement("input", { ref: "department", type: "text", className: "leastInput searchInput" })
 								),
 								_react2.default.createElement(
 									"div",
@@ -1096,7 +1293,7 @@ webpackJsonp([0],{
 							),
 							_react2.default.createElement(
 								"button",
-								{ type: "button", className: "blueBut", id: "stadiumSearchBtn" },
+								{ onClick: this.search.bind(this), type: "button", className: "blueBut", id: "stadiumSearchBtn" },
 								_react2.default.createElement("span", { className: "glyphicon glyphicon-search ", "aria-hidden": "true" }),
 								"搜 索"
 							)
@@ -1114,7 +1311,11 @@ webpackJsonp([0],{
 
 /***/ },
 
+<<<<<<< HEAD
 /***/ 268:
+=======
+/***/ 275:
+>>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1348,7 +1549,11 @@ webpackJsonp([0],{
 
 /***/ },
 
+<<<<<<< HEAD
 /***/ 269:
+=======
+/***/ 276:
+>>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1508,6 +1713,7 @@ webpackJsonp([0],{
 
 /***/ },
 
+<<<<<<< HEAD
 /***/ 270:
 /***/ function(module, exports) {
 
@@ -1530,6 +1736,9 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 273:
+=======
+/***/ 277:
+>>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1701,7 +1910,11 @@ webpackJsonp([0],{
 
 /***/ },
 
+<<<<<<< HEAD
 /***/ 274:
+=======
+/***/ 278:
+>>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1716,6 +1929,16 @@ webpackJsonp([0],{
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactDom = __webpack_require__(34);
+
+	var _reactRedux = __webpack_require__(186);
+
+	var _actions = __webpack_require__(273);
+
+	var action = _interopRequireWildcard(_actions);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1724,50 +1947,35 @@ webpackJsonp([0],{
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var RuleList = function (_React$Component) {
-		_inherits(RuleList, _React$Component);
+	var RuleList = function (_Component) {
+		_inherits(RuleList, _Component);
 
 		function RuleList() {
 			_classCallCheck(this, RuleList);
 
-			var _this = _possibleConstructorReturn(this, (RuleList.__proto__ || Object.getPrototypeOf(RuleList)).call(this));
-
-			_this.state = {
-				currentPage: 1,
-				allPage: "",
-				allData: "",
-				datas: [],
-				data: [],
-				dataPage: 4,
-				display: "none"
-			};
-			return _this;
+			return _possibleConstructorReturn(this, (RuleList.__proto__ || Object.getPrototypeOf(RuleList)).call(this));
 		}
 
 		_createClass(RuleList, [{
 			key: "componentDidMount",
 			value: function componentDidMount() {
+				var dispatch = this.props.dispatch;
 
-				var p = [{ rule: "张凯利1", start: "2016-03-01", end: "2013-06-04", or: 2 }, { rule: "张凯利2", start: "2016-03-02", end: "2013-06-04", or: 2 }, { rule: "张凯利3", start: "2016-03-03", end: "2013-06-04", or: 2 }, { rule: "张凯利4", start: "2016-03-04", end: "2013-06-04", or: 2 }, { rule: "张凯利5", start: "2016-03-05", end: "2013-06-04", or: 2 }, { rule: "张凯利6", start: "2016-03-06", end: "2013-06-04", or: 2 }, { rule: "张凯利7", start: "2016-03-07", end: "2013-06-04", or: 2 }, { rule: "张凯利8", start: "2016-03-08", end: "2013-06-04", or: 2 }, { rule: "张凯利9", start: "2016-03-09", end: "2013-06-04", or: 2 }];
 				$.ajax({
-					url: "",
-					type: "",
+					url: "http://139.129.131.105:8802/api/rules",
+					type: "get",
 					dataType: "json",
 					data: "",
-					success: function success(data) {}
-				});
-
-				this.setState({
-					datas: p,
-					data: p.slice(0, 4),
-					allData: p.length,
-					allPage: Math.ceil(p.length / 4),
-					display: "block"
+					success: function success(data) {
+						dispatch(action.stadiumData({ ruleList: data }));
+					}
 				});
 			}
 		}, {
 			key: "render",
 			value: function render() {
+				var tableData = this.props.tableData;
+
 				return _react2.default.createElement(
 					"div",
 					null,
@@ -1832,12 +2040,13 @@ webpackJsonp([0],{
 							_react2.default.createElement(
 								"tbody",
 								null,
-								this.state.data.map(function (index, i) {
+								tableData.map(function (index, i) {
 									return _react2.default.createElement(
 										"tr",
 										{ key: i },
 										_react2.default.createElement(
 											"td",
+<<<<<<< HEAD
 											{ style: { width: '160px' } },
 											index.rule
 										),
@@ -1850,6 +2059,25 @@ webpackJsonp([0],{
 											"td",
 											{ style: { width: '180px' } },
 											index.end
+=======
+											null,
+											index.name
+										),
+										_react2.default.createElement(
+											"td",
+											null,
+											index.startDate
+										),
+										_react2.default.createElement(
+											"td",
+											null,
+											index.endDate
+										),
+										_react2.default.createElement(
+											"td",
+											null,
+											index.isCurrent == 2 ? "否" : "是"
+>>>>>>> b39ea5cf1689d12e17f1568d63bea6cc235847ad
 										),
 										_react2.default.createElement("td", { style: { width: '250px' } }),
 										_react2.default.createElement(
@@ -1875,10 +2103,17 @@ webpackJsonp([0],{
 		}]);
 
 		return RuleList;
-	}(_react2.default.Component);
+	}(_react.Component);
 
-	exports.default = RuleList;
 	;
+
+	function select(store) {
+		return {
+			tableData: store.data.ruleList == undefined ? [] : store.data.ruleList
+		};
+	}
+
+	exports.default = (0, _reactRedux.connect)(select)(RuleList);
 
 /***/ }
 
