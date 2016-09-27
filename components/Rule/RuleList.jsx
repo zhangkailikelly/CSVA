@@ -1,52 +1,28 @@
-import React from "react";
-export default class RuleList extends React.Component{
+import React,{Component} from "react";
+import {render} from "react-dom";
+import {connect} from 'react-redux';
+import * as action from '../../redux/actions/actions.js';
+
+class RuleList extends Component{
 	constructor(){
 		super();
-		this.state={
-			currentPage:1,
-			allPage:"",
-			allData:"",
-			datas:[],
-			data:[],
-			dataPage:4,
-			display:"none"
+		
 	}
-}
 	componentDidMount(){
-
-				var p=[
-{rule:"张凯利1",start:"2016-03-01",end:"2013-06-04",or:2},
-{rule:"张凯利2",start:"2016-03-02",end:"2013-06-04",or:2},
-{rule:"张凯利3",start:"2016-03-03",end:"2013-06-04",or:2},
-{rule:"张凯利4",start:"2016-03-04",end:"2013-06-04",or:2},
-{rule:"张凯利5",start:"2016-03-05",end:"2013-06-04",or:2},
-{rule:"张凯利6",start:"2016-03-06",end:"2013-06-04",or:2},
-{rule:"张凯利7",start:"2016-03-07",end:"2013-06-04",or:2},
-{rule:"张凯利8",start:"2016-03-08",end:"2013-06-04",or:2},
-{rule:"张凯利9",start:"2016-03-09",end:"2013-06-04",or:2},
-
-];
+		const {dispatch}=this.props;
 		$.ajax({
-			url:"",
-			type:"",
+			url:"http://139.129.131.105:8802/api/rules",
+			type:"get",
 			dataType:"json",
 			data:"",
 			success:function(data){
-
+				dispatch(action.stadiumData({ruleList:data}))
 			}
-		})
-
-
-		this.setState({
-			datas:p,
-			data:p.slice(0,4),
-			allData:p.length,
-			allPage:Math.ceil(p.length/4),
-			display:"block"
 		})
 	}
 	
 	render(){
+		const {tableData}=this.props;
 		return (
 			<div>
 				<div className="location">
@@ -64,20 +40,33 @@ export default class RuleList extends React.Component{
      					 </tr>
      				 </thead>
      				 <tbody>
-         				{this.state.data.map(function(index,i){
-         					return (<tr key={i}>
-         						<td>{index.rule}</td>
-         						<td>{index.start}</td>
-         						<td>{index.end}</td>
-            				<td><span className="viewDataBtn"><a name='<%= o.id %>'>查看运营数据</a></span></td>
-         					</tr>)
-         				})}
+     				 {tableData.map(function(index,i){
+     				 		return(
+     				 		<tr key={i}>
+     				 			<td>{index.name}</td>
+     				 			<td>{index.startDate}</td>
+     				 			<td>{index.endDate}</td>
+     				 			<td>{index.isCurrent==2?"否":"是"}</td>
+            					<td><span className="viewDataBtn"><a name='<%= o.id %>'>查看运营数据</a></span></td>
+         					</tr>
+     				 			)
+     				 })}
+     						
+         				
      				</tbody>
    			       </table>
    				</div>
 			</div>
 
 
-)
+		)
 	}
 };
+
+function select(store){
+	return {
+		tableData:store.data.ruleList==undefined?[]:store.data.ruleList
+	}
+}
+
+export default connect(select)(RuleList);

@@ -11,6 +11,7 @@ class App extends React.Component{
 		super();
 	}
 	render(){
+    const {dispatch}=this.props;
 		return (
       <div >
 					  <header className="Header">
