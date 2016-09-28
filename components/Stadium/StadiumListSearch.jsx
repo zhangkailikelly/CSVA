@@ -26,7 +26,7 @@ export default class Search extends React.Component{
 
 					        <div className="form-group input-group-sm">
 					            <label>场馆名称:</label>
-					            <input ref="cgName" type="text" className="leastInput searchInput" placeholder="宁夏"/>
+					            <input ref="cgName" type="text" className="leastInput searchInput" defaultValue="清水体育中心"/>
 					        </div>
 
 						    <div className="form-group input-group-sm clearfix">

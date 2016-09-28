@@ -1,21 +1,45 @@
 import React from "react";
+import {connect} from "react-redux";
+import * as action from '../../redux/actions/actions.js';
 import YHRC from "../../images/SF1.png";
 import MFRC from "../../images/SF2.png";
 import YHJE from "../../images/SF3.png";
-export default class StadiumDataCount extends React.Component{
+ class StadiumDataCount extends React.Component{
 	constructor(){
 		super();
 	}
 	componentDidMount(){
+		let {dispatch}=this.props;
 	$('.mydate').datetimepicker({
    		 format: 'yyyy-mm-dd',
    		 language:  'zh-CN',
    		 minView: 2,
    		 autoclose:true
   		});
-
+	$.ajax({
+		url:"http://139.129.131.105:8802/api/dailys",
+		type:"get",
+		data:"",
+		dataType:"json",
+		success:function(data){
+			dispatch(action.stadiumData({StadiumDataCount:data}))
+		}
+	})
+	}
+	searchBtn(){
+		let {dispatch}=this.props;
+		var filters={
+			startTime:this.refs.startTime.value,
+			endTime:this.refs.endTime.value,
+			tel:this.refs.tel.value,
+			priceType:this.refs.priceType.value
+		};
+		dispatch(action.search({sDataCount:filters}))
 	}
 	render(){
+		let {dispatch,tableData,searchContent}=this.props;
+		console.log(tableData);
+		console.log(searchContent);
 		return (
 			<div>
 			    <div className="location">
@@ -27,28 +51,28 @@ export default class StadiumDataCount extends React.Component{
 					    <div className="pull-left" style={{marginRight:'50px'}}>
 					        <div className="form-group input-group-sm">
 					            <label>起始时间:</label>
-					            <input type="text" className="leastInput searchInput mydate" />
+					            <input ref="startTime" type="text" className="leastInput searchInput mydate" />
 					        </div>
 					        <div className="form-group input-group-sm clearfix">
 					            <label className="pull-left" style={{marginTop:'6px'}}>优惠类型:</label>
-					            <select className="pull-left" name="sdcType">
-					                <option value="os1">不限</option>
-					                <option value="os2">免费</option>
-					                <option value="os3">低收费</option>
+					            <select ref="priceType" className="pull-left" name="sdcType">
+					                <option value="0">不限</option>
+					                <option value="1">免费</option>
+					                <option value="2">低收费</option>
 					            </select>
 					        </div>
 					    </div>
 					    <div className="pull-left">
 					        <div className="form-group input-group-sm">
 					            <label>截止时间:</label>
-					            <input type="text" className="leastInput searchInput mydate" />
+					            <input ref="endTime" type="text" className="leastInput searchInput mydate" />
 					        </div>
 					        <div className="form-group input-group-sm">
 					            <label>手机号码:</label>
-					            <input type="text" className="leastInput" />
+					            <input ref="tel" type="text" className="leastInput" />
 					        </div>
 					    </div>
-					    <button type="button" className="blueBut" id="CountSearchBtn">
+					    <button onClick={()=>{this.searchBtn()}} type="button" className="blueBut" id="CountSearchBtn">
 					        <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
 					        搜 索
 					    </button>
@@ -62,7 +86,7 @@ export default class StadiumDataCount extends React.Component{
 					      <img className="pull-left" src={YHRC} />
 					      <div className="pull-left">
 					        <span>优惠人次</span>
-					        <em>890</em>
+					        <em>{statistics(tableData).count}</em>
 					      </div>
 					    </li>
 					    <li className="clearfixs">
@@ -76,7 +100,7 @@ export default class StadiumDataCount extends React.Component{
 					      <img className="pull-left" src={YHJE} />
 					      <div className="pull-left">
 					        <span>优惠金额</span>
-					        <em>00</em>
+					        <em>{statistics(tableData).price}</em>
 					      </div>
 					    </li>
 					</ul>
@@ -96,15 +120,19 @@ export default class StadiumDataCount extends React.Component{
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td style={{width:'150px'}}></td>
-								<td style={{width:'115px'}}></td>
-								<td style={{width:'120px'}}></td>
-								<td style={{width:'115px'}}></td>
-								<td style={{width:'165px'}}></td>
-								<td style={{width:'290px'}}>
-								</td>
+						{tableData.length==0?(<tr><td>没有符合条件的数据</td></tr>):tableData.map((index,i)=>{
+								return (
+							<tr key={i}>
+								<td style={{width:'150px'}}>{index.name}</td>
+								<td style={{width:'115px'}}>{index.cardID}</td>
+								<td style={{width:'120px'}}>{index.sports}</td>
+								<td style={{width:'115px'}}>{index.day}</td>
+								<td style={{width:'165px'}}>{index.discount}</td>
+								<td style={{width:'290px'}}>{index.priceType}</td>
+								<td style={{width:'290px'}}>{index.discountAmount}</td>
 							</tr>
+									)
+							})}
 						</tbody>
 				    </table>
 				</div>
@@ -112,3 +140,49 @@ export default class StadiumDataCount extends React.Component{
 			)
 	}
 };
+/**
+ * 低收费数据统计
+ * @param  {[type]} data 统计的数据表
+ * @return {[type]} price 优惠金额
+ *                  count 优惠人次
+ */
+function statistics(data){
+	var obj={
+		price:0,
+		count:0
+	}
+	data.map(function(index){
+		obj.price+=index.priceType;
+		obj.count+=index.count
+	})
+	return obj;
+}
+/**
+ * 过滤
+ * 	tableData：表格展示数据
+ * 	searchContent：搜索条件
+ */
+
+/**
+ * 过滤函数
+ * 
+ */
+function filter(data,filters){
+	var arr=[];
+	if(filters.type==="search"){
+		data.map(index=>{
+			if(index.priceType==filters.sDataCount.priceType&&index.day==filters.sDataCount.startTime&&index.phone==filters.sDataCount.tel){
+				arr.push(index)
+			}
+		})
+		return arr;
+	}
+	return data;
+}
+function select(store){
+	return {
+		tableData:filter(store.data.StadiumDataCount==undefined?[]:store.data.StadiumDataCount,store.search),
+		searchContent:store.search
+	}
+}
+export default connect(select)(StadiumDataCount)
