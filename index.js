@@ -24,11 +24,11 @@ import StadiumList from "./components/Stadium/StadiumList.jsx";
 //左2
 import StadiumInfo from "./components/Stadium/StadiumInfo.jsx";
 //左3
-import StadiumDataCount from "./components/Stadium/StadiumDataCount.jsx";
-//日常数据
-import DailyData from "./components/Stadium/DailyData.jsx";
-
 import StadiumData from "./components/Stadium/StadiumData.jsx";
+//左4
+import StadiumDataCount from "./components/Stadium/StadiumDataCount.jsx";
+//左5
+import DailyData from "./components/Stadium/DailyData.jsx";
 //右1
 import RuleAdd from "./components/Rule/RuleAdd.jsx";
 //右2

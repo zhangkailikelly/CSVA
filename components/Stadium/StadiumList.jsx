@@ -22,10 +22,11 @@ class StadiumList extends Component{
 		
 	}
 	render(){
-		const {dispatch,Data}=this.props;
+		const {dispatch,Data,searchs}=this.props;
+		console.log(Data)
 		return (
 			<div>
-				<Search search={(obj)=>{dispatch(action.search(obj))}}/>
+				<Search search={(obj)=>{dispatch(action.search({sList:obj}))}}/>
 	            {/******************表格*********************/}
 	            <div id="ruleWrap"  className="table-responsive normal mLR tbodyLeft" style={{marginTop:"20px"}}>
 	    			<table className="table tableColor tablebor NoMB" id="ruleTable">
@@ -97,8 +98,8 @@ function filter(filters,data,type){
 //过滤store
 function select(store){
 	return {
-		searchs:store.search,
-		Data:filter(store.search,store.data.stadium,store.search.type),
+		searchs:store.search.sList,
+		Data:filter(store.search.sList,store.data.stadium,store.search.type),
 	}
 }
 export default connect(select)(StadiumList);
