@@ -63,9 +63,51 @@ webpackJsonp([0],{
 
 	var _RuleList2 = _interopRequireDefault(_RuleList);
 
+	var _SportsActive = __webpack_require__(281);
+
+	var _SportsActive2 = _interopRequireDefault(_SportsActive);
+
+	var _GamesMain = __webpack_require__(282);
+
+	var _GamesMain2 = _interopRequireDefault(_GamesMain);
+
+	var _ActiveMain = __webpack_require__(283);
+
+	var _ActiveMain2 = _interopRequireDefault(_ActiveMain);
+
+	var _ActiveMain3 = __webpack_require__(284);
+
+	var _ActiveMain4 = _interopRequireDefault(_ActiveMain3);
+
+	var _SportsService = __webpack_require__(285);
+
+	var _SportsService2 = _interopRequireDefault(_SportsService);
+
+	var _SportsTraining = __webpack_require__(286);
+
+	var _SportsTraining2 = _interopRequireDefault(_SportsTraining);
+
+	var _ServiceGuidance = __webpack_require__(287);
+
+	var _ServiceGuidance2 = _interopRequireDefault(_ServiceGuidance);
+
+	var _ServiceMajor = __webpack_require__(288);
+
+	var _ServiceMajor2 = _interopRequireDefault(_ServiceMajor);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//注入reduce
+
+	//运动健身指导列表
+
+
+	//体育服务
+
+	//群体活动
+
+
+	//活动承载
 
 	//右1
 
@@ -84,6 +126,14 @@ webpackJsonp([0],{
 	var store = (0, _redux.createStore)(_reduce2.default);
 	//根元素
 
+	//专业训练列表
+
+	//体育培训列表
+
+	//其他文体活动
+
+	//体育赛事
+
 	//右2
 
 	//左3
@@ -91,6 +141,8 @@ webpackJsonp([0],{
 	//左1
 
 	//展示组件
+	//登录
+	/*import Login from "./components/Login.jsx";*/
 	//左上
 
 	//将子reduce合并成一个主reduce传进createStore()内
@@ -123,6 +175,20 @@ webpackJsonp([0],{
 					{ path: '/Rule', component: _Rule2.default },
 					_react2.default.createElement(_reactRouter.IndexRoute, { component: _RuleAdd2.default }),
 					_react2.default.createElement(_reactRouter.Route, { path: '/Rule/2', component: _RuleList2.default })
+				),
+				_react2.default.createElement(
+					_reactRouter.Route,
+					{ path: '/SportsActive', component: _SportsActive2.default },
+					_react2.default.createElement(_reactRouter.IndexRoute, { component: _GamesMain2.default }),
+					_react2.default.createElement(_reactRouter.Route, { path: '/SportsActive/2', component: _ActiveMain2.default }),
+					_react2.default.createElement(_reactRouter.Route, { path: '/SportsActive/3', component: _ActiveMain4.default })
+				),
+				_react2.default.createElement(
+					_reactRouter.Route,
+					{ path: '/SportsService', component: _SportsService2.default },
+					_react2.default.createElement(_reactRouter.IndexRoute, { component: _SportsTraining2.default }),
+					_react2.default.createElement(_reactRouter.Route, { path: '/SportsService/2', component: _ServiceGuidance2.default }),
+					_react2.default.createElement(_reactRouter.Route, { path: '/SportsService/3', component: _ServiceMajor2.default })
 				)
 			)
 		)
@@ -232,7 +298,7 @@ webpackJsonp([0],{
 	              "  | ",
 	              _react2.default.createElement(
 	                "a",
-	                { className: "exitL", name: "", href: "login" },
+	                { className: "exitL", name: "", href: "login.jsx" },
 	                _react2.default.createElement("img", { src: _exit2.default, title: "退出" })
 	              )
 	            )
@@ -2288,7 +2354,7 @@ webpackJsonp([0],{
 								{ className: "yiji" },
 								_react2.default.createElement(
 									_reactRouter.Link,
-									{ to: "/stadium/5" },
+									{ to: "/stadium/5", className: "color6" },
 									"日常数据"
 								)
 							)
@@ -2312,17 +2378,29 @@ webpackJsonp([0],{
 								_react2.default.createElement(
 									"span",
 									{ className: "erji" },
-									"体育赛事"
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ to: "/SportsActive", className: "color6" },
+										"体育赛事"
+									)
 								),
 								_react2.default.createElement(
 									"span",
 									{ className: "erji" },
-									"群体活动"
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ to: "/SportsActive/2", className: "color6" },
+										"群体活动"
+									)
 								),
 								_react2.default.createElement(
 									"span",
 									{ className: "erji" },
-									"其他文体活动"
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ to: "/SportsActive/3", className: "color6" },
+										"其他文体活动"
+									)
 								)
 							)
 						),
@@ -2345,17 +2423,29 @@ webpackJsonp([0],{
 								_react2.default.createElement(
 									"span",
 									{ className: "erji" },
-									"体育训练"
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ to: "/SportsService", className: "color6" },
+										"体育训练"
+									)
 								),
 								_react2.default.createElement(
 									"span",
 									{ className: "erji" },
-									"运动健身指导"
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ to: "/SportsService/2", className: "color6" },
+										"运动健身指导"
+									)
 								),
 								_react2.default.createElement(
 									"span",
 									{ className: "erji" },
-									"专业训练"
+									_react2.default.createElement(
+										_reactRouter.Link,
+										{ to: "/SportsService/3", className: "color6" },
+										"专业训练"
+									)
 								)
 							)
 						)
@@ -2749,6 +2839,1174 @@ webpackJsonp([0],{
 	}
 
 	exports.default = (0, _reactRedux.connect)(select)(RuleList);
+
+/***/ },
+
+/***/ 281:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(196);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Rule = function (_React$Component) {
+		_inherits(Rule, _React$Component);
+
+		function Rule() {
+			_classCallCheck(this, Rule);
+
+			return _possibleConstructorReturn(this, (Rule.__proto__ || Object.getPrototypeOf(Rule)).call(this));
+		}
+
+		_createClass(Rule, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "content clearfix" },
+					_react2.default.createElement(
+						"div",
+						{ className: "sidebar pull-left" },
+						_react2.default.createElement(
+							"ul",
+							{ className: "nav nav-sidebar", id: "side-menu" },
+							_react2.default.createElement(
+								"li",
+								{ className: "nav-header" },
+								_react2.default.createElement(
+									_reactRouter.Link,
+									{ to: "/SportsActive/", onlyActiveOnIndex: true, activeClassName: "cur" },
+									"体育赛事"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ className: "nav-header" },
+								_react2.default.createElement(
+									_reactRouter.Link,
+									{ to: "/SportsActive/2", activeClassName: "cur" },
+									"群体活动"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ className: "nav-header" },
+								_react2.default.createElement(
+									_reactRouter.Link,
+									{ to: "/SportsActive/3", activeClassName: "cur" },
+									"其他文体活动"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "rightContent pull-left" },
+						this.props.children
+					)
+				);
+			}
+		}]);
+
+		return Rule;
+	}(_react2.default.Component);
+
+	exports.default = Rule;
+	;
+
+/***/ },
+
+/***/ 282:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var GamesMain = function (_React$Component) {
+		_inherits(GamesMain, _React$Component);
+
+		function GamesMain() {
+			_classCallCheck(this, GamesMain);
+
+			return _possibleConstructorReturn(this, (GamesMain.__proto__ || Object.getPrototypeOf(GamesMain)).call(this));
+		}
+
+		_createClass(GamesMain, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"div",
+						{ className: "location" },
+						_react2.default.createElement(
+							"h3",
+							null,
+							">",
+							_react2.default.createElement(
+								"span",
+								null,
+								" 体育赛事 "
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "topSearch RightInfo mLR MB" },
+						_react2.default.createElement(
+							"form",
+							{ className: "form-inline", id: "gameSearchForm" },
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"赛事名称"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", id: "gameName", placeholder: "赛事名称" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"主办单位"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", id: "hostUnit", placeholder: "主办单位" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"承办单位"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", id: "undertakeUnit", placeholder: "承办单位" })
+							),
+							_react2.default.createElement(
+								"button",
+								{ type: "button", className: "btn btn-default", id: "gameSearchBtn" },
+								_react2.default.createElement(
+									"a",
+									null,
+									"搜索"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "table-responsive normal mLR tbodyLeft", style: { marginTop: "20px" } },
+						_react2.default.createElement(
+							"table",
+							{ className: "table tableColor tablebor NoMB", id: "gameTable" },
+							_react2.default.createElement(
+								"thead",
+								{ className: "tabelH" },
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '170px' } },
+										"赛事名称"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"赛事级别"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"起始时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"结束时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"观众人数"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '104px' } },
+										"操作"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"tbody",
+								null,
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement("td", { style: { width: '170px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '104px' } })
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return GamesMain;
+	}(_react2.default.Component);
+
+	exports.default = GamesMain;
+	;
+
+/***/ },
+
+/***/ 283:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var GamesMain = function (_React$Component) {
+		_inherits(GamesMain, _React$Component);
+
+		function GamesMain() {
+			_classCallCheck(this, GamesMain);
+
+			return _possibleConstructorReturn(this, (GamesMain.__proto__ || Object.getPrototypeOf(GamesMain)).call(this));
+		}
+
+		_createClass(GamesMain, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"div",
+						{ className: "location" },
+						_react2.default.createElement(
+							"h3",
+							null,
+							">",
+							_react2.default.createElement(
+								"span",
+								null,
+								" 体育赛事 "
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "topSearch RightInfo  mLR" },
+						_react2.default.createElement(
+							"form",
+							{ className: "form-inline", id: "gameSearchForm" },
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"活动名称"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", id: "gameName", placeholder: "活动名称" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"主办单位"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", id: "hostUnit", placeholder: "主办单位" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"承办单位"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", id: "undertakeUnit", placeholder: "承办单位" })
+							),
+							_react2.default.createElement(
+								"button",
+								{ type: "button", className: "btn btn-default", id: "gameSearchBtn" },
+								_react2.default.createElement(
+									"a",
+									null,
+									"搜索"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "table-responsive normal mLR tbodyLeft", style: { marginTop: "20px" } },
+						_react2.default.createElement(
+							"table",
+							{ className: "table tableColor tablebor NoMB" },
+							_react2.default.createElement(
+								"thead",
+								{ className: "tabelH" },
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '197px' } },
+										"活动名称"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '206px' } },
+										"起始时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '206px' } },
+										"结束时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '195px' } },
+										"观众人数"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '142px' } },
+										"操作"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"tbody",
+								null,
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement("td", { style: { width: '197px' } }),
+									_react2.default.createElement("td", { style: { width: '206px' } }),
+									_react2.default.createElement("td", { style: { width: '206px' } }),
+									_react2.default.createElement("td", { style: { width: '195px' } }),
+									_react2.default.createElement("td", { style: { width: '142px' } })
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return GamesMain;
+	}(_react2.default.Component);
+
+	exports.default = GamesMain;
+	;
+
+/***/ },
+
+/***/ 284:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var GamesMain = function (_React$Component) {
+		_inherits(GamesMain, _React$Component);
+
+		function GamesMain() {
+			_classCallCheck(this, GamesMain);
+
+			return _possibleConstructorReturn(this, (GamesMain.__proto__ || Object.getPrototypeOf(GamesMain)).call(this));
+		}
+
+		_createClass(GamesMain, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"div",
+						{ className: "location" },
+						_react2.default.createElement(
+							"h3",
+							null,
+							">",
+							_react2.default.createElement(
+								"span",
+								null,
+								" 其他文体活动 "
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "topSearch RightInfo  mLR" },
+						_react2.default.createElement(
+							"form",
+							{ className: "form-inline", id: "gameSearchForm" },
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"活动名称"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", id: "gameName", placeholder: "活动名称" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"主办单位"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", id: "hostUnit", placeholder: "主办单位" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"承办单位"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", id: "undertakeUnit", placeholder: "承办单位" })
+							),
+							_react2.default.createElement(
+								"button",
+								{ type: "button", className: "btn btn-default", id: "gameSearchBtn" },
+								_react2.default.createElement(
+									"a",
+									null,
+									"搜索"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "table-responsive normal mLR tbodyLeft", style: { marginTop: "20px" } },
+						_react2.default.createElement(
+							"table",
+							{ className: "table tableColor tablebor NoMB" },
+							_react2.default.createElement(
+								"thead",
+								{ className: "tabelH" },
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '197px' } },
+										"活动名称"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '206px' } },
+										"起始时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '206px' } },
+										"结束时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '195px' } },
+										"观众人数"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '142px' } },
+										"操作"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"tbody",
+								null,
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement("td", { style: { width: '197px' } }),
+									_react2.default.createElement("td", { style: { width: '206px' } }),
+									_react2.default.createElement("td", { style: { width: '206px' } }),
+									_react2.default.createElement("td", { style: { width: '195px' } }),
+									_react2.default.createElement("td", { style: { width: '142px' } })
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return GamesMain;
+	}(_react2.default.Component);
+
+	exports.default = GamesMain;
+	;
+
+/***/ },
+
+/***/ 285:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(196);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SportsService = function (_React$Component) {
+		_inherits(SportsService, _React$Component);
+
+		function SportsService() {
+			_classCallCheck(this, SportsService);
+
+			return _possibleConstructorReturn(this, (SportsService.__proto__ || Object.getPrototypeOf(SportsService)).call(this));
+		}
+
+		_createClass(SportsService, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "content clearfix" },
+					_react2.default.createElement(
+						"div",
+						{ className: "sidebar pull-left" },
+						_react2.default.createElement(
+							"ul",
+							{ className: "nav nav-sidebar", id: "side-menu" },
+							_react2.default.createElement(
+								"li",
+								{ className: "nav-header" },
+								_react2.default.createElement(
+									_reactRouter.Link,
+									{ to: "/SportsService/", onlyActiveOnIndex: true, activeClassName: "cur" },
+									"体育培训列表"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ className: "nav-header" },
+								_react2.default.createElement(
+									_reactRouter.Link,
+									{ to: "/SportsService/2", activeClassName: "cur" },
+									"运动健身指导列表"
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								{ className: "nav-header" },
+								_react2.default.createElement(
+									_reactRouter.Link,
+									{ to: "/SportsService/3", activeClassName: "cur" },
+									"专业训练列表"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "rightContent pull-left" },
+						this.props.children
+					)
+				);
+			}
+		}]);
+
+		return SportsService;
+	}(_react2.default.Component);
+
+	exports.default = SportsService;
+	;
+
+/***/ },
+
+/***/ 286:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var GamesMain = function (_React$Component) {
+		_inherits(GamesMain, _React$Component);
+
+		function GamesMain() {
+			_classCallCheck(this, GamesMain);
+
+			return _possibleConstructorReturn(this, (GamesMain.__proto__ || Object.getPrototypeOf(GamesMain)).call(this));
+		}
+
+		_createClass(GamesMain, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"div",
+						{ className: "location" },
+						_react2.default.createElement(
+							"h3",
+							null,
+							">",
+							_react2.default.createElement(
+								"span",
+								null,
+								" 体育培训列表 "
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "topSearch RightInfo mLR MB" },
+						_react2.default.createElement(
+							"form",
+							{ className: "form-inline", id: "gameSearchForm" },
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"培训名称"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "培训名称" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"培训机构名称"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "培训机构名称" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"培训项目"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "培训项目" })
+							),
+							_react2.default.createElement(
+								"button",
+								{ type: "button", className: "btn btn-default", id: "gameSearchBtn" },
+								_react2.default.createElement(
+									"a",
+									null,
+									"搜索"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "table-responsive normal mLR tbodyLeft", style: { marginTop: "20px" } },
+						_react2.default.createElement(
+							"table",
+							{ className: "table tableColor tablebor NoMB", id: "gameTable" },
+							_react2.default.createElement(
+								"thead",
+								{ className: "tabelH" },
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '170px' } },
+										"培训名称"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"培训项目"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"起始时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"结束时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"受训人数"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '104px' } },
+										"操作"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"tbody",
+								null,
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement("td", { style: { width: '170px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '104px' } })
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return GamesMain;
+	}(_react2.default.Component);
+
+	exports.default = GamesMain;
+	;
+
+/***/ },
+
+/***/ 287:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ServiceGuidance = function (_React$Component) {
+		_inherits(ServiceGuidance, _React$Component);
+
+		function ServiceGuidance() {
+			_classCallCheck(this, ServiceGuidance);
+
+			return _possibleConstructorReturn(this, (ServiceGuidance.__proto__ || Object.getPrototypeOf(ServiceGuidance)).call(this));
+		}
+
+		_createClass(ServiceGuidance, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"div",
+						{ className: "location" },
+						_react2.default.createElement(
+							"h3",
+							null,
+							">",
+							_react2.default.createElement(
+								"span",
+								null,
+								" 运动健身指导列表 "
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "topSearch RightInfo mLR MB" },
+						_react2.default.createElement(
+							"form",
+							{ className: "form-inline", id: "gameSearchForm" },
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"活动名称"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "活动名称" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									null,
+									"培训机构名称"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "培训机构名称" })
+							),
+							_react2.default.createElement(
+								"button",
+								{ type: "button", className: "btn btn-default", id: "gameSearchBtn" },
+								_react2.default.createElement(
+									"a",
+									null,
+									"搜索"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "table-responsive normal mLR tbodyLeft", style: { marginTop: "20px" } },
+						_react2.default.createElement(
+							"table",
+							{ className: "table tableColor tablebor NoMB", id: "gameTable" },
+							_react2.default.createElement(
+								"thead",
+								{ className: "tabelH" },
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '170px' } },
+										"培训名称"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"培训项目"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"起始时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"结束时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"参与人数"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '104px' } },
+										"操作"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"tbody",
+								null,
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement("td", { style: { width: '170px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '104px' } })
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return ServiceGuidance;
+	}(_react2.default.Component);
+
+	exports.default = ServiceGuidance;
+	;
+
+/***/ },
+
+/***/ 288:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ServiceMajor = function (_React$Component) {
+		_inherits(ServiceMajor, _React$Component);
+
+		function ServiceMajor() {
+			_classCallCheck(this, ServiceMajor);
+
+			return _possibleConstructorReturn(this, (ServiceMajor.__proto__ || Object.getPrototypeOf(ServiceMajor)).call(this));
+		}
+
+		_createClass(ServiceMajor, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"div",
+						{ className: "location" },
+						_react2.default.createElement(
+							"h3",
+							null,
+							">",
+							_react2.default.createElement(
+								"span",
+								null,
+								" 运动健身指导列表 "
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "topSearch RightInfo mLR MB" },
+						_react2.default.createElement(
+							"form",
+							{ className: "form-inline", id: "gameSearchForm" },
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									{ style: { width: "100px" } },
+									"运动队(员)名字"
+								),
+								_react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "运动队(员)名字" })
+							),
+							_react2.default.createElement(
+								"button",
+								{ type: "button", className: "btn btn-default", id: "gameSearchBtn" },
+								_react2.default.createElement(
+									"a",
+									null,
+									"搜索"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "table-responsive normal mLR tbodyLeft", style: { marginTop: "20px" } },
+						_react2.default.createElement(
+							"table",
+							{ className: "table tableColor tablebor NoMB", id: "gameTable" },
+							_react2.default.createElement(
+								"thead",
+								{ className: "tabelH" },
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '170px' } },
+										"培训名称"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"培训项目"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"起始时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"结束时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '168px' } },
+										"总天数"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '104px' } },
+										"操作"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"tbody",
+								null,
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement("td", { style: { width: '170px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '168px' } }),
+									_react2.default.createElement("td", { style: { width: '104px' } })
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return ServiceMajor;
+	}(_react2.default.Component);
+
+	exports.default = ServiceMajor;
+	;
 
 /***/ }
 

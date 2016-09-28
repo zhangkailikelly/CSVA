@@ -26,7 +26,7 @@ class App extends React.Component{
                                 <span className="RSmallName pull-left"></span> 
                               </a>
                           </h1>
-                           <p className="pull-right UserExit"><img src={userSrc} style={{margin:'-3px 10px 0 0'}} /><em>admin@admin.com</em>  | <a className="exitL" name="" href="login"><img src={exitSrc} title="退出" /></a></p>
+                           <p className="pull-right UserExit"><img src={userSrc} style={{margin:'-3px 10px 0 0'}} /><em>admin@admin.com</em>  | <a className="exitL" name="" href="login.jsx"><img src={exitSrc} title="退出" /></a></p>
                       </div>
                       <nav className="HeaderB">
                         <ul className="list-inline" id="topNav">
