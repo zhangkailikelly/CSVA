@@ -22,18 +22,18 @@ export default class StadiumData extends React.Component{
 				    <p className="pull-left"><img src={sport} /></p>
 				    <span className="yiji">活动承载</span>
 				    <div style={{marginLeft:"20px"}}>
-				      <span className="erji"><Link to="/SportsActive" className="color6">体育赛事</Link></span>
-				      <span className="erji"><Link to="/SportsActive/2" className="color6">群体活动</Link></span>
-				      <span className="erji"><Link to="/SportsActive/3" className="color6">其他文体活动</Link></span>
+				      <span className="erji"><Link to="/stadium/6" className="color6">体育赛事</Link></span>
+				      <span className="erji"><Link to="/stadium/7" className="color6">群体活动</Link></span>
+				      <span className="erji"><Link to="/stadium/8" className="color6">其他文体活动</Link></span>
 				    </div>
 				  </div>
 				  <div className="YYDataCon">
 				    <p className="pull-left"><img src={service} /></p>
 				    <span className="yiji">体育服务</span>
 					<div style={{marginLeft:"20px"}}>
-					    <span className="erji"><Link to="/SportsService" className="color6">体育训练</Link></span>
-					    <span className="erji"><Link to="/SportsService/2" className="color6">运动健身指导</Link></span>
-					    <span className="erji"><Link to="/SportsService/3" className="color6">专业训练</Link></span>
+					    <span className="erji"><Link to="/stadium/9" className="color6">体育训练</Link></span>
+					    <span className="erji"><Link to="/stadium/10" className="color6">运动健身指导</Link></span>
+					    <span className="erji"><Link to="/stadium/11" className="color6">专业训练</Link></span>
 					</div>
 				  </div>
 				</div>

@@ -42,7 +42,7 @@ import GamesMain from "./components/SportsActive/GamesMain.jsx";
 import ActiveMain from "./components/SportsActive/ActiveMain.jsx";
  //其他文体活动
 import ActiveMain2 from "./components/SportsActive/ActiveMain2.jsx";
-
+ 
 
 //体育服务
 import SportsService from "./components/SportsService/SportsService.jsx";
@@ -72,12 +72,20 @@ let rootElement=document.getElementById('box');
 					    <Route path="/stadium/3" component={StadiumData}/>
 					    <Route path="/stadium/4" component={StadiumDataCount}/>
 					    <Route path="/stadium/5" component={DailyData}/>
+					    <Route path="/stadium/6" component={GamesMain}/>
+					    <Route path="/stadium/7" component={ActiveMain}/>
+						<Route path="/stadium/8" component={ActiveMain2}/>
+						<Route path="/stadium/9" component={SportsTraining}/>
+					    <Route path="/stadium/10" component={ServiceGuidance}/>
+						<Route path="/stadium/11" component={ServiceMajor}/>
+
 					</Route>
 				    {/*评分规则*/}
 					<Route path="/Rule" component={Rule}>
 						<IndexRoute component={RuleAdd}/>
 						<Route path="/Rule/2" component={RuleList}/>
 					</Route>
+					{/*
 					<Route path="/SportsActive" component={SportsActive}>
 						<IndexRoute component={GamesMain}/>
 						<Route path="/SportsActive/2" component={ActiveMain}/>
@@ -87,7 +95,7 @@ let rootElement=document.getElementById('box');
 						<IndexRoute component={SportsTraining}/>
 						<Route path="/SportsService/2" component={ServiceGuidance}/>
 						<Route path="/SportsService/3" component={ServiceMajor}/>
-					</Route>
+					</Route> */}
 				</Route>
 			</Router>
 		</Provider>,

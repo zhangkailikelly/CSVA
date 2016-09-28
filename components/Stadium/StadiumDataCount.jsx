@@ -110,26 +110,26 @@ import YHJE from "../../images/SF3.png";
 	    			<table className="table tableColor tablebor NoMB" id="stadiumTable">
 						<thead className="tabelH">
 							<tr>
-								<th style={{width:'150px'}}>用户名称</th>
-								<th style={{width:'115px'}}>身份证号码</th>
-								<th style={{width:'120px'}}>运动类型</th>
-								<th style={{width:'115px'}}>日期</th>
-								<th style={{width:'165px'}}>折扣</th>
-								<th style={{width:'290px'}}>优惠金额</th>
-								<th style={{width:'290px'}}>优惠人次</th>
+								<th style={{width:'125px'}}>用户名称</th>
+								<th style={{width:'220px'}}>身份证号码</th>
+								<th style={{width:'130px'}}>运动类型</th>
+								<th style={{width:'150px'}}>日期</th>
+								<th style={{width:'80px'}}>折扣</th>
+								<th style={{width:'130px'}}>优惠金额</th>
+								<th style={{width:'130px'}}>优惠人次</th>
 							</tr>
 						</thead>
 						<tbody>
 						{tableData.length==0?(<tr><td>没有符合条件的数据</td></tr>):tableData.map((index,i)=>{
 								return (
 							<tr key={i}>
-								<td style={{width:'150px'}}>{index.name}</td>
-								<td style={{width:'115px'}}>{index.cardID}</td>
-								<td style={{width:'120px'}}>{index.sports}</td>
-								<td style={{width:'115px'}}>{index.day}</td>
-								<td style={{width:'165px'}}>{index.discount}</td>
-								<td style={{width:'290px'}}>{index.priceType}</td>
-								<td style={{width:'290px'}}>{index.discountAmount}</td>
+								<td style={{width:'125px'}}>{index.name}</td>
+								<td style={{width:'220px'}}>{index.cardID}</td>
+								<td style={{width:'130px'}}>{index.sports}</td>
+								<td style={{width:'150px'}}>{index.day}</td>
+								<td style={{width:'80px'}}>{index.discount}</td>
+								<td style={{width:'130px'}}>{index.priceType}</td>
+								<td style={{width:'130px'}}>{index.discountAmount}</td>
 							</tr>
 									)
 							})}
