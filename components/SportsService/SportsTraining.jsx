@@ -51,7 +51,7 @@ console.log(data)
 						</thead>
 						<tbody>
 						{
-								data.length==0?(<tr><td>没有数据</td></tr>):(data.map((index,i)=>
+								data.length==0?(<tr><td style={{width:'945px'}}>没有数据</td></tr>):(data.map((index,i)=>
 									(
 							<tr key={i}>
 								<td style={{width:'170px'}}>{index.name}</td>

@@ -49,7 +49,7 @@ class GamesMain2 extends React.Component{
 						</thead>
 						<tbody>
 								{
-								data.length==0?(<tr><td>没有数据</td></tr>):(data.map((index,i)=>
+								data.length==0?(<tr><td style={{width:'945px'}}>没有数据</td></tr>):(data.map((index,i)=>
 									(
 							<tr key={i}> 
 								<td style={{width:'197px'}}>{index.name}</td>

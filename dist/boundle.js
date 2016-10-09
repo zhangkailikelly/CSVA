@@ -43,7 +43,7 @@ webpackJsonp([0],{
 
 	var _Rule2 = _interopRequireDefault(_Rule);
 
-	var _StadiumList = __webpack_require__(273);
+	var _StadiumList = __webpack_require__(274);
 
 	var _StadiumList2 = _interopRequireDefault(_StadiumList);
 
@@ -103,11 +103,11 @@ webpackJsonp([0],{
 
 	var _ServiceMajor2 = _interopRequireDefault(_ServiceMajor);
 
-	var _Total = __webpack_require__(289);
+	var _Total = __webpack_require__(296);
 
 	var _Total2 = _interopRequireDefault(_Total);
 
-	var _TotalInfo = __webpack_require__(290);
+	var _TotalInfo = __webpack_require__(297);
 
 	var _TotalInfo2 = _interopRequireDefault(_TotalInfo);
 
@@ -207,16 +207,20 @@ webpackJsonp([0],{
 					_reactRouter.Route,
 					{ path: '/Rule', component: _Rule2.default },
 					_react2.default.createElement(_reactRouter.IndexRoute, { component: _RuleAdd2.default }),
-<<<<<<< HEAD
-					_react2.default.createElement(_reactRouter.Route, { path: '/Rule/2', component: _RuleList2.default })
+					_react2.default.createElement(_reactRouter.Route, { path: '2', component: _RuleList2.default })
 				),
+				_react2.default.createElement(
+					_reactRouter.Route,
+					{ path: '/SportsService', component: _SportsService2.default },
+					_react2.default.createElement(_reactRouter.IndexRoute, { component: _SportsTraining2.default }),
+					_react2.default.createElement(_reactRouter.Route, { path: '/SportsService/2', component: _ServiceGuidance2.default }),
+					_react2.default.createElement(_reactRouter.Route, { path: '/SportsService/3', component: _ServiceMajor2.default })
+				),
+				' */}',
 				_react2.default.createElement(
 					_reactRouter.Route,
 					{ path: '/Total', component: _Total2.default },
 					_react2.default.createElement(_reactRouter.IndexRoute, { component: _TotalInfo2.default })
-=======
-					_react2.default.createElement(_reactRouter.Route, { path: '2', component: _RuleList2.default })
->>>>>>> b40bc655c61a48985de68c600e3a5b6ecefa1870
 				)
 			)
 		)
@@ -1886,7 +1890,7 @@ webpackJsonp([0],{
 
 	var _reactRouter = __webpack_require__(203);
 
-	var _actions = __webpack_require__(274);
+	var _actions = __webpack_require__(273);
 
 	var action = _interopRequireWildcard(_actions);
 
@@ -1972,255 +1976,6 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 273:
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(203);
-
-	var _reactDom = __webpack_require__(34);
-
-	var _reactRedux = __webpack_require__(186);
-
-	var _actions = __webpack_require__(274);
-
-	var action = _interopRequireWildcard(_actions);
-
-	var _StadiumListSearch = __webpack_require__(275);
-
-	var _StadiumListSearch2 = _interopRequireDefault(_StadiumListSearch);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var StadiumList = function (_Component) {
-		_inherits(StadiumList, _Component);
-
-		function StadiumList() {
-			_classCallCheck(this, StadiumList);
-
-			return _possibleConstructorReturn(this, (StadiumList.__proto__ || Object.getPrototypeOf(StadiumList)).call(this));
-		}
-
-		_createClass(StadiumList, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				var _props = this.props;
-				var dispatch = _props.dispatch;
-				var Data = _props.Data;
-
-				if (Data.length != 0) return;
-				dispatch(action.getStadiumsData());
-			}
-		}, {
-			key: "viewData",
-			value: function viewData(id) {
-				var dispatch = this.props.dispatch;
-
-				dispatch(action.viewData(id));
-			}
-		}, {
-			key: "render",
-			value: function render() {
-				var _this2 = this;
-
-				var _props2 = this.props;
-				var dispatch = _props2.dispatch;
-				var Data = _props2.Data;
-				var da = _props2.da;
-
-				console.log(da);
-				return _react2.default.createElement(
-					"div",
-					null,
-					_react2.default.createElement(_StadiumListSearch2.default, { search: function search(obj) {
-							dispatch(action.search(obj));
-						} }),
-					_react2.default.createElement(
-						"div",
-						{ id: "ruleWrap", className: "table-responsive normal mLR tbodyLeft", style: { marginTop: "20px" } },
-						_react2.default.createElement(
-							"table",
-							{ className: "table tableColor tablebor NoMB", id: "ruleTable" },
-							_react2.default.createElement(
-								"thead",
-								{ className: "tabelH" },
-								_react2.default.createElement(
-									"tr",
-									null,
-									_react2.default.createElement(
-										"th",
-										{ style: { width: '150px' } },
-										"场馆名称"
-									),
-									_react2.default.createElement(
-										"th",
-										{ style: { width: '115px' } },
-										"所在城市"
-									),
-									_react2.default.createElement(
-										"th",
-										{ style: { width: '120px' } },
-										"审核状态"
-									),
-									_react2.default.createElement(
-										"th",
-										{ style: { width: '115px' } },
-										"运营单位名称"
-									),
-									_react2.default.createElement(
-										"th",
-										{ style: { width: '165px' } },
-										"提交时间"
-									),
-									_react2.default.createElement(
-										"th",
-										{ style: { width: '290px' } },
-										"操作"
-									)
-								)
-							),
-							_react2.default.createElement(
-								"tbody",
-								null,
-								Data.length == 0 ? _react2.default.createElement(
-									"tr",
-									null,
-									_react2.default.createElement(
-										"td",
-										null,
-										"没有数据"
-									)
-								) : Data.map(function (index, i) {
-									return _react2.default.createElement(
-										"tr",
-										{ key: i },
-										_react2.default.createElement(
-											"td",
-											{ style: { width: '150px' } },
-											index.name
-										),
-										_react2.default.createElement(
-											"td",
-											{ style: { width: '115px' } },
-											index.city
-										),
-										_react2.default.createElement(
-											"td",
-											{ style: { width: '120px' } },
-											function (obj) {
-												if (obj == 0) return "不限";
-												if (obj == 1) return "正在审核";
-												if (obj == 2) return "审核通过";
-												if (obj == 3) return "审核不通过";
-											}(index.state)
-										),
-										_react2.default.createElement(
-											"td",
-											{ style: { width: '115px' } },
-											index.mainUnit
-										),
-										_react2.default.createElement(
-											"td",
-											{ style: { width: '165px' } },
-											index.buildDate
-										),
-										_react2.default.createElement(
-											"td",
-											{ style: { width: '290px' } },
-											_react2.default.createElement(
-												"span",
-												{ className: "auditBtn" },
-												_react2.default.createElement(
-													_reactRouter.Link,
-													{ to: "/stadium/2", onClick: function onClick() {
-															dispatch(action.check(index, i));
-														} },
-													"审核"
-												)
-											),
-											" |",
-											_react2.default.createElement(
-												"span",
-												{ className: "auditViewBtn" },
-												_react2.default.createElement(
-													_reactRouter.Link,
-													{ to: "/stadium/3", onClick: function onClick() {
-															_this2.viewData(index.id);
-														} },
-													"查看运营数据"
-												)
-											),
-											" |",
-											_react2.default.createElement(
-												"span",
-												{ className: "auditCountBtn" },
-												_react2.default.createElement(
-													_reactRouter.Link,
-													{ to: "/stadium/4", onClick: function onClick() {
-															return _this2.viewData(index.id);
-														} },
-													"查看数据统计"
-												)
-											)
-										)
-									);
-								})
-							)
-						)
-					)
-				);
-			}
-		}]);
-
-		return StadiumList;
-	}(_react.Component);
-
-	;
-	//筛选符合条件的
-	function filter(filters, data, type) {
-		var arr = [];
-		if (type == 'search') {
-			data.map(function (index) {
-				if (index.name == filters.cgName && index.city == filters.locaCity && index.state == filters.state && index.mainUnit == filters.department) {
-					arr.push(index);
-				}
-			});
-		} else {
-			arr = data;
-		}
-		return arr;
-	}
-	//过滤store
-	function select(store) {
-		return {
-			da: store,
-			searchs: store.search,
-			Data: filter(store.search, store.data.stadium == undefined ? [] : store.data.stadium, store.search.type)
-		};
-	}
-	exports.default = (0, _reactRedux.connect)(select)(StadiumList);
-
-/***/ },
-
-/***/ 274:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2458,6 +2213,255 @@ webpackJsonp([0],{
 
 /***/ },
 
+/***/ 274:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(203);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactRedux = __webpack_require__(186);
+
+	var _actions = __webpack_require__(273);
+
+	var action = _interopRequireWildcard(_actions);
+
+	var _StadiumListSearch = __webpack_require__(275);
+
+	var _StadiumListSearch2 = _interopRequireDefault(_StadiumListSearch);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var StadiumList = function (_Component) {
+		_inherits(StadiumList, _Component);
+
+		function StadiumList() {
+			_classCallCheck(this, StadiumList);
+
+			return _possibleConstructorReturn(this, (StadiumList.__proto__ || Object.getPrototypeOf(StadiumList)).call(this));
+		}
+
+		_createClass(StadiumList, [{
+			key: "componentDidMount",
+			value: function componentDidMount() {
+				var _props = this.props;
+				var dispatch = _props.dispatch;
+				var Data = _props.Data;
+
+				if (Data.length != 0) return;
+				dispatch(action.getStadiumsData());
+			}
+		}, {
+			key: "viewData",
+			value: function viewData(id) {
+				var dispatch = this.props.dispatch;
+
+				dispatch(action.viewData(id));
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				var _this2 = this;
+
+				var _props2 = this.props;
+				var dispatch = _props2.dispatch;
+				var Data = _props2.Data;
+				var da = _props2.da;
+
+				console.log(da);
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(_StadiumListSearch2.default, { search: function search(obj) {
+							dispatch(action.search(obj));
+						} }),
+					_react2.default.createElement(
+						"div",
+						{ id: "ruleWrap", className: "table-responsive normal mLR tbodyLeft", style: { marginTop: "20px" } },
+						_react2.default.createElement(
+							"table",
+							{ className: "table tableColor tablebor NoMB", id: "ruleTable" },
+							_react2.default.createElement(
+								"thead",
+								{ className: "tabelH" },
+								_react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '150px' } },
+										"场馆名称"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '115px' } },
+										"所在城市"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '120px' } },
+										"审核状态"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '115px' } },
+										"运营单位名称"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '165px' } },
+										"提交时间"
+									),
+									_react2.default.createElement(
+										"th",
+										{ style: { width: '290px' } },
+										"操作"
+									)
+								)
+							),
+							_react2.default.createElement(
+								"tbody",
+								null,
+								Data.length == 0 ? _react2.default.createElement(
+									"tr",
+									null,
+									_react2.default.createElement(
+										"td",
+										null,
+										"没有数据"
+									)
+								) : Data.map(function (index, i) {
+									return _react2.default.createElement(
+										"tr",
+										{ key: i },
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '150px' } },
+											index.name
+										),
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '115px' } },
+											index.city
+										),
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '120px' } },
+											function (obj) {
+												if (obj == 0) return "不限";
+												if (obj == 1) return "正在审核";
+												if (obj == 2) return "审核通过";
+												if (obj == 3) return "审核不通过";
+											}(index.state)
+										),
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '115px' } },
+											index.mainUnit
+										),
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '165px' } },
+											index.buildDate
+										),
+										_react2.default.createElement(
+											"td",
+											{ style: { width: '290px' } },
+											_react2.default.createElement(
+												"span",
+												{ className: "auditBtn" },
+												_react2.default.createElement(
+													_reactRouter.Link,
+													{ to: "/stadium/2", onClick: function onClick() {
+															dispatch(action.check(index, i));
+														} },
+													"审核"
+												)
+											),
+											" |",
+											_react2.default.createElement(
+												"span",
+												{ className: "auditViewBtn" },
+												_react2.default.createElement(
+													_reactRouter.Link,
+													{ to: "/stadium/3", onClick: function onClick() {
+															_this2.viewData(index.id);
+														} },
+													"查看运营数据"
+												)
+											),
+											" |",
+											_react2.default.createElement(
+												"span",
+												{ className: "auditCountBtn" },
+												_react2.default.createElement(
+													_reactRouter.Link,
+													{ to: "/stadium/4", onClick: function onClick() {
+															return _this2.viewData(index.id);
+														} },
+													"查看数据统计"
+												)
+											)
+										)
+									);
+								})
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return StadiumList;
+	}(_react.Component);
+
+	;
+	//筛选符合条件的
+	function filter(filters, data, type) {
+		var arr = [];
+		if (type == 'search') {
+			data.map(function (index) {
+				if (index.name == filters.cgName && index.city == filters.locaCity && index.state == filters.state && index.mainUnit == filters.department) {
+					arr.push(index);
+				}
+			});
+		} else {
+			arr = data;
+		}
+		return arr;
+	}
+	//过滤store
+	function select(store) {
+		return {
+			da: store,
+			searchs: store.search,
+			Data: filter(store.search, store.data.stadium == undefined ? [] : store.data.stadium, store.search.type)
+		};
+	}
+	exports.default = (0, _reactRedux.connect)(select)(StadiumList);
+
+/***/ },
+
 /***/ 275:
 /***/ function(module, exports, __webpack_require__) {
 
@@ -2687,7 +2691,7 @@ webpackJsonp([0],{
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(274);
+	var _actions = __webpack_require__(273);
 
 	var action = _interopRequireWildcard(_actions);
 
@@ -3233,7 +3237,7 @@ webpackJsonp([0],{
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(274);
+	var _actions = __webpack_require__(273);
 
 	var action = _interopRequireWildcard(_actions);
 
@@ -3910,7 +3914,7 @@ webpackJsonp([0],{
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(274);
+	var _actions = __webpack_require__(273);
 
 	var action = _interopRequireWildcard(_actions);
 
@@ -4369,7 +4373,7 @@ webpackJsonp([0],{
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(274);
+	var _actions = __webpack_require__(273);
 
 	var action = _interopRequireWildcard(_actions);
 
@@ -4523,7 +4527,7 @@ webpackJsonp([0],{
 									null,
 									_react2.default.createElement(
 										'td',
-										null,
+										{ style: { width: '945px' } },
 										'没有数据'
 									)
 								) : data.map(function (index, i) {
@@ -4592,7 +4596,7 @@ webpackJsonp([0],{
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(274);
+	var _actions = __webpack_require__(273);
 
 	var action = _interopRequireWildcard(_actions);
 
@@ -4740,7 +4744,7 @@ webpackJsonp([0],{
 									null,
 									_react2.default.createElement(
 										'td',
-										null,
+										{ style: { width: '945px' } },
 										'没有数据'
 									)
 								) : data.map(function (index, i) {
@@ -4808,7 +4812,7 @@ webpackJsonp([0],{
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(274);
+	var _actions = __webpack_require__(273);
 
 	var action = _interopRequireWildcard(_actions);
 
@@ -4956,7 +4960,7 @@ webpackJsonp([0],{
 									null,
 									_react2.default.createElement(
 										'td',
-										null,
+										{ style: { width: '945px' } },
 										'没有数据'
 									)
 								) : data.map(function (index, i) {
@@ -5116,7 +5120,7 @@ webpackJsonp([0],{
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(274);
+	var _actions = __webpack_require__(273);
 
 	var action = _interopRequireWildcard(_actions);
 
@@ -5270,7 +5274,7 @@ webpackJsonp([0],{
 									null,
 									_react2.default.createElement(
 										'td',
-										null,
+										{ style: { width: '945px' } },
 										'没有数据'
 									)
 								) : data.map(function (index, i) {
@@ -5343,7 +5347,7 @@ webpackJsonp([0],{
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(274);
+	var _actions = __webpack_require__(273);
 
 	var action = _interopRequireWildcard(_actions);
 
@@ -5486,7 +5490,7 @@ webpackJsonp([0],{
 									null,
 									_react2.default.createElement(
 										'td',
-										null,
+										{ style: { width: '945px' } },
 										'没有数据'
 									)
 								) : data.map(function (index, i) {
@@ -5559,7 +5563,7 @@ webpackJsonp([0],{
 
 	var _reactRedux = __webpack_require__(186);
 
-	var _actions = __webpack_require__(274);
+	var _actions = __webpack_require__(273);
 
 	var action = _interopRequireWildcard(_actions);
 
@@ -5692,7 +5696,7 @@ webpackJsonp([0],{
 									null,
 									_react2.default.createElement(
 										'td',
-										null,
+										{ style: { width: '945px' } },
 										'没有数据'
 									)
 								) : data.map(function (index, i) {
@@ -5748,7 +5752,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 289:
+/***/ 296:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -5763,7 +5767,7 @@ webpackJsonp([0],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(196);
+	var _reactRouter = __webpack_require__(203);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6013,7 +6017,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 290:
+/***/ 297:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
