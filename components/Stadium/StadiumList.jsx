@@ -9,24 +9,20 @@ class StadiumList extends Component{
 		super();
 	}
 	componentDidMount(){
+		const {dispatch,Data}=this.props;
+		if(Data.length!=0)return;
+		dispatch(action.getStadiumsData())
+	}
+	viewData(id){
 		const {dispatch}=this.props;
-		$.ajax({
-		url:"http://139.129.131.105:8802/api/stadiums",
-		data:"",
-		type:"GET",
-		dataType:'JSON',
-		success:function(data){
-		dispatch(action.stadiumData({stadium:data}))
-			}
-		})
-		
+		dispatch(action.viewData(id));
 	}
 	render(){
-		const {dispatch,Data,searchs}=this.props;
-		console.log(Data)
+		const {dispatch,Data,da}=this.props;
+		console.log(da)
 		return (
 			<div>
-				<Search search={(obj)=>{dispatch(action.search({sList:obj}))}}/>
+				<Search search={(obj)=>{dispatch(action.search(obj))}}/>
 	            {/******************表格*********************/}
 	            <div id="ruleWrap" className="table-responsive normal mLR tbodyLeft" style={{marginTop:"20px"}}>
 	    			<table className="table tableColor tablebor NoMB" id="ruleTable">
@@ -42,22 +38,31 @@ class StadiumList extends Component{
 						</thead>
 						<tbody>
 							{
-								Data.length==0?(<tr><td style={{width:'945px'}}>没有数据</td></tr>):Data.map(function(index,i){
-								return (
+								Data.length==0?(<tr><td>没有数据</td></tr>):Data.map((index,i)=>
+								 (
 									<tr key={i}>
 										<td style={{width:'150px'}}>{index.name}</td>
 										<td style={{width:'115px'}}>{index.city}</td>
-										<td style={{width:'120px'}}>{index.state}</td>
+										<td style={{width:'120px'}}>
+										{
+											((obj)=>{
+												if(obj==0)return "不限";
+												if(obj==1)return "正在审核";
+												if(obj==2)return "审核通过";
+												if(obj==3)return "审核不通过";
+											})(index.state)
+										}
+										</td>
 										<td style={{width:'115px'}}>{index.mainUnit}</td>
 										<td style={{width:'165px'}}>{index.buildDate}</td>
 										<td style={{width:'290px'}}>
-											<span className="auditBtn"><Link to="/stadium/2" onClick={()=>{dispatch(action.check(index))}}>审核</Link></span> | 
-										    <span className="auditViewBtn"><Link to="/stadium/3">查看运营数据</Link></span> | 
-							                <span className="auditCountBtn"><Link to="/stadium/4">查看数据统计</Link></span>
+										<span className="auditBtn"><Link to="/stadium/2" onClick={()=>{dispatch(action.check(index,i))}}>审核</Link></span> | 
+										<span className="auditViewBtn"><Link to="/stadium/3" onClick={()=>{this.viewData(index.id)}}>查看运营数据</Link></span> | 
+							            <span className="auditCountBtn"><Link to="/stadium/4" onClick={()=>this.viewData(index.id)}>查看数据统计</Link></span>
 										</td>
 									</tr>
 								)
-							})
+							)
 							}
 						</tbody>
 				    </table>
@@ -69,22 +74,8 @@ class StadiumList extends Component{
 //筛选符合条件的
 function filter(filters,data,type){
 	var arr=[];
-	//没有数据或者数据小于1条均不符合要求
-	if(data&&data.length){
-		//状态数据转换
-	data=data.map(function(index){
-		if(index.state==0)index.state="不限";
-		if(index.state==1)index.state="正在审核";
-		if(index.state==2)index.state="审核通过";
-		if(index.state==3)index.state="审核不通过";
-		return index;
-	})
-		if(type=='search'){
-			data.map(function(index){
-				if(filters.state==0)filters.state="不限";
-				if(filters.state==1)filters.state="正在审核";
-				if(filters.state==2)filters.state="审核通过";
-				if(filters.state==3)filters.state="审核不通过";
+	if(type=='search'){
+			data.map(index=>{
 				if(index.name==filters.cgName&&index.city==filters.locaCity&&index.state==filters.state&&index.mainUnit==filters.department){
 					arr.push(index)
 				}
@@ -92,14 +83,14 @@ function filter(filters,data,type){
 		}else{
 			arr=data;
 		}
-	}
 	return arr;
 }
 //过滤store
 function select(store){
 	return {
-		searchs:store.search.sList,
-		Data:filter(store.search.sList,store.data.stadium,store.search.type),
+		da:store,
+		searchs:store.search,
+		Data:filter(store.search,store.data.stadium==undefined?[]:store.data.stadium,store.search.type)
 	}
 }
 export default connect(select)(StadiumList);

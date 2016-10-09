@@ -1,8 +1,15 @@
 import React from "react";
 import {Link} from "react-router";
-export default class Rule extends React.Component{
+import * as action from '../../redux/actions/actions.js';
+import {connect} from 'react-redux';
+
+class Rule extends React.Component{
 	constructor(){
 		super();
+	}
+	componentDidMount(){
+		const {dispatch,tableData}=this.props;
+		dispatch(action.getRuleListData())
 	}
 	render(){
 		return (
@@ -27,3 +34,4 @@ export default class Rule extends React.Component{
 			</div>)
 	}
 };
+export default connect()(Rule)

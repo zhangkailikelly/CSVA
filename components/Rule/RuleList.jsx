@@ -1,26 +1,11 @@
 import React,{Component} from "react";
 import {render} from "react-dom";
 import {connect} from 'react-redux';
-import * as action from '../../redux/actions/actions.js';
 
 class RuleList extends Component{
 	constructor(){
 		super();
-		
 	}
-	componentDidMount(){
-		const {dispatch}=this.props;
-		$.ajax({
-			url:"http://139.129.131.105:8802/api/rules",
-			type:"get",
-			dataType:"json",
-			data:"",
-			success:function(data){
-				dispatch(action.stadiumData({ruleList:data}))
-			}
-		})
-	}
-	
 	render(){
 		const {tableData}=this.props;
 		return (
@@ -55,15 +40,13 @@ class RuleList extends Component{
    			       </table>
    				</div>
 			</div>
-
-
 		)
 	}
 };
 
 function select(store){
 	return {
-		tableData:store.data.ruleList==undefined?[]:store.data.ruleList
+		tableData:store.data.ruleList==undefined?[]:store.data.ruleList,
 	}
 }
 

@@ -9,22 +9,16 @@ import YHJE from "../../images/SF3.png";
 		super();
 	}
 	componentDidMount(){
-		let {dispatch}=this.props;
+		let {dispatch,id}=this.props;
+		console.log(id)
 	$('.mydate').datetimepicker({
    		 format: 'yyyy-mm-dd',
    		 language:  'zh-CN',
    		 minView: 2,
    		 autoclose:true
   		});
-	$.ajax({
-		url:"http://139.129.131.105:8802/api/dailys",
-		type:"get",
-		data:"",
-		dataType:"json",
-		success:function(data){
-			dispatch(action.stadiumData({StadiumDataCount:data}))
-		}
-	})
+		dispatch(action.costList())
+	
 	}
 	searchBtn(){
 		let {dispatch}=this.props;
@@ -38,8 +32,6 @@ import YHJE from "../../images/SF3.png";
 	}
 	render(){
 		let {dispatch,tableData,searchContent}=this.props;
-		console.log(tableData);
-		console.log(searchContent);
 		return (
 			<div>
 			    <div className="location">
@@ -182,7 +174,8 @@ function filter(data,filters){
 function select(store){
 	return {
 		tableData:filter(store.data.StadiumDataCount==undefined?[]:store.data.StadiumDataCount,store.search),
-		searchContent:store.search
+		searchContent:store.search,
+		id:store.lookData.id
 	}
 }
 export default connect(select)(StadiumDataCount)
