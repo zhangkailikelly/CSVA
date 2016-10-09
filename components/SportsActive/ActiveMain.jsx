@@ -1,13 +1,20 @@
 import React from "react";
-export default class GamesMain extends React.Component{
+import {connect} from 'react-redux';
+import * as action from '../../redux/actions/actions.js';
+class GamesMain extends React.Component{
 	constructor(){
 		super();
 	}
+	componentDidMount(){
+		const {dispatch,id}=this.props
+		dispatch(action.getActiveMainData(id))
+	}
 	render(){
+		const {data}=this.props;
 		return (
 			<div>
 			    <div className="location">
- 					 <h3>&gt;<span> 体育赛事 </span></h3>
+ 					 <h3>&gt;<span>群体活动</span></h3>
 				</div>
 			    {/*查询*/}
 				<div className="topSearch RightInfo  mLR">
@@ -41,13 +48,19 @@ export default class GamesMain extends React.Component{
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td style={{width:'197px'}}></td>
-								<td style={{width:'206px'}}></td>
-								<td style={{width:'206px'}}></td>
-								<td style={{width:'195px'}}></td>
-								<td style={{width:'142px'}}></td>
+							{
+								data.length==0?(<tr><td>没有数据</td></tr>):(data.map((index,i)=>
+									(
+							<tr key={i}> 
+								<td style={{width:'197px'}}>{index.name}</td>
+								<td style={{width:'206px'}}>{index.startDate}</td>
+								<td style={{width:'206px'}}>{index.endDate}</td>
+								<td style={{width:'195px'}}>{index.number}</td>
+								<td style={{width:'142px'}}>{}</td>
 							</tr>
+									)
+								))
+							}
 						</tbody>
 				    </table>
 				</div>
@@ -56,3 +69,10 @@ export default class GamesMain extends React.Component{
 			)
 	}
 };
+function filter(store){
+	return {
+		data:store.data.groupActivity==undefined?[]:store.data.groupActivity,
+		id:store.lookData.id
+	}
+}
+export default connect(filter)(GamesMain)

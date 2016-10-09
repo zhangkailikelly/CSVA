@@ -35,6 +35,7 @@ export default class Search extends React.Component{
 					                    <option>北京</option>
 					                    <option>上海</option>
 					                    <option>广州</option>
+					                    <option>银川</option>
 					            </select>
 					        </div>
 

@@ -6,13 +6,14 @@ export default class Login extends React.Component{
 	constructor(){
 		super();
 	}
+
 	render(){
 		return (
 			<div>
 			    <div className="loginBG">
 				    <div className="text-center loginscreen">
 				    <div className="Login_Title"><p className="TitleChina">中国体育场馆协会数据中心</p><p className="TitleEnglish">China Association for Data Center Stadiums</p></div>
-					    <form className="m-" role="form" onsubmit="return loginSubmit(this)">
+					    <form className="m-" role="form" onSubmit={()=>{}}>
 					      <div className="loginBox">
 					        <div className="LoginCon">
 					          <span id="message"></span>

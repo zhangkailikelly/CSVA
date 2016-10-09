@@ -1,7 +1,6 @@
 import React from "react";
 import ReactRouter,{Link} from "react-router";
 import {connect} from 'react-redux';
-
 import '../css/style.css';
 import userSrc from "../images/user.png";
 import exitSrc from "../images/exit.png";

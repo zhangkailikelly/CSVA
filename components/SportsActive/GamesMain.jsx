@@ -1,9 +1,17 @@
 import React from "react";
-export default class GamesMain extends React.Component{
+import {connect} from 'react-redux';
+import * as action from '../../redux/actions/actions.js';
+class GamesMain extends React.Component{
 	constructor(){
 		super();
 	}
+	componentDidMount(){
+		const {dispatch,id}=this.props
+		dispatch(action.getGamesMainData(id))
+	}
 	render(){
+		const {data}=this.props;
+		console.log(data)
 		return (
 			<div>
 			    <div className="location">
@@ -42,14 +50,18 @@ export default class GamesMain extends React.Component{
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td style={{width:'170px'}}></td>
-								<td style={{width:'168px'}}></td>
-								<td style={{width:'168px'}}></td>
-								<td style={{width:'168px'}}></td>
-								<td style={{width:'168px'}}></td>
-								<td style={{width:'104px'}}></td>
-							</tr>
+						{
+							data.length==0?(<tr><td>没有数据</td></tr>):data.map((index,i)=>(
+								<tr key={i}>
+								<td style={{width:'170px'}}>{index.name}</td>
+								<td style={{width:'168px'}}>{}</td>
+								<td style={{width:'168px'}}>{index.startDate}</td>
+								<td style={{width:'168px'}}>{index.endDate}</td>
+								<td style={{width:'168px'}}>{index.number}</td>
+								<td style={{width:'104px'}}>{}</td>
+								</tr>
+								))
+						}
 						</tbody>
 				    </table>
 				</div>
@@ -58,3 +70,10 @@ export default class GamesMain extends React.Component{
 			)
 	}
 };
+function filter(store){
+	return {
+		data:store.data.sportsActivs==undefined?[]:store.data.sportsActivs,
+		id:store.lookData.id
+	}
+}
+export default connect(filter)(GamesMain)

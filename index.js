@@ -2,15 +2,20 @@
 import React from 'react';
 //提供render方法渲染
 import {render} from 'react-dom';
-//createStore方法用来创建store
-import {createStore} from 'redux';
+//创建 redux的store 和 配置 中间件
+import {createStore,applyMiddleware} from 'redux';
 //容器组建,注入store,使其子组件都可获得store
 import {Provider} from "react-redux";
+//中间件 用于 异步加载
+import thunk from 'redux-thunk';
+//中间件打印action
+import createLogger from 'redux-logger';
 //容器组件
 import App from "./redux/App.js";
 //将子reduce合并成一个主reduce传进createStore()内
 import reducers from './redux/reducer/reduce.js';
-//路由组件
+//路由组件==>Router外层路由组件包裹,indexRedirect组件用于访问根路由的时候，将用户重定向到某个子组件
+//Link类似于a标签,IndexRoute默认加载的子组件,hashHistory路由通过#号切换
 import ReactRouter,{Router,Route,IndexRedirect,Link,hashHistory,IndexRoute} from "react-router";
 //展示组件
  //登录
@@ -55,47 +60,47 @@ import ServiceMajor from "./components/SportsService/ServiceMajor.jsx";
 
 
 //注入reduce
-let store=createStore(reducers);
+let store=createStore(reducers,applyMiddleware(
+	thunk//允许action 返回function  并运行function  function内可以调用dispatch 用于异步加载  链接服务器用
+	));
 //根元素
 let rootElement=document.getElementById('box');
 	render(
 		<Provider store={store}>
 			<Router history={hashHistory}>
 				<Route path="/" component={App}>
-					{/* <IndexRedirect to="/login"/>
-					<Route path="/Login" component={Login}>
-					</Route> */}
 					<IndexRedirect  to="/stadium"/>
+					{/*场馆管理*/}
 					<Route path="/stadium" component={Stadium}>
 						<IndexRoute component={StadiumList}/>
-        			    <Route path="/stadium/2" component={StadiumInfo}/>
-					    <Route path="/stadium/3" component={StadiumData}/>
-					    <Route path="/stadium/4" component={StadiumDataCount}/>
-					    <Route path="/stadium/5" component={DailyData}/>
-					    <Route path="/stadium/6" component={GamesMain}/>
-					    <Route path="/stadium/7" component={ActiveMain}/>
-						<Route path="/stadium/8" component={ActiveMain2}/>
-						<Route path="/stadium/9" component={SportsTraining}/>
-					    <Route path="/stadium/10" component={ServiceGuidance}/>
-						<Route path="/stadium/11" component={ServiceMajor}/>
-
+						{/*path后不直接用斜杠为相对路由*/}
+        			    <Route path="2" component={StadiumInfo}/>
+					    <Route path="3" component={StadiumData}/>
+					    <Route path="4" component={StadiumDataCount}/>
+					    <Route path="5" component={DailyData}/>
+					    <Route path="6" component={GamesMain}/>
+					    <Route path="7" component={ActiveMain}/>
+						<Route path="8" component={ActiveMain2}/>
+						<Route path="9" component={SportsTraining}/>
+					    <Route path="10" component={ServiceGuidance}/>
+						<Route path="11" component={ServiceMajor}/>
 					</Route>
 				    {/*评分规则*/}
 					<Route path="/Rule" component={Rule}>
 						<IndexRoute component={RuleAdd}/>
-						<Route path="/Rule/2" component={RuleList}/>
+						<Route path="2" component={RuleList}/>
 					</Route>
-					{/*
-					<Route path="/SportsActive" component={SportsActive}>
-						<IndexRoute component={GamesMain}/>
-						<Route path="/SportsActive/2" component={ActiveMain}/>
-						<Route path="/SportsActive/3" component={ActiveMain2}/>
-					</Route>
-					<Route path="/SportsService" component={SportsService}>
-						<IndexRoute component={SportsTraining}/>
-						<Route path="/SportsService/2" component={ServiceGuidance}/>
-						<Route path="/SportsService/3" component={ServiceMajor}/>
-					</Route> */}
+														{/*已注释
+														<Route path="/SportsActive" component={SportsActive}>
+															<IndexRoute component={GamesMain}/>
+															<Route path="/SportsActive/2" component={ActiveMain}/>
+															<Route path="/SportsActive/3" component={ActiveMain2}/>
+														</Route>
+														<Route path="/SportsService" component={SportsService}>
+															<IndexRoute component={SportsTraining}/>
+															<Route path="/SportsService/2" component={ServiceGuidance}/>
+															<Route path="/SportsService/3" component={ServiceMajor}/>
+														</Route> */}
 				</Route>
 			</Router>
 		</Provider>,
