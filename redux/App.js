@@ -40,6 +40,11 @@ class App extends React.Component{
                                 评分设置
                               </Link>
                             </li>
+                            <li>
+                              <Link to='/Total' activeClassName="active">
+                                汇总数据
+                              </Link>
+                            </li>
                         </ul>
                       </nav>
             </header>

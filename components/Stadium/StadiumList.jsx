@@ -28,7 +28,7 @@ class StadiumList extends Component{
 			<div>
 				<Search search={(obj)=>{dispatch(action.search({sList:obj}))}}/>
 	            {/******************表格*********************/}
-	            <div id="ruleWrap"  className="table-responsive normal mLR tbodyLeft" style={{marginTop:"20px"}}>
+	            <div id="ruleWrap" className="table-responsive normal mLR tbodyLeft" style={{marginTop:"20px"}}>
 	    			<table className="table tableColor tablebor NoMB" id="ruleTable">
 						<thead className="tabelH">
 							<tr>

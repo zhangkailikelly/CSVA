@@ -3,6 +3,7 @@ module.exports={
 	entry:{
 		app:"./index.js",
 		vendors:["react","react-router","react-dom","react-redux","redux"]
+		/*vendors:["react","react-dom"]*/
 	},
 	output:{
 		path:__dirname+"/dist",

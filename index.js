@@ -53,6 +53,9 @@ import ServiceGuidance from "./components/SportsService/ServiceGuidance.jsx";
  //专业训练列表
 import ServiceMajor from "./components/SportsService/ServiceMajor.jsx";
 
+//汇总数据
+import Total from "./components/Total/Total.jsx";
+import TotalInfo from "./components/Total/TotalInfo.jsx";
 
 //注入reduce
 let store=createStore(reducers);
@@ -96,6 +99,9 @@ let rootElement=document.getElementById('box');
 						<Route path="/SportsService/2" component={ServiceGuidance}/>
 						<Route path="/SportsService/3" component={ServiceMajor}/>
 					</Route> */}
+					<Route path="/Total" component={Total}>
+						<IndexRoute component={TotalInfo}/>
+					</Route>
 				</Route>
 			</Router>
 		</Provider>,

@@ -95,9 +95,20 @@ webpackJsonp([0],{
 
 	var _ServiceMajor2 = _interopRequireDefault(_ServiceMajor);
 
+	var _Total = __webpack_require__(289);
+
+	var _Total2 = _interopRequireDefault(_Total);
+
+	var _TotalInfo = __webpack_require__(290);
+
+	var _TotalInfo2 = _interopRequireDefault(_TotalInfo);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//注入reduce
+
+
+	//汇总数据
 
 	//运动健身指导列表
 
@@ -183,6 +194,11 @@ webpackJsonp([0],{
 					{ path: '/Rule', component: _Rule2.default },
 					_react2.default.createElement(_reactRouter.IndexRoute, { component: _RuleAdd2.default }),
 					_react2.default.createElement(_reactRouter.Route, { path: '/Rule/2', component: _RuleList2.default })
+				),
+				_react2.default.createElement(
+					_reactRouter.Route,
+					{ path: '/Total', component: _Total2.default },
+					_react2.default.createElement(_reactRouter.IndexRoute, { component: _TotalInfo2.default })
 				)
 			)
 		)
@@ -319,6 +335,15 @@ webpackJsonp([0],{
 	                  _reactRouter.Link,
 	                  { to: "/Rule", activeClassName: "active" },
 	                  "评分设置"
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "li",
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouter.Link,
+	                  { to: "/Total", activeClassName: "active" },
+	                  "汇总数据"
 	                )
 	              )
 	            )
@@ -919,7 +944,8 @@ webpackJsonp([0],{
 								_react2.default.createElement(
 									_reactRouter.Link,
 									{ to: "/Rule", onlyActiveOnIndex: true, activeClassName: "cur" },
-									"设置评分规则"
+									"设置评分规则",
+									_react2.default.createElement("span", { className: "pull-right glyphicon glyphicon-menu-right", "aria-hidden": "true" })
 								)
 							),
 							_react2.default.createElement(
@@ -928,7 +954,8 @@ webpackJsonp([0],{
 								_react2.default.createElement(
 									_reactRouter.Link,
 									{ to: "/Rule/2", activeClassName: "cur" },
-									"设置评分列表"
+									"设置评分列表",
+									_react2.default.createElement("span", { className: "pull-right glyphicon glyphicon-menu-right", "aria-hidden": "true" })
 								)
 							)
 						)
@@ -4147,6 +4174,335 @@ webpackJsonp([0],{
 	}(_react2.default.Component);
 
 	exports.default = ServiceMajor;
+	;
+
+/***/ },
+
+/***/ 289:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(196);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Total = function (_React$Component) {
+		_inherits(Total, _React$Component);
+
+		function Total() {
+			_classCallCheck(this, Total);
+
+			return _possibleConstructorReturn(this, (Total.__proto__ || Object.getPrototypeOf(Total)).call(this));
+		}
+
+		_createClass(Total, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "content clearfix" },
+					_react2.default.createElement(
+						"div",
+						{ className: "sidebar pull-left" },
+						_react2.default.createElement(
+							"ul",
+							{ id: "accordion", className: "nav nav-sidebar accordion open" },
+							_react2.default.createElement(
+								"li",
+								{ className: "open" },
+								_react2.default.createElement(
+									_reactRouter.Link,
+									{ to: "/Total", onlyActiveOnIndex: true, className: "link" },
+									"开放信息",
+									_react2.default.createElement("span", { className: "pull-right glyphicon glyphicon-menu-right", "aria-hidden": "true" })
+								),
+								_react2.default.createElement(
+									"ul",
+									{ className: "nav submenu", style: { display: 'block' } },
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"开放情况"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"开放面积"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"开放天数"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"开放时间"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"开放天数"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"体育赛事"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"群体活动"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"其他文体活动"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"体育培训"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"运动健身指导"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"专业训练"
+										)
+									)
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"a",
+									{ href: "javascript:;", className: "link" },
+									"综合效益",
+									_react2.default.createElement("span", { className: "pull-right glyphicon glyphicon-menu-right", "aria-hidden": "true" })
+								),
+								_react2.default.createElement(
+									"ul",
+									{ className: "nav submenu" },
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"效益列表"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"接待总量"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"接待人次增长"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"收支比例"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"收入增长"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"公益项目"
+										)
+									),
+									_react2.default.createElement(
+										"li",
+										null,
+										_react2.default.createElement(
+											"a",
+											null,
+											"满意度"
+										)
+									)
+								)
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								_react2.default.createElement(
+									"a",
+									{ href: "javascript:;", className: "link" },
+									"特色加分",
+									_react2.default.createElement("span", { className: "pull-right glyphicon glyphicon-menu-right", "aria-hidden": "true" })
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "rightContent pull-left" },
+						this.props.children
+					)
+				);
+			}
+		}]);
+
+		return Total;
+	}(_react2.default.Component);
+
+	exports.default = Total;
+	;
+
+/***/ },
+
+/***/ 290:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var TotalInfo = function (_React$Component) {
+		_inherits(TotalInfo, _React$Component);
+
+		function TotalInfo() {
+			_classCallCheck(this, TotalInfo);
+
+			return _possibleConstructorReturn(this, (TotalInfo.__proto__ || Object.getPrototypeOf(TotalInfo)).call(this));
+		}
+
+		_createClass(TotalInfo, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					null,
+					_react2.default.createElement(
+						"div",
+						{ className: "location" },
+						_react2.default.createElement(
+							"h3",
+							null,
+							">",
+							_react2.default.createElement(
+								"label",
+								null,
+								" 汇总数据 "
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return TotalInfo;
+	}(_react2.default.Component);
+
+	exports.default = TotalInfo;
 	;
 
 /***/ }
