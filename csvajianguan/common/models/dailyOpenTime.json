@@ -1,0 +1,13 @@
+{
+  "name": "DailyOpenTime",
+  "plural": "dailyOpenTimes",
+  "base": "PersistedModel",
+  "properties": {
+    "stadiumId":{"type":"string","required":true},
+    "day":{"type":"string","required":true},
+    "startTime":{"type":"string"},
+    "endTime":{"type":"string"}
+
+  },
+  "methods": []
+}

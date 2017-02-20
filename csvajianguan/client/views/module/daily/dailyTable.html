@@ -1,0 +1,67 @@
+<div id="dailyWrap" class="table-responsive normal mLR tbodyLeft">
+    <table class="table tableColor tablebor NoMB" id="dailyTable">
+      <thead class="tabelH">
+      <th>用户名称</th>
+      <th>身份证号码</th>
+      <th>手机号码</th>
+      <th>运动类型</th>
+      <th>时间</th>
+      <th>操作</th>
+      </thead>
+      <tbody>
+
+      <% dailys.forEach(function(o,i){ %>
+          <tr>
+            <td><%= o.name %></td>
+            <td><%= o.cardID?o.cardID:'' %></td>
+            <td><%= o.phone %></td>
+            <td><%= o.sports %></td>
+            <td><%= o.startDate?o.startDate:'...' + '-' + o.endDate %></td>
+            <td>
+              <button class="btn btn-info btn-xs dailyDeleteBtn"><a name='<%= o.id %>'>删除</a></button>
+            </td>
+          </tr>
+      <% }) %>
+      <% if( !dailys.length ){ %>
+          <tr><td aling="center" colspan="6">没有数据</td></tr>
+      <% }%>
+
+      </tbody>
+    </table>
+
+     <% if(dailys.length ){ %>
+           <% include dailyTablePagination.html %>
+     <% }%>
+</div>
+
+
+
+
+<script>
+  $("#dailyTable .dailyDeleteBtn").click(function(){
+    var stadiumId =  $(this).find("a").attr("name");
+    alert(stadiumId);
+
+  })
+
+//  function gameDelete(id) {
+//    $.ajax({
+//      type: 'delete',
+//      url: '/gameDelete/' + id,
+//      success: function (data) {
+//        if (data.state) {
+//          updateTable();
+//        }
+//        else {
+//          alert("oh my gad 失败了");
+//        }
+//      }
+//    });
+//  }
+
+
+</script>
+
+
+
+

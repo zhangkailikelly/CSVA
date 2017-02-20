@@ -1,0 +1,14 @@
+{
+  "name": "InCome",
+  "plural": "incComes",
+  "base": "PersistedModel",
+  "properties": {
+
+    "stadiumId":{"type":"string","required": true},
+    "year":{"type":"string"},
+    "money":{"type":"number"}
+
+
+  },
+  "methods": []
+}

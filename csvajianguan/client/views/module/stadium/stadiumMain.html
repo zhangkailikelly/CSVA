@@ -1,0 +1,90 @@
+<div class="location">
+  <h3><span>场馆管理</span>&gt;<span> 场馆列表 </span></h3>
+</div>
+<!--顶部查询开始-->
+<div class="topSearch RightInfo  mLR">
+  <form class=" clearfix" id="stadiumSearchForm">
+    <div class="pull-left" style="margin-right:50px;">
+      <div class="form-group input-group-sm">
+              <label>场馆名称:</label>
+              <input type="text" class="leastInput searchInput" name="stadium[name]"  placeholder=" ">
+          </div>
+          <div class="form-group input-group-sm clearfix">
+              <label class="pull-left" style="margin-top:6px;">所在城市:</label>
+              <select class="pull-left"   name="stadium[city]"  placeholder=" ">
+                    <option value="os1">北京</option>
+                    <option value="os2">上海</option>
+                    <option value="os3">广州</option>
+            </select>
+
+          </div>
+          <div class="form-group input-group-sm clearfix">
+              <label class="pull-left" style="margin-top:6px;">审核状态:</label>
+              <select class="pull-left"  name="stadium[state]" id="">
+                    <option value="os1">不限</option>
+                    <option value="os2">正在审核</option>
+                    <option value="os3">审核通过</option>
+                    <option value="os4">审核不通过</option>
+            </select>
+          </div>
+    </div>
+    <div class="pull-left">
+      <div class="form-group input-group-sm">
+              <label>运营单位名称:</label>
+              <input type="text" class="leastInput searchInput"  name="stadium[mainUnit]"  placeholder=" ">
+          </div>
+          <div class="form-group input-group-sm">
+              <label>联系人名称:</label>
+              <input type="text" class="leastInput"  name="stadium[contants]"  placeholder=" ">
+          </div>
+          <div class="form-group input-group-sm">
+              <label>联系人电话:</label>
+              <input type="text" class="leastInput" name="stadium[contantsPhone]"  placeholder=" ">
+          </div>
+    </div>
+        <button type="button" class="blueBut"  id="stadiumSearchBtn">
+            <span class="glyphicon glyphicon-search " aria-hidden="true"></span>
+            搜 索
+        </button>
+    </form>
+</div>
+
+<section>
+  <% include stadiumTable.html %>
+</section>
+
+
+<script>
+  (function(global){
+
+      $("#stadiumSearchBtn").click(function(){
+        searchstadium()
+      })
+
+      function searchstadium(pagination){
+        var param = $("#stadiumSearchForm").serialize();
+        if(pagination){
+          param += pagination
+        }
+        $.ajax({
+          type: 'post',
+          url: '/stadiuSearch/',
+          data:param,
+          success: function (data) {
+            if (data) {
+              $("#stadiumWrap").empty().append(data);
+            }
+            else {
+              alert("oh my gad 失败了");
+            }
+          }
+        });
+      }
+
+    global.stadium={};
+    global.stadium.searchstadium = searchstadium;
+
+  })(window)
+
+ //@ sourceURL=smain.js
+</script>

@@ -1,0 +1,40 @@
+<div class="location">
+  <h3>&gt; <label> 优惠信息列表 </label></h3>
+</div>
+<div class="topSearch RightInfo  mLR">
+  <button type="" class="btn btn-default MB" id="cheapInfoAddBtn"><a>添加</a></button>
+</div>
+<section>
+  <% include cheapInfoTable.html %>
+</section>
+
+
+<script>
+
+  (function(global){
+
+      $("#cheapInfoAddBtn").click(function(){
+         loadPage("/cheapInfoAdd")
+      })
+
+      function searchCheapinfo(pagination){
+        $.ajax({
+          type: 'post',
+          url: '/cheapInfoList/',
+          data:pagination,
+          success: function (data) {
+            if (data) {
+              $("#cheapInfoWrap").empty().append(data);
+            }
+            else {
+              alert("oh my gad 失败了");
+            }
+          }
+        });
+      }
+
+    global.cheapinfo={};
+    global.cheapinfo.searchCheapinfo = searchCheapinfo;
+
+  })(window)
+</script>

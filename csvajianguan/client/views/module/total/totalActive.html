@@ -1,0 +1,31 @@
+
+<% if(activeType == 1){ %>
+<div class="location">
+  <h3>&gt; <label> 体育赛事 </label></h3>
+</div>
+<% }else if(activeType == 2){ %>
+<div class="location">
+  <h3>&gt; <label> 群体活动 </label></h3>
+</div>
+<% }else if(activeType == 3){ %>
+<div class="location">
+  <h3>&gt; <label> 其他文体活动 </label></h3>
+</div>
+<% } %>
+
+<form class="form-horizontal">
+
+  <div class="form-group MT">
+    <label class="col-sm-2 control-label">总次数</label>
+    <div class="col-sm-4">
+      <input type="number" required="" readonly="readonly"  value="<%= actives %>"  class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">次</label>
+  </div>
+<div class="mLR">
+  <label >数据来源于</label>
+
+  <p>1.活动承载</p>
+</div>
+
+</form>

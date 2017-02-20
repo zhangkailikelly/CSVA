@@ -1,0 +1,70 @@
+<div class="location">
+  <h3>&gt; <label> 收支比例 </label></h3>
+</div>
+<form class="form-horizontal" id="paymentScaleForm" onsubmit="return paymentScaleAdd()">
+
+  <div class="form-group MT">
+    <label class="col-sm-2 control-label">经营收入</label>
+    <div class="col-sm-4">
+      <input type="number"   id="payIn" name="paymentScale[payIn]" value="<%= data.payIn %>" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">万</label>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">经营支出</label>
+    <div class="col-sm-4">
+      <input type="number"  id="payOut" name="paymentScale[payOut]" value="<%= data.payOut %>" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">万</label>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">收支比例</label>
+    <div class="col-sm-4">
+      <input type="text"  id="payScale" readonly="readonly" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">%</label>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-7">
+      <button type="submit" class="btn btn-default">保存</button>
+    </div>
+  </div>
+
+
+</form>
+
+<script>
+  function paymentScaleAdd(){
+    $.ajax({
+      type: 'POST',
+      url: '/paymentScaleSave',
+      data: $("#paymentScaleForm").serialize(),
+      success: function(data){
+        if(data.state){
+          swal("info","保存成功","success")
+        }
+
+      }
+    });
+
+    //最终总是返回false,阻止表单自动提交，因为上面的ajax已经提交了
+    return false;
+  }
+  (function(global){
+
+    $("#payIn").change(function(){
+      if($("#payOut").val() != 0)
+         $("#payScale").val( ($(this).val() / $("#payOut").val() *100).toFixed(2) );
+    });
+
+    $("#payOut").change(function(){
+
+      if($(this).val() != 0)
+          $("#payScale").val( ($("#payIn").val() / $(this).val() *100).toFixed(2) );
+    })
+    $("#payIn").change();
+
+  })(window)
+</script>

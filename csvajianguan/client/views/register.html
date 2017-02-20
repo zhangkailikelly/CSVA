@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>体育场馆申报系统，注册</title>
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
+</head>
+<body class="loginBg">
+<div class="text-center loginscreen animated fadeInDown">
+  <p class="Login_Title"> </p>
+  <form class="m-t" role="form" method="post" action="/register" onsubmit="return AuthPassword()">
+    <div class="loginBox">
+      <div class="LoginCon" >
+        <%- message %>
+        <div class="form-group">
+          <input type="text" class="form-control" name="user[username]" placeholder="用户名" required="">
+        </div>
+        <div class="form-group">
+          <input type="email" class="person form-control" placeholder="Email" name="user[email]" required="登录邮箱">
+        </div>
+        <div class="form-group">
+          <input type="password" class="lock form-control" id="password" placeholder="Password" name="user[password]" required="密码">
+        </div>
+
+        <div class="form-group">
+        <input type="password" class="form-control"  id="password_again" placeholder="确认密码" required="">
+        </div>
+
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary  ButColor">注册</button>
+          <button type="button" class="btn btn-primary  ButColor"><a href='/login'>登录</a></button>
+
+        </div>
+
+
+      </div>
+    </div>
+  </form>
+</div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+  function AuthPassword(){
+    if( $("#password").val() !=  $("#password_again").val() ){
+      alert("两次登录的密码不一致");
+      return false;
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!--头部开始-->
+<!-- <header class="Header">
+  <div class="HeaderT">
+    <h1 class="logo clearfix">
+      <a href="#" title="中国体育场馆协会数据中心">
+        <span class="BigName pull-left"></span>
+        <em class="pull-left">|</em>
+        <% if(user.mark == 0){ %>
+           <span class="SmallName pull-left"><%= status.name %></span>
+        <% } %>
+      </a>
+    </h1>
+    <p class="Header_little pull-right">技术支持：华亿创新</p>
+  </div>
+  <nav class="HeaderB">
+    <ul class="list-inline" id="topNav">
+      <% if(user.mark == 0){ %>
+      <li><a name="rcsj">日常数据</a></li>
+      <li><a name="hdcz">活动承载</a></li>
+      <li><a name="tyfw">体育服务</a></li>
+      <li><a name="cggl">场馆管理</a></li>
+      <li><a name="hzsj">汇总数据</a></li>
+      <% } else {%>
+      <li><a name="cgdf">场馆得分</a></li>
+      <li><a name="cgglM">场馆管理</a></li>
+      <li><a name="pfsz">评分设置</a></li>
+
+      <% } %>
+    </ul>
+  </nav>
+</header> -->
+
+<!--头部-->
+<header class="Header">
+    <div class="HeaderT">
+        <h1 class="logo clearfix">
+            <a href="#" title="中国体育场馆协会数据中心">
+              <div class="pull-left">
+                <span class="BigName">中国体育场馆协会数据中心</span>
+                <p class="SmallName">China Association for Data Center Stadiums</p>
+              </div>
+              <em class="pull-left">|</em>
+              <% if(user.mark == 0){ %>
+              <span class="RSmallName pull-left"><%= status.name %></span>
+              <% } %>  
+            </a>
+        </h1>
+         <p class="pull-right UserExit"><img src="images/user.png" style="margin:-3px 10px 0 0;" /><em><%- user.email %></em> &nbsp&nbsp| <a class="exitL" name="" href="login"><img src="images/exit.png" title="退出"></a></p>
+    </div>
+    <nav class="HeaderB">
+      <ul class="list-inline" id="topNav">
+        <% if(user.mark == 0){ %>
+        <li><a name="rcsj">日常数据</a></li>
+        <li><a name="hdcz">活动承载</a></li>
+        <li><a name="tyfw">体育服务</a></li>
+        <li><a name="cggl">场馆管理</a></li>
+        <li><a name="hzsj">汇总数据</a></li>
+        <% } else {%>
+        <!--<li><a name="cgdf">场馆得分</a></li>-->
+        <li><a name="cgglM">场馆管理</a></li>
+        <li><a name="pfsz">评分设置</a></li>
+
+        <% } %>
+      </ul>
+    </nav>
+</header>
+
+
+
+<div class="content clearfix">
+
+  <!--左侧导航开始-->
+  <div class="sidebar pull-left">
+      <ul class="nav nav-sidebar" id="side-menu">
+        <li class="nav-header"></li>
+      </ul>
+
+  </div>
+
+
+    <div  ui-view class="rightContent pull-left at-view-fade-in at-view-fade-out" id="ui-view" ></div>
+
+
+
+</div>
+
+
+<footer class="footer">
+  <span>版权所有：中国体育场馆协会</span><span style="margin-left:40px;">技术支持：华亿创新</span>
+</footer>
+
+
+<!-- 主页面布局js start -->
+<script src="/js/plugins/jquery.metisMenu.js"></script>
+<script src="/js/plugins/jquery.slimscroll.min.js"></script>
+<script src="/js/plugins/inspinia.js"></script>
+<script src="/js/plugins/pace.min.js"></script>
+<script src="/js/plugins/bootstrap-datetimepicker.min.js"></script>
+<script src="/js/plugins/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="/js/plugins/pagination.js"></script>
+<script src='/js/plugins/fullcalendar-2.7.0/lib/moment.min.js'></script>
+<script src='/js/plugins/fullcalendar-2.7.0/fullcalendar.min.js'></script>
+<script src='/js/plugins/fullcalendar-2.7.0/lang/zh-cn.js'></script>
+<script src='/js/utils/utils.js'></script>
+<script src='/js/utils/secondMenu.js'></script>
+<script src="/js/upload/js/webuploader.html5only.min.js"></script>
+<script src="/js/upload/js/diyUpload.js"></script>
+<script>
+
+  (function(){
+    var curHash = window.location.hash;
+    var hasHash = curHash.substr(1)
+    if(hasHash){
+      window.hasHash = hasHash
+    }
+  })();
+
+
+  window.addEventListener("popstate",function(event){
+    if(event.state)
+      loadPage(event.state)
+  });
+</script>
+
+
+<script>
+
+ // var SecondMenu = window.SecondMenuAdmin
+ var SecondMenu =  "<%= user.mark %>" == 0 ?window.SecondMenu : window.SecondMenuAdmin;
+
+
+  function getTopMenu(curPage){
+
+    var topMenu = ''
+    var flag = true;
+
+    for ( var p in SecondMenu )
+    {
+      if(flag == true)
+      {
+          var temp =  SecondMenu[p];
+          for(var j =0; j < temp.length; j++){
+            if( temp[j].target == curPage ){
+              topMenu = p;
+              flag = false;
+              break;
+            }
+            else if(temp[j].children){
+              var temp_child = temp[j].children;
+              for(var m =0; m < temp_child.length; m++){
+                  if( temp_child[m].target == curPage ){
+                    topMenu = p;
+                    flag = false;
+                    break;
+                  }
+              }
+            }
+          }
+      }
+      else
+      {
+        break;
+      }
+    }
+    return topMenu
+  }
+  window.getTopMenu = getTopMenu;
+  window.getTopMenu();
+
+  function rendererSecondMenu(curPage){
+    if(curPage){
+      $("#side-menu li a").each(function(i, o)
+      {
+        $(this).removeClass("cur");
+        if($(this).attr("target") == curPage){
+          $(this).addClass("cur");
+          loadPage(curPage);
+          if($(this).parent().parent().parent().is("li")){
+            $(this).parent().parent().parent().addClass("active").click();
+          }
+          return false
+        }
+      })
+    }
+  }
+
+  window.rendererSecondMenu = rendererSecondMenu;
+
+  function initMenu(menus){
+    //var menus = SecondMenu.name;
+    for(var i = 0;i< menus.length ;i++){
+      var item = menus[i];
+      var secondM = "<li>";
+      if(item.name){
+        secondM += "<a target='"+item.target+"'><i class='fa fa-th-large'></i><span class='nav-label'>";
+        secondM +=  item.name;
+        secondM += "</span><span class='pull-right glyphicon glyphicon-menu-right' aria-hidden='true'></span></a>";
+      }
+      if(item.children && item.children.length > 0 ){
+        secondM += "<ul class='nav nav-second-level'>";
+        for(var j = 0; j<item.children.length; j++){
+          var thirdM =  item.children[j];
+          if(thirdM.name){
+            secondM += " <li ><a  target='" + thirdM.target + "'>" + thirdM.name + "</a></li>";
+          }
+        }
+        secondM += "</ul>";
+      }
+      secondM += "<li>";
+      $("#side-menu").append(secondM);
+
+    }
+  }
+  $("#topNav a").click(function(){
+    $(this).parent().addClass('active').siblings().removeClass('active');
+    var curMenu = $(this).attr("name");
+    $("#side-menu > li").remove();
+    if(SecondMenu[curMenu]){
+      initMenu(SecondMenu[curMenu]);
+      $("#side-menu").metisMenu();
+
+      var tempSecondMenuObj = $("#side-menu li a");
+      tempSecondMenuObj.click(function(){
+        tempSecondMenuObj.removeClass("cur");
+        var targe =  $(this).addClass('cur').attr("target");
+        if(targe){
+          if(targe == '/stadiumAuditDetail' || targe == '/stadiumFunctionBlock'){
+            if(window.currentStadium && window.currentStadium.id){
+              loadPage(targe);
+            }else{
+              swal("提示","请在场馆列表中，选择查看一个场馆","info");
+              loadPage("/stadiumMain");
+            }
+          }else{
+            loadPage(targe);
+          }
+
+        }
+
+      })
+    }
+    rendererSecondMenu(window.hasHash)
+  })
+
+
+
+
+
+  console.log(window.hasHash)
+  //初始化一级菜单
+  var topMenuName = getTopMenu(window.hasHash);
+  console.log(topMenuName)
+  if(topMenuName){
+      $("#topNav a").each(function(i, o){
+        if( $(this).attr("name") == topMenuName) {
+          $(this).click();
+          return false;
+        }
+      })
+  }
+  else{
+     var userMark = " <%= user.mark %>";
+      if( userMark == 0 ){
+        $("#topNav a[name='rcsj']").click();
+        rendererSecondMenu("/dailyIndex") //默认加载日常数据主页
+      }
+      else if(userMark == 1){
+        $("#topNav a[name='cgglM']").click();
+        rendererSecondMenu("/stadiumMain") //默认加载场馆信息主页
+      }
+
+  }
+
+</script>
+
+

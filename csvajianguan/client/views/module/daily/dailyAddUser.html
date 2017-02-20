@@ -1,0 +1,98 @@
+<div class="location">
+  <h3>&gt; <span> 添加日常活动用户 </span></h3>
+</div>
+<form class="form-horizontal" id="dailyAddUserForm" onsubmit="return dailyAddUser()">
+
+  <div class="form-group MT noMR">
+    <label class="col-sm-2 control-label">用户姓名</label>
+    <div class="col-sm-4">
+      <input type="text" required="" name="daily[name]" class="form-control">
+    </div>
+    <label class="col-sm-2 control-label">身份证号码</label>
+    <div class="col-sm-4">
+      <input type="text"  name="daily[cardID]" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">手机号码</label>
+    <div class="col-sm-4">
+      <input type="text"  name="daily[phone]" class="form-control">
+    </div>
+    <label class="col-sm-2 control-label">运动类型</label>
+    <div class="col-sm-4">
+      <input type="text"  name="daily[sports]" class="form-control">
+    </div>
+  </div>
+
+
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">起始时间</label>
+    <div class="col-sm-4">
+      <input type="text" data-date-format="hh:ii " required="" name="daily[startDate]" class="form-control mydate">
+    </div>
+    <label class="col-sm-2 control-label">结束时间</label>
+    <div class="col-sm-4">
+      <input type="text" data-date-format="hh:ii " required="" name="daily[endDate]" class="form-control mydate">
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">是否为当前规则</label>
+    <div class="col-sm-10">
+
+      <label class="radio-inline">
+        <input type="radio" name="daily[priceType]"  value="1">全价
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="daily[priceType]"   value="2">优惠价
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="daily[priceType]" checked="checked"  value="3">免费
+      </label>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit"  class="OrangeButF">添加</button>
+    </div>
+  </div>
+
+</form>
+
+<script>
+
+  function dailyAddUser(){
+    $.ajax({
+      type: 'POST',
+      url: '/dailyAddUser',
+      data: $("#dailyAddUserForm").serialize(),
+      success: function(data){
+        if(data.state){
+          swal("成功!", "添加成功", "success");
+        }
+        else{
+          alert("oh my gad 失败了");
+        }
+      }
+    });
+
+    //最终总是返回false,阻止表单自动提交，因为上面的ajax已经提交了
+    return false;
+  }
+
+
+  $('#dailyAddUserForm .mydate').datetimepicker({
+    format: 'hh:ii',
+    language:  'zh-CN',
+    minView: 0,
+    startView: 1,
+    maxView: 1,
+    autoclose:true
+  });
+
+</script>

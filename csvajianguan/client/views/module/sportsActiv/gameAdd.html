@@ -1,0 +1,111 @@
+<div class="location">
+  <h3>&gt; <span> 添加体育赛事 </span></h3>
+</div>
+<form class="form-horizontal" id="gameAddForm" onsubmit="return gameAdd()">
+  <div class="form-group MT noMR">
+    <label  class="col-sm-2 control-label">赛事名称</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" required="" name="game[name]"  placeholder="赛事名称">
+    </div>
+  </div>
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">主办单位</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" required="" name="game[hostUnit]"  placeholder="主办单位">
+    </div>
+  </div>
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">承办单位</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" required="" name="game[undertakeUnit]"  placeholder="承办单位">
+    </div>
+  </div>
+
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">赛事级别</label>
+    <div class="col-sm-10" style="margin-left:-3px;">
+        <select class="form-control" name="game[level]">
+          <option value="1">省级</option>
+          <option value="2">国家级</option>
+          <option value="3">国际级</option>
+          <option value="4">其他级别</option>
+        </select>
+    </div>
+  </div>
+
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">起始时间</label>
+    <div class="col-sm-4">
+      <input type="text"  required="" name="game[startDate]" class="form-control mydate">
+    </div>
+    <label class="col-sm-2 control-label">结束时间</label>
+    <div class="col-sm-4">
+      <input type="text" required="" name="game[endDate]" class="form-control mydate">
+    </div>
+  </div>
+
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">赛事联系人</label>
+    <div class="col-sm-4">
+      <input type="text" name="game[contants]" class="form-control">
+    </div>
+    <label class="col-sm-2 control-label">联系电话</label>
+    <div class="col-sm-4">
+      <input type="text" name="game[contantsPhone]" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">观众人数</label>
+    <div class="col-sm-10">
+      <input type="text" required="" name="game[number]" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">现场图片</label>
+    <div class="col-sm-10">
+      <input type="file" class="form-control">
+    </div>
+
+  </div>
+
+  <div class="form-group noMR">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" id="gameAddBtn" class="btn btn-default">添加</button>
+    </div>
+  </div>
+  <input type="hidden" name="game[type]" value="1">
+</form>
+
+<script>
+
+  function gameAdd(){
+    $.ajax({
+      type: 'POST',
+      url: '/gameAdd',
+      data: $("#gameAddForm").serialize(),
+      success: function(data){
+        if(data.state){
+          //loadPage("/gamesList");
+          swal("成功!", "添加成功", "success");
+        }
+        else{
+          alert("oh my gad 失败了");
+        }
+      }
+    });
+
+    //最终总是返回false,阻止表单自动提交，因为上面的ajax已经提交了
+    return false;
+  }
+
+
+  $('.mydate').datetimepicker({
+    format: 'yyyy-mm-dd',
+    language:  'zh-CN',
+    minView: 2,
+    autoclose:true
+  });
+
+</script>

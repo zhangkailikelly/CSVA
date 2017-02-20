@@ -1,0 +1,39 @@
+<div id="CountWrap" class="table-responsive normal mLR tbodyLeft">
+  <table  class="table tableColor tablebor NoMB" id="stadiumTable">
+    <thead class="tabelH">
+    <th></th>
+    <th>用户名称</th>
+    <th>身份证号码</th>
+    <th>运动类型</th>
+    <th>日期</th>
+    <th>折扣</th>
+    <th>优惠金额</th>
+    <th>优惠人次</th>
+    </thead>
+    <tbody>
+    <% dailyData.forEach(function(o,i){ %>
+    <tr>
+      <td><%= i+1 %></td>
+      <td><%= o.name %></td>
+      <td><%= o.cardID?o.cardID:'' %></td>
+      <td><%= o.sports %></td>
+      <td><%= o.day %></td>
+      <td><%= o.discount?o.discount:'--' %></td>
+      <td><%= o.discountAmount?o.discountAmount:'--' %></td>
+      <td><%= o.count %></td>
+    </tr>
+    <% }) %>
+    <% if( !dailyData.length ){ %>
+    <tr><td aling="center" colspan="8">没有数据</td></tr>
+    <% }%>
+    </tbody>
+  </table>
+  <% if(dailyData.length ){ %>
+  <% include stadiumDCTablePagination.html %>
+  <% }%>
+
+</div>
+
+
+
+

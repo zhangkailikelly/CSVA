@@ -1,0 +1,125 @@
+<div class="table-responsive normal mLR tbodyLeft">
+    <table class="table tableColor tablebor NoMB" id="serviceTable">
+      <thead class="tabelH">
+      <th>培训名称</th>
+
+      <% if(serviceType == 1){ %>
+      <th>培训项目</th>
+      <% } %>
+
+      <th>起始时间</th>
+      <th>结束时间</th>
+
+      <% if(serviceType == 1){ %>
+      <th>受训人数</th>
+      <% }else if(serviceType == 2){ %>
+      <th>参与人数</th>
+      <% }else if(serviceType == 3){ %>
+      <th>总天数</th>
+      <% } %>
+
+
+      <th>操作</th>
+      </thead>
+      <tbody>
+
+      <% services.forEach(function(o,i){ %>
+          <tr>
+
+            <td><%= o.name %></td>
+
+            <% if(serviceType == 1){ %>
+              <td><%= o.project %></td>
+            <% } %>
+
+            <td><%= new Date(o.startDate).toLocaleString() %></td>
+            <td><%= new Date(o.endDate).toLocaleString() %></td>
+
+            <% if(serviceType == 3){ %>
+            <td><%= 1+parseInt(Math.abs(new Date(o.endDate)  -  new Date(o.startDate))  /  1000  /  60  /  60  /24) %></td>
+            <% }else{ %>
+            <td><%= o.number %></td>
+            <% } %>
+
+            <td>
+              <button class="btn btn-info btn-xs detBtn"><a name='<%= o.id %>'>查看</a></button>
+              <% if( userMark == 0 ){ %>
+                <% if(serviceType == 1){ %>
+                   <button class="btn btn-info btn-xs addTrainerBtn"><a name='<%= o.id %>'>添加受训者</a></button>
+                <% }else if(serviceType == 2){ %>
+                   <button class="btn btn-info btn-xs addTrainerBtn"><a name='<%= o.id %>'>添加参与者</a></button>
+                <% } %>
+              <button class="btn btn-warning btn-xs delBtn"><a name='<%= o.id %>'>删除</a></button>
+              <% } %>
+
+            </td>
+          </tr>
+      <% }) %>
+      <% if( !services.length ){ %>
+          <tr><td aling="center" colspan="6">没有数据</td></tr>
+      <% }%>
+
+      </tbody>
+    </table>
+
+     <% if(services.length ){ %>
+           <% include serviceTablePagination.html %>
+     <% }%>
+</div>
+
+
+
+
+<script>
+
+  (function(global){
+
+
+  $("#serviceTable .btn").click(function(){
+    var serviceId =  $(this).find("a").attr("name");
+   if( $(this).hasClass("detBtn") ){
+     loadPage("/serviceDetail/"+serviceId);
+   }else if($(this).hasClass("addTrainerBtn")){
+     loadPage("/trainerMain/"+serviceId);
+   }
+   else if( $(this).hasClass("delBtn")){
+     swal({
+       title: "删除确定?",
+       text: "删除后将不可恢复",
+       type: "warning",
+       showCancelButton: true,
+       confirmButtonText: "一定要删!",
+       cancelButtonText: "取消",
+       closeOnConfirm: false
+     },
+       function(){
+         serviceDelete(serviceId);
+
+       });
+   }
+  })
+
+  function serviceDelete(id) {
+    $.ajax({
+      type: 'delete',
+      url: '/serviceDelete/' + id,
+      success: function (data) {
+        if (data.state) {
+          if(global.service){
+            global.service.updateTable();
+            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+          }
+        }
+        else {
+          alert("oh my gad 失败了");
+        }
+      }
+    });
+  }
+
+  })(window)
+</script>
+
+
+
+

@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "note": {
+    "dataSource": "db"
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true
+  },
+  "SportsService": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Stadium": {
+    "dataSource": "db",
+    "public": true
+  },
+  "SportsActiv": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Rule": {
+    "dataSource": "db",
+    "public": true
+  },
+  "FlowMoney": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Trainer": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Total": {
+    "dataSource": "db",
+    "public": true
+  },
+  "CheapInfo": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Daily": {
+    "dataSource": "db",
+    "public": true
+  },
+  "DailyOpenTime": {
+    "dataSource": "db",
+    "public": true
+  },
+  "InCome": {
+    "dataSource": "db",
+    "public": true
+  }
+}
+

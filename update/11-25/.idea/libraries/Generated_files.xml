@@ -1,0 +1,86 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/public/components/Stadium/AddmationList.js" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsService/ServiceMajor.js" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsService/ServiceAdd2.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Stadium/StadiumData.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Rule/Rule.js" />
+        <item url="file://$PROJECT_DIR$/public/manage.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Stadium/DailyData.js" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsService/SportsTraining.js" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsActive/ActiveMain2.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Stadium/StadiumList.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Stadium/Cheapmation.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Stadium/Stadium.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Stadium/StadiumListSearch.js" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsService/StadiumUser.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Stadium/DailyData.jsx" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsService/ServiceGuidance.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Daily/DailyData.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Daily/DailyDataUser.js" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsActive/ActiveMain.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Daily/Daily.js" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsActive/GamesAdd.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Stadium/StadiumUser.js" />
+        <item url="file://$PROJECT_DIR$/public/components/TablePage.js" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsActive/ActiveAdd.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Stadium/Basemation.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Daily/DailyAddUser.js" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsActive/GamesMain.js" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsService/SportsService.js" />
+        <item url="file://$PROJECT_DIR$/public/components/SportsActive/SportsActive.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Stadium/StadiumInfo.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Total/Total.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Total/TotalTableInfo.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Profit/benefitTableInfo.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Total/TotalDays.js" />
+        <item url="file://$PROJECT_DIR$/public/components/Calendar.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/public/components/CheapInfo/CheapInfo.js" />
+      <root url="file://$PROJECT_DIR$/public/components/CheapInfo/CheapInfo.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/AddmationList.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/Cheapmation.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/Basemation.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/AddmationList.js" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsService/ServiceMajor.js" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsService/ServiceAdd2.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/StadiumData.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Rule/Rule.js" />
+      <root url="file://$PROJECT_DIR$/public/manage.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/DailyData.js" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsService/SportsTraining.js" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsActive/ActiveMain2.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/StadiumList.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/Cheapmation.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/Stadium.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/StadiumListSearch.js" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsService/StadiumUser.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/DailyData.jsx" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsService/ServiceGuidance.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Daily/DailyData.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Daily/DailyDataUser.js" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsActive/ActiveMain.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Daily/Daily.js" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsActive/GamesAdd.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/StadiumUser.js" />
+      <root url="file://$PROJECT_DIR$/public/components/TablePage.js" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsActive/ActiveAdd.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/Basemation.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Daily/DailyAddUser.js" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsActive/GamesMain.js" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsService/SportsService.js" />
+      <root url="file://$PROJECT_DIR$/public/components/SportsActive/SportsActive.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Stadium/StadiumInfo.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Total/Total.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Total/TotalTableInfo.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Profit/benefitTableInfo.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Total/TotalDays.js" />
+      <root url="file://$PROJECT_DIR$/public/components/Calendar.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

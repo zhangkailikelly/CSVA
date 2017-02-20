@@ -1,0 +1,25 @@
+{
+  "name": "Daily",
+  "plural": "dailys",
+  "base": "PersistedModel",
+  "properties": {
+    "stadiumId":{"type":"string","required":true},
+    "day":{"type":"string"},
+    "name":{"type":"string"},
+    "cardID":{"type":"string"},
+    "phone":{"type":"string"},
+    "sports":{"type":"string"},
+    "startDate":{"type":"string"},
+    "endDate":{"type":"string"},
+    "serial":{"type":"string"},
+    "priceType":{"type":"number"}
+  },
+  "relations": {
+    "stadium": {
+      "type": "belongsTo",
+      "model": "Stadium",
+      "foreignKey": "stadiumId"
+    }
+  },
+  "methods": []
+}

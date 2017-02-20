@@ -1,0 +1,25 @@
+{
+  "name": "SportsService",
+  "plural": "sportsServices",
+  "base": "PersistedModel",
+  "properties": {
+    "name":{
+      "type":"string",
+      "required": true
+    },
+    "unit":{"type":"string"},
+    "nature":{"type":"number"},
+    "project":{"type":"string"},
+    "content":{"type":"string"},
+    "fee":{"type":"number"},
+    "startDate":{"type":"date"},
+    "endDate":{"type":"date"},
+    "contants":{"type":"string"},
+    "contantsPhone":{"type":"string"},
+    "number":{"type":"number"},
+    "type":{"type":"number"},
+    "stadiumId":{"type":"string","required": true}
+
+  },
+  "methods": []
+}

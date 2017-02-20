@@ -1,0 +1,72 @@
+<div class="location">
+  <h3>&gt; <label> 接待总量 </label></h3>
+</div>
+<form class="form-horizontal" id="receiveNumsForm" >
+
+  <div class="form-group MT">
+    <label class="col-sm-2 control-label">总人数</label>
+    <div class="col-sm-4">
+      <input type="number"  readonly="readonly" id="receiveNums" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">人</label>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">园区总面积</label>
+    <div class="col-sm-4">
+      <input type="number"  readonly="readonly" value="<%= parkArea %>" id="parkArea" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">万平米</label>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">年接待总量</label>
+    <div class="col-sm-4">
+      <input type="text"  id="receiveCalc" readonly="readonly" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">人/万平米/年</label>
+  </div>
+
+</form>
+<div class="mLR">
+<label >数据来源于</label>
+<p>1.日常数据</p>
+<p>2.活动承载</p>
+<p>3.体育服务</p>
+</div>
+<script>
+  (function(global){
+
+    function renderResult(){
+      $("#receiveNums").val(global.total.receiveNums);
+      var pArea = $("#parkArea").val();
+      if(pArea > 0)
+        $("#receiveCalc").val( parseInt(global.total.receiveNums / pArea) );
+
+    }
+    //清空接待人数
+    global.total.totalReceiveNumsEmpty();
+
+    //服务人数
+    global.util.postAjax("/receiveServiceNums",'',function(data){
+      global.total.totalReceiveNumsAdd(data.nums);
+      renderResult();
+    });
+
+    //体育活动人数
+    global.util.postAjax("/receiveActiveNums",'',function(data){
+      global.total.totalReceiveNumsAdd(data.nums);
+      renderResult();
+    });
+
+    //日常数据人数
+    global.util.postAjax("/receiveDailyNums",'',function(data){
+      global.total.totalReceiveNumsAdd(data.nums);
+      renderResult();
+    });
+
+
+
+
+  })(window)
+</script>

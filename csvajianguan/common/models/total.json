@@ -1,0 +1,13 @@
+{
+  "name": "Total",
+  "plural": "totals",
+  "base": "PersistedModel",
+  "properties": {
+    "fine":{"type":"string"},
+    "ruleId":{"type":"string","required":true},
+    "stadiumId":{"type":"string","required":true},
+    "special":{"type":"string"},
+    "openArea":{"type":"number"}
+  },
+  "methods": []
+}

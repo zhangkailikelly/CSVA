@@ -1,0 +1,72 @@
+
+<section class="MB">
+  <% if(activeType == 2){ %>
+  <div class="location">
+    <h3>&gt;<label>群体活动列表</label></h3>
+  </div>
+  <% }else{  %>
+  <div class="location">
+    <h3>&gt;<label>其他文体活动列表</label></h3>
+  </div>
+  <% } %>
+  <!--顶部查询开始-->
+  <div class="topSearch RightInfo  mLR">
+    <form class="form-inline" id="gameSearchForm">
+      <div class="form-group">
+        <label >活动名称</label>
+        <input type="text" class="form-control" id="gameName" name="game[name]" placeholder="活动名称">
+      </div>
+      <div class="form-group">
+        <label>主办单位</label>
+        <input type="text" class="form-control" id="hostUnit" name="game[hostUnit]" placeholder="主办单位">
+      </div>
+      <div class="form-group">
+        <label>承办单位</label>
+        <input type="text" class="form-control" id="undertakeUnit" name="game[undertakeUnit]" placeholder="承办单位">
+      </div>
+      <button type="button" class="btn btn-default" id="gameSearchBtn"><a>搜索</a></button>
+    </form>
+
+    <!--<button type="" class="btn btn-default"><a href="javascript:window.loadpath('/gameAdd')">添加</a></button>-->
+    <% if(userMark && userMark == 0){ %>
+      <button type="" class="btn btn-default" id="gameAddBtn"><a>添加</a></button>
+    <% } %>
+  </div>
+
+</section>
+
+
+<section  id="gameWrap">
+  <% include activeTable.html %>
+</section>
+
+
+<script>
+
+  var activeType = '<%= activeType %>';  //活动类型
+
+  $("#gameAddBtn").click(function(){
+    loadPage("/activeAdd/"+activeType);
+  })
+
+  $("#gameSearchBtn").click(function(){
+    searchGame()
+  })
+
+
+  function searchGame(){
+    $.ajax({
+      type: 'post',
+      url: '/searchGame/'+activeType,
+      data:$("#gameSearchForm").serialize(),
+      success: function (data) {
+        if (data) {
+          $("#gameWrap").empty().append(data);
+        }
+        else {
+          alert("oh my gad 失败了");
+        }
+      }
+    });
+  }
+</script>

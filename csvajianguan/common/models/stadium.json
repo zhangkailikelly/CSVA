@@ -1,0 +1,63 @@
+{
+  "name": "Stadium",
+  "plural": "stadiums",
+  "base": "PersistedModel",
+  "properties": {
+    "name":{
+      "type":"string",
+      "required": true
+    },
+    "city":{
+      "type":"string",
+      "required": true
+    },
+    "mainUnit":{
+      "type":"string",
+      "required": true
+    },
+    "buildDate":{
+      "type":"date",
+      "required": true
+    },
+    "investmentAmount":{
+      "type":"number"
+    },
+    "level":{
+      "type":"string"
+    },
+    "seats":{
+      "type":"number"
+    },
+    "parkArea":{
+      "type":"number"
+    },
+    "stadiumArea":{
+      "type":"number"
+    },
+    "openArea":{
+      "type":"number"
+    },
+    "sports":{
+      "type":"string"
+    },
+    "state":{
+      "type":"number"
+    },
+    "address":{"type":"string"},
+    "coordinate":{"type":"array"},
+    "picture": [{
+      "type": "string"
+    }],
+    "landline":{"type":"string"},
+    "contants":{"type":"string"},
+    "contantsPhone":{"type":"string"},
+    "userid":{"type":"string"},
+    "operatingUnit":{"type":"number"},
+    "operatingUnitName":{"type":"string"},
+    "operatTimeNormalStart":{"type":"string"},
+    "operatTimeNormalEnd":{"type":"string"},
+    "operatTimeHdayStart":{"type":"string"},
+    "operatTimeHdayEnd":{"type":"string"}
+  },
+  "methods": []
+}

@@ -1,0 +1,52 @@
+{
+  "name": "SportsActiv",
+  "plural": "sportsActivs",
+  "base": "PersistedModel",
+  "properties": {
+    "name":{
+      "type":"string",
+      "required": true
+    },
+    "hostUnit":{
+      "type":"string",
+      "required": true
+    },
+    "undertakeUnit":{
+      "type":"string",
+      "required": true
+    },
+    "startDate":{
+      "type":"date",
+      "required": true
+    },
+    "endDate":{
+      "type":"date",
+      "required": true
+    },
+    "contants":{
+      "type":"string"
+    },
+    "contantsPhone":{
+      "type":"string"
+    },
+    "price":{
+      "type":"number"
+    },
+    "number":{
+      "type":"number"
+    },
+    "picture":{
+      "type":"array"
+    },
+    "type":{
+      "type":"number"
+    },
+    "level":{
+      "type":"number"
+    },
+    "stadiumId":{
+      "type":"string"
+    }
+  },
+  "methods": []
+}

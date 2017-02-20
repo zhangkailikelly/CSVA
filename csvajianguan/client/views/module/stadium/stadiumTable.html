@@ -1,0 +1,95 @@
+<div id="stadiumWrap" class="table-responsive normal mLR tbodyLeft">
+    <table  class="table tableColor tablebor NoMB" id="stadiumTable">
+      <thead class="tabelH">
+      <th>场馆名称</th>
+      <th>所在城市</th>
+      <th>运营单位</th>
+      <th>提交时间</th>
+      <th>审核状态</th>
+      <th>操作</th>
+      </thead>
+      <tbody>
+
+      <% stadiums.forEach(function(o,i){ %>
+          <tr>
+            <td><%= o.name %></td>
+            <td><%= o.city %></td>
+            <td><%= o.mainUnit %></td>
+            <td>222:222</td>
+            <td><%= o.state %></td>
+            <td>
+              <span class="auditBtn"><a name='<%= o.id %>'>审核</a></span> | 
+              <span class="auditViewBtn"><a name='<%= o.id %>'>查看运营数据</a></span> | 
+              <span class="auditCountBtn"><a name='<%= o.id %>'>查看数据统计</a></span>
+            </td>
+          </tr>
+      <% }) %>
+      <% if( !stadiums.length ){ %>
+          <tr><td aling="center" colspan="6">没有数据</td></tr>
+      <% }%>
+
+      </tbody>
+    </table>
+
+     <% if(stadiums.length ){ %>
+           <% include stadiumTablePagination.html %>
+     <% }%>
+</div>
+
+
+
+
+<script>
+
+(function(){
+
+  function Tt(val){
+    var text = "";
+    if(val == 1){
+      text = "正在审核"
+    }
+    else if(val == 2){
+      text = "审核通过"
+    }
+    else{
+      text = "审核失败"
+    }
+    return text;
+  }
+
+  $("#stadiumTable tbody tr").each(function(){
+    var stateTD = $(this).find("td").eq(4);
+    stateTD.text(Tt(stateTD.text()))
+
+    $(this).find(".auditBtn").click(function(){
+      var stadiuID = $(this).find("a").attr("name");
+      if(stadiuID){
+        loadPage("/stadiumAuditDetail/"+stadiuID);
+      }
+
+    })
+
+    $(this).find(".auditViewBtn").click(function(){
+      var stadiuID = $(this).find("a").attr("name");
+      if(stadiuID){
+        loadPage("/stadiumFunctionBlock/"+stadiuID);
+      }
+
+    })
+
+    $(this).find(".auditCountBtn").click(function(){
+      var stadiuID = $(this).find("a").attr("name");
+      if(stadiuID){
+        loadPage("/stadiumDataCount/"+stadiuID);
+      }
+
+    })
+
+  })
+
+})()
+
+</script>
+
+
+

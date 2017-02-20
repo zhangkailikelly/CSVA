@@ -1,0 +1,98 @@
+
+<section class="MB">
+  <% if(serviceType == 1){ %>
+  <div class="location">
+    <h3>&gt;<label>体育培训列表</label></h3>
+  </div>
+  <% }else if(serviceType == 2){ %>
+  <div class="location">
+    <h3>&gt;<label>运动健身指导列表</label></h3>
+  </div>
+  <% }else if(serviceType == 3){ %>
+  <div class="location">
+    <h3>&gt;<label>专业训练列表</label></h3>
+  </div>
+  <% } %>
+  <!--顶部查询开始-->
+  <div class="topSearch RightInfo  mLR">
+    <form class="form-inline" id="serviceSearchForm">
+
+      <% if(serviceType == 1){ %>
+          <div class="form-group">
+            <label >培训名称</label>
+            <input type="text" class="form-control"  name="service[name]" placeholder="培训名称">
+          </div>
+          <div class="form-group">
+            <label>培训机构名称</label>
+            <input type="text" class="form-control" name="service[unit]" placeholder="培训机构名称">
+          </div>
+          <div class="form-group">
+            <label>培训项目</label>
+            <input type="text" class="form-control"  name="service[project]" placeholder="培训项目">
+          </div>
+      <% }else if(serviceType == 2){ %>
+          <div class="form-group">
+            <label >活动名称</label>
+            <input type="text" class="form-control" name="service[name]" placeholder="活动名称">
+          </div>
+          <div class="form-group">
+            <label>培训机构名称</label>
+            <input type="text" class="form-control"  name="service[unit]" placeholder="培训机构名称">
+          </div>
+      <% }else if(serviceType == 3){ %>
+          <div class="form-group">
+            <label style="width:100px;">运动队(员)名字</label>
+            <input type="text" class="form-control" name="service[name]" placeholder="运动队(员)名字">
+          </div>
+      <% } %>
+
+      <button type="button" class="btn btn-default" id="serviceSearchBtn"><a>搜索</a></button>
+    </form>
+    <% if( userMark == 0){ %>
+      <button type="" class="btn btn-default" id="serviceAddBtn"><a>添加</a></button>
+    <% } %>
+  </div>
+
+</section>
+
+
+<section id="serviceWrap">
+  <% include serviceTable.html %>
+</section>
+
+
+<script>
+
+  (function(global){
+
+
+
+  var serviceType = '<%= serviceType %>';  //服务类型
+  $("#serviceAddBtn").click(function(){
+    loadPage("/serviceAdd/"+serviceType);
+  })
+
+  $("#serviceSearchBtn").click(function(){
+    searchService(serviceType,"")
+  })
+
+  function searchService(serType, paramPage){
+    $.ajax({
+      type: 'post',
+      url: '/searchServices/'+serType,
+      data:$("#serviceSearchForm").serialize() + paramPage,
+      success: function (data) {
+        if (data) {
+          $("#serviceWrap").empty().append(data);
+        }
+        else {
+          alert("oh my gad 失败了");
+        }
+      }
+    });
+  }
+    global.service = {}
+    global.service.searchService = searchService;
+
+  })(window);
+</script>

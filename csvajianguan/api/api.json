@@ -1,0 +1,200 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "测试 API",
+        "description": "Move your app forward with the Uber API",
+        "version": "1.0.0"
+    },
+    "host": "127.0.0.1:8090",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/system/usermanager/list": {
+            "get": {
+                "summary": "用户信息",
+                "description": "系统用户列表",
+                "parameters": [
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "description": "Latitude component of location.",
+                        "required": false,
+                        "type": "number",
+                        "format": "double"
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "description": "Longitude component of location.",
+                        "required": false,
+                        "type": "number",
+                        "format": "double"
+                    }
+                ],
+                "tags": [
+                    "用户信息"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "An array of userinfos",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Userinfo"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+
+        "/system/usermanager/add": {
+            "post": {
+                "tags": [
+                    "用户信息"
+                ],
+                "summary": "添加用户",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "createUser",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "loginName",
+                        "description": "用户名名称",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Userinfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+          "/system/usermanager/update": {
+            "post": {
+                "tags": [
+                    "用户信息"
+                ],
+                "summary": "修改用户",
+                "description": "",
+                "schemes": [
+                    "http"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "_id",
+                        "in": "formData",
+                        "description": "",
+                        "required": true,
+                        "type": "string",
+                        "default": "",
+                        "format": ""
+                    },
+                    {
+                        "name": "loginName",
+                        "in": "formData",
+                        "description": "",
+                        "required": true,
+                        "type": "string",
+                        "default": "",
+                        "format": ""
+                    }
+                ],
+                "responses": {},
+                "sortWeight": 0
+            }
+        },
+    
+
+     "/system/usermanager/del": {
+            "post": {
+                "tags": [
+                    "用户信息"
+                ],
+                "summary": "删除用户",
+                "description": "根据用户id删除",
+                "schemes": [
+                    "http"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "_id",
+                        "in": "formData",
+                        "description": "",
+                        "required": true,
+                        "type": "string",
+                        "default": "",
+                        "format": ""
+                    }
+                ],
+                "responses": {},
+                "sortWeight": 0
+            }
+        }
+
+
+       
+    },
+    
+    
+    "definitions": {
+        "Userinfo": {
+            "type": "object",
+            "properties": {
+                "loginName": {
+                    "type": "string",
+                    "description": "用户名名称"
+                }
+            }
+        },
+ 
+
+
+        "Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "fields": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

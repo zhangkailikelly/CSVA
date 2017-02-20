@@ -1,0 +1,93 @@
+
+<div>
+    <table class="table table-striped tablepad" id="trainerTable">
+      <thead>
+      <th>培训名称</th>
+      <th>受训者名称</th>
+      <th>身份证号码</th>
+      <th>手机号码</th>
+      <th>受训时间</th>
+      <th>操作</th>
+      </thead>
+      <tbody>
+
+      <% trainers.forEach(function(o,i){ %>
+          <tr>
+            <td><%= service.name %></td>
+            <td><%= o.name %></td>
+            <td><%= o.cardID %></td>
+            <td><%= o.phone %></td>
+            <td><%= new Date(o.onDay).toLocaleString() %></td>
+
+
+            <td>
+              <% if( userMark == 0 ){ %>
+               <button class="btn btn-warning btn-primary delBtn"><a name='<%= o.id %>'>删除</a></button>
+              <% } %>
+
+            </td>
+          </tr>
+      <% }) %>
+      <% if( !trainers.length ){ %>
+          <tr><td aling="center" colspan="6">没有数据</td></tr>
+      <% }%>
+
+      </tbody>
+    </table>
+
+     <% if(trainers.length ){ %>
+           <% include trainerTablePagination.html %>
+     <% }%>
+</div>
+
+
+
+
+<script>
+
+  (function(global){
+
+
+  $("#trainerTable .btn").click(function(){
+    var trainerId =  $(this).find("a").attr("name");
+    if( $(this).hasClass("delBtn")){
+     swal({
+       title: "删除确定?",
+       text: "删除后将不可恢复",
+       type: "warning",
+       showCancelButton: true,
+       confirmButtonText: "一定要删!",
+       cancelButtonText: "取消",
+       closeOnConfirm: false
+     },
+       function(){
+         trainerDelete(trainerId);
+
+       });
+   }
+  })
+
+  function trainerDelete(id) {
+    $.ajax({
+      type: 'delete',
+      url: '/trainerDelete/' + id,
+      success: function (data) {
+        if (data.state) {
+          if(global.trainer){
+            global.trainer.updateTable();
+            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+          }
+        }
+        else {
+          alert("oh my gad 失败了");
+        }
+      }
+    });
+  }
+
+  })(window)
+</script>
+
+
+
+

@@ -1,0 +1,92 @@
+<div class="location">
+  <h3>&gt; <label> 接待人次增长 </label></h3>
+</div>
+<form class="form-horizontal" id="receiveNumsForm" >
+
+  <div class="form-group MT">
+    <label class="col-sm-2 control-label">今年接待量</label>
+    <div class="col-sm-4">
+      <input type="number"  readonly="readonly" id="receiveNums" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">人/万平米/年</label>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">去年接待量</label>
+    <div class="col-sm-4">
+      <input type="number"  readonly="readonly"  id="receiveNumsPrevYear" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">人/万平米/年</label>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">增长率</label>
+    <div class="col-sm-4">
+      <input type="text"  id="receiveGrow" readonly="readonly" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">%</label>
+  </div>
+
+  <input type="hidden" value="<%= parkArea %>" id="parkArea">
+</form>
+<div class="mLR">
+  <label >数据来源于</label>
+  <p>1.日常数据</p>
+  <p>2.活动承载</p>
+  <p>3.体育服务</p>
+</div>
+<script>
+  (function(global){
+
+    var pArea = $("#parkArea").val();
+
+    //渲染结果到界面
+    function renderResult(){
+      $("#receiveNums").val( (global.total.receiveNumsThisYear / pArea).toFixed(2) );
+      $("#receiveNumsPrevYear").val( (global.total.receiveNumsPrevYear / pArea).toFixed(2) );
+
+      if(global.total.receiveNumsPrevYear > 0){
+        var temp = (( global.total.receiveNumsThisYear - global.total.receiveNumsPrevYear) / global.total.receiveNumsPrevYear * 100).toFixed(2);
+        $("#receiveGrow").val(temp);
+      }
+    }
+
+    //初始化统计数据
+    function initReceiveNums(yearCode, nums){
+      if(yearCode == 0){
+        global.total.totalReceiveNumsAdd_ThisYear(nums);
+      }else if(yearCode == -1){
+        global.total.totalReceiveNumsAdd_PrevYear(nums);
+      }
+      renderResult();
+    }
+    function letGo(yearCode){
+        //服务人数
+        global.util.postAjax("/receiveServiceNumsByYear/"+yearCode,'',function(data){
+          initReceiveNums(yearCode, data.nums);
+        });
+
+        //体育活动人数
+        global.util.postAjax("/receiveActiveNumsByYear/"+yearCode,'',function(data){
+          initReceiveNums(yearCode, data.nums);
+        });
+
+        //日常数据人数
+        global.util.postAjax("/receiveDailyNumsByYear/"+yearCode,'',function(data){
+          initReceiveNums(yearCode, data.nums);
+        });
+    }
+
+
+
+    //如果去年和今年的接待人数，已经统计过，则直接去取出来(由于今年接待人数和去年接待人数，总是一起初始化，下面的判断暂时用 || 判断)
+    if( global.total.receiveNumsThisYear > 0 || global.total.receiveNumsPrevYear > 0){
+      renderResult();
+    }else{
+      //统计今年
+      letGo(0)
+      //统计去年
+      letGo(-1)
+    }
+  })(window)
+</script>

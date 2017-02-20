@@ -1,0 +1,13 @@
+{
+  "name": "FlowMoney",
+  "plural": "flowMoneys",
+  "base": "PersistedModel",
+  "properties": {
+    "payIn":{"type":"number"},
+    "payOut":{"type":"number"},
+    "stadiumId":{"type":"string","required": true},
+    "ruleId":{"type":"string"}
+
+  },
+  "methods": []
+}

@@ -1,0 +1,69 @@
+
+<section class="fr">
+  <span>第 <%= Math.floor(filter.skip / filter.limit)+1 %> 页</span>&nbsp;&nbsp;
+  <span>每页 <%= filter.limit %> 条数据</span>&nbsp;&nbsp;
+  <span>共 <%= Math.ceil(totalCount / filter.limit) %> 页</span>&nbsp;&nbsp;
+  <span>共 <%= totalCount %> 条数据</span>
+  <button class="btn btn-default" id="firstPathBtn">首页</button>
+  <button class="btn btn-default" id="prevPageBtn">上一页</button>
+  <button class="btn btn-default" id="nextPageBtn">下一页</button>
+  <button class="btn btn-default" id="lastPageBtn">尾页</button>
+
+  
+</section>
+
+<script>
+
+  var limit = 2;                              //没页显示多少行
+  var totalCount = '<%= totalCount %>';  //总共多少行数据
+  var curPage = '<%= Math.floor(filter.skip / filter.limit)+1 %>'; //当前第几页
+  var pagination =  new Pagination(limit, Number(curPage), Number(totalCount));  //一定要传入这三个参数
+
+function updateTable(param){
+
+  var paramSerialize = "";
+  if( param && param.skip && param.limit){
+    paramSerialize = "&skip="+param.skip+"&limit"+param.limit;
+  }
+
+  $.ajax({
+    type: 'post',
+    url: '/gamesList/',
+    data:$("#gameSearchForm").serialize()+paramSerialize,
+    success: function (data) {
+        if (data) {
+        $("#gameWrap").empty().append(data);
+        }
+        else {
+        alert("oh my gad 失败了");
+        }
+        }
+    });
+}
+
+
+
+$("#prevPageBtn").click(function(){
+pagination.prev(updateTable);
+})
+$("#nextPageBtn").click(function(){
+pagination.next(updateTable);
+})
+$("#firstPathBtn").click(function(){
+  pagination.first(updateTable);
+})
+
+$("#lastPageBtn").click(function(){
+  pagination.last(updateTable);
+})
+
+
+
+
+
+
+</script>
+
+
+
+

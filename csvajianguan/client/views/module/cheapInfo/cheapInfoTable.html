@@ -1,0 +1,102 @@
+<div id="cheapInfoWrap" class="table-responsive normal mLR tbodyLeft">
+    <table class="table tableColor tablebor NoMB" id="cheapInfoTable">
+      <thead class="tabelH">
+      <th>标题</th>
+      <th>开放时间</th>
+      <th>结束时间</th>
+      <th>是否免费</th>
+      <th>操作</th>
+      </thead>
+      <tbody>
+
+      <% cheapinfos.forEach(function(o,i){ %>
+          <tr>
+            <td><%= o.title %></td>
+            <td><%= new Date(o.startDate).toLocaleString() %></td>
+            <td><%= new Date(o.endDate).toLocaleString() %></td>
+            <td><%= o.fee == 1 ? '免费':'优惠' %></td>
+            <td>
+              <button class="btn btn-info btn-xs cheapinfoUpdateBtn"><a name='<%= o.id %>'>修改</a></button>
+              <button class="btn btn-warning btn-xs cheapInfoDelBtn"><a name='<%= o.id %>'>删除</a></button>
+            </td>
+          </tr>
+      <% }) %>
+      <% if( !cheapinfos.length ){ %>
+          <tr><td aling="center" colspan="5">没有数据</td></tr>
+      <% }%>
+
+      </tbody>
+    </table>
+
+     <% if(cheapinfos.length ){ %>
+           <% include cheapInfoTablePagination.html %>
+     <% }%>
+</div>
+
+
+
+
+<script>
+
+(function(){
+
+
+  $("#cheapInfoTable tbody tr").each(function(){
+
+    $(this).find(".cheapinfoUpdateBtn").click(function(){
+      var cheapID = $(this).find("a").attr("name");
+      if(cheapID){
+        loadPage("/cheapInfoUpdate/"+cheapID);
+      }
+
+    })
+
+    $(this).find(".cheapInfoDelBtn").click(function(){
+      var cheapID = $(this).find("a").attr("name");
+      if(cheapID){
+
+        swal({
+            title: "删除确定?",
+            text: "删除后将不可恢复",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonText: "一定要删!",
+            cancelButtonText: "取消",
+            closeOnConfirm: false
+          },
+          function(){
+            cheapInfoDelete(cheapID);
+
+          });
+      }
+
+    })
+  })
+
+
+  function cheapInfoDelete(id) {
+    $.ajax({
+      type: 'delete',
+      url: '/cheapInfoDelete/' + id,
+      success: function (data) {
+        if (data.state) {
+          swal("Deleted!", "Your imaginary file has been deleted.", "success");
+          if(window.cheapinfo){
+            cheapinfo.updateTable();
+          }else{
+              loadPage("/cheapInfoMain")
+          }
+        }
+        else {
+          alert("oh my gad 失败了");
+        }
+      }
+    });
+  }
+
+})()
+
+</script>
+
+
+

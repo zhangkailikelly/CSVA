@@ -1,0 +1,46 @@
+<div class="location">
+  <h3>&gt; <label> 特色加分 </label></h3>
+</div>
+<form class="form-horizontal" id="totalAddScoreForm" onsubmit="return totalScoreAdd()">
+
+  <div class="form-group MT noMR">
+    <label class="col-sm-2 control-label">自述</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" name="total[special]" value="" id=""  rows="10" required>
+        <%= special %>
+      </textarea>
+    </div>
+
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" id="totalFine" class="btn btn-default">保存</button>
+    </div>
+  </div>
+
+
+</form>
+
+<script>
+
+
+  function totalScoreAdd(){
+
+    var  obj={
+      url:"/totalSave",
+      data:$('#totalAddScoreForm').serialize()
+    }
+    window.util.postAjax(obj.url,obj.data,function(data){
+      if(data.state){
+        swal("成功!", "特色加分保存成功", "success");
+      }
+      else{
+        swal("提示",data.error,"info")
+      }
+    });
+    //最终总是返回false,阻止表单自动提交，因为上面的ajax已经提交了
+    return false;
+  }
+
+</script>
+

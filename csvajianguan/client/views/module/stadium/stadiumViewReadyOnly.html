@@ -1,0 +1,72 @@
+<form id="stadiumAuditViewForm" class="animated fadeInDown">
+<ul class="RightInfo">
+  <li><label>审核状态</label>
+
+    <% if(stadium.state == 1){ %>
+    <span>正在审核</span>
+    <% } else if(stadium.state == 2){ %>
+    <span>通过审核</span>
+    <% }else{%>
+    <span>审核失败</span>
+    <% } %>
+  </li>
+  <li><label>场馆名称</label><span><%= stadium.name %></span></li>
+  <li><label>所在城市</label><span><%= stadium.city %></span></li>
+  <li><label>建成时间</label><span><%= new Date(stadium.buildDate).getFullYear() %></span><em>年</em></li>
+  <li><label>投资金额</label><span><%= stadium.investmentAmount %></span><em>万</em></li>
+  <li><label>场馆级别</label><span><%= stadium.level %></span></li>
+  <li><label>座位数</label><span><%= stadium.seats %></span><em>个</em></li>
+  <li><label>园区用地面积</label><span><%= stadium.parkArea %></span>平方米</li>
+
+  <li><label>体育场地面积</label><span><%= stadium.stadiumArea %></span>平方米</li>
+  <li><label>包含运动类型</label><span><%= stadium.sports %></span></li>
+  <li><label>场馆地址</label><span><%= stadium.address %></span></li>
+  <li><label>场馆图片</label><span>
+         <% if (stadium.picture && stadium.pictureCount > 0 ) { %>
+            <% stadium.picture.forEach(function(name){ %>
+                <img width='170px' height="150px" src="<%= "uploadImage/"+stadium.id+"/"+name %>" alt="">
+            <% }) %>
+        <% } %>
+  </span></li>
+
+  <li><label>场馆电话</label><span><%= stadium.landline %></span></li>
+  <li><label>联系人名称</label><span><%= stadium.contants %></span></li>
+
+  <li><label>联系人手机</label><span><%= stadium.contantsPhone %></span></li>
+
+<input type="hidden" id="stadiumID" name="stadium[id]" value="<%= stadium.id %>">
+</ul>
+<button type="button" style="margin:0 0 40px 190px;" id="auditYesBtn" class="BlueBut">审核通过</button>
+<button type="button" style="margin:0 0 40px 40px;" id="auditNoBtn" class="BlueBut">审核不通过</button>
+</form>
+
+<script>
+  (function(){
+
+    function auditStadium(id,_state) {
+      $.ajax({
+        type: 'post',
+        url: '/stadiuAudit/' + id+"/"+_state,
+        success: function (data) {
+          if (data.state) {
+            swal("成功!", "审核状态已经反馈给了场馆", "success");
+            loadPage("/stadiumMain");
+          }
+
+        }
+      });
+    }
+
+    var stadiumId = $("#stadiumAuditViewForm #stadiumID").val()
+    $("#stadiumAuditViewForm #auditYesBtn").click(function(){
+      auditStadium(stadiumId,2) //审核通过
+    })
+
+    $("#stadiumAuditViewForm #auditNoBtn").click(function(){
+      auditStadium(stadiumId,3) //审核不通过
+    })
+
+
+  })()
+</script>
+

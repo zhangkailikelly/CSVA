@@ -1,0 +1,53 @@
+<div class="location">
+  <h3>&gt; <label> 开放天数 </label></h3>
+</div>
+<form class="form-horizontal">
+  <div class="form-group MT">
+    <label class="col-sm-2 control-label">开放天数</label>
+    <div class="col-sm-4">
+      <input type="number" id="totayDay" readonly="readonly"  class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">天</label>
+  </div>
+
+</form>
+
+<div id='calendar' class="fl" style="max-width:600px;height:700px;margin-left:12px;"></div>
+<div class="pull-left rightCale" style="height:483px;padding-top:200px;">
+  <span>数据来源于：</span><br/>
+  <span>1.日常数据</span><br/>
+  <span>2.活动承载</span><br/>
+  <span>3.体育服务</span>
+</div>
+
+<script>
+(function(global){
+    $(document).ready(function() {
+        $('#calendar').fullCalendar({
+              defaultDate: new Date(),
+              editable: true,
+              eventLimit: true
+        });
+
+      function render(data,text){
+        if (data && data instanceof Array) {
+          var tempData = []
+          data.forEach(function(o,i){
+            var item = {};
+            item.title = text;
+            item.start = o;
+            tempData.push(item);
+            if(i+1 ==  data.length){
+              $('#calendar').fullCalendar( 'addEventSource', tempData );
+            }
+          })
+          $("#totayDay").val(window.total.totalOpenDays.unique().length)
+        }
+      }
+      global.total.totalRenderer()("/totalDailyOpenDays", "开放", render);
+      global.total.totalRenderer()("/totalSportsService/1", "活动", render);
+      global.total.totalRenderer()("/totalSportsService/2", "服务", render);
+
+    });
+})(window)
+</script>

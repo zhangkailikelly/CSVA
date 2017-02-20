@@ -1,0 +1,30 @@
+{
+  "name": "user",
+  "plural": "users",
+  "base": "PersistedModel",
+  "properties": {
+    "mark":{
+      "type":"number",
+      "default":0
+    },
+    "username":{
+      "type":"string",
+      "required": true
+    },
+    "password":{
+      "type":"string",
+      "required": true
+    },
+    "email":{
+      "type":"string",
+      "required": true
+    },
+    "status":{
+      "type":"string"
+    },
+    "created":{
+      "type":"date"
+    }
+  },
+  "methods": []
+}

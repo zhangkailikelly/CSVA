@@ -1,0 +1,25 @@
+{
+  "name": "Trainer",
+  "plural": "trainers",
+  "base": "PersistedModel",
+  "properties": {
+    "name":{
+      "type":"string",
+      "required": true
+    },
+    "cardID":{
+      "type":"string"
+    },
+    "phone":{
+      "type":"string"
+    },
+    "onDay":{
+      "type":"date"
+    },
+    "sportsServiceId":{
+      "type":"string",
+      "required": true
+    }
+  },
+  "methods": []
+}

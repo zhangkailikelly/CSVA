@@ -1,0 +1,15 @@
+{
+  "name": "CheapInfo",
+  "plural": "cheapinfos",
+  "base": "PersistedModel",
+  "properties": {
+    "title":{"type":"string","required":true},
+    "startDate":{"type":"date"},
+    "endDate":{"type":"date"},
+    "fee":{"type":"number"},
+    "des":{"type":"string"},
+    "stadiumId":{"type":"string","required": true}
+
+  },
+  "methods": []
+}

@@ -1,0 +1,82 @@
+<div class="location">
+  <h3>&gt; <label> 开放面积 </label></h3>
+</div>
+<form class="form-horizontal" id="totalAreaForm" onsubmit="return totalAreaAdd()">
+
+
+
+  <div class="form-group MT">
+    <label class="col-sm-2 control-label">开放面积</label>
+    <div class="col-sm-4">
+      <input type="number" min="0" required="" value="<%= openArea ?  openArea : ''%>" id="total_openArea" name="total[openArea]" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">平方米</label>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">体育场馆面积</label>
+    <div class="col-sm-4">
+      <input type="text"   min="0" readonly="readonly" value="<%= stadiumArea %>" id="stadium_stadiumArea" name="stadium[stadiumArea]" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">平方米</label>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">占比</label>
+    <div class="col-sm-4">
+      <input type="text" required="" id="zanbi" readonly="readonly" class="form-control">
+    </div>
+
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" id="totalAreaBtn" class="btn btn-default">确定</button>
+    </div>
+  </div>
+
+</form>
+
+<script>
+
+  function totalAreaAdd(){
+    $.ajax({
+      type: 'POST',
+      url: '/totalArea',
+      data: $("#totalAreaForm").serialize(),
+      success: function(data){
+        if(data.state){
+          swal("成功!", "开放面积保存成功", "success");
+        }
+        else{
+          swal("提示",data.error,"info")
+        }
+      }
+    });
+
+    //最终总是返回false,阻止表单自动提交，因为上面的ajax已经提交了
+    return false;
+  }
+
+
+
+ var $_stadiumArea = $("#totalAreaForm #stadium_stadiumArea");
+  var $_zanbi = $("#totalAreaForm #zanbi");
+  $("#totalAreaForm #total_openArea").change(function(){
+    var _new_value = $(this).val();
+    if( _new_value == 0 ){
+      $(this).val(0)
+      return;
+    }
+    if( parseInt(_new_value) >= $_stadiumArea.val() ){
+      $(this).val($_stadiumArea.val())
+    }
+    else{
+      $_zanbi.val( ((_new_value / $_stadiumArea.val()) * 100).toFixed(2) + "%");
+    }
+  })
+  $("#totalAreaForm #total_openArea").change();
+
+
+</script>

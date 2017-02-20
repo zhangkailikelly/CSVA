@@ -1,0 +1,74 @@
+<div id='calendar' class="pull-left" style="max-width:500px;margin:15px 0 0 12px;"></div>
+<div class="pull-left rightCale" style="margin-top:15px;">
+  <p><span class="RTitle">日期：</span><span id="currCheckDay">2016-3-10</span><br/></p>
+  <p><span class="RTitle">开放时间：</span><span id="currCheckDayHour">13小时</span><br/></p>
+  <p><span class="RTitle">参与活动人次：</span><span id="dailyUser"></span></p>
+
+</div>
+
+<script>
+
+  $(document).ready(function() {
+    function refreshPenalInfo(currentDay, openHourse){
+      $("#currCheckDay").text(currentDay);
+      $("#currCheckDayHour").text(openHourse);
+    }
+
+    function refreshPeanlUserCount(count){
+      $("#dailyUser").text(count);
+    }
+    var totalCount = '<%= totalCount %>';
+    if(totalCount){
+      refreshPeanlUserCount(totalCount);
+    }
+
+    var rendererMyCalendar = function(datainfo){
+        $('#calendar').fullCalendar({
+              defaultDate: new Date(),
+              dayClick: function(date, jsEvent, view) {
+                //alert('Clicked on: ' + date.format());
+                window.daily.currentDate = date.format();
+                window.daily.searchDaily('','');  //查找开放的日常用户列表
+                window.daily.searchDailyOpenTime(refreshPenalInfo);  //查看开放时间段
+                window.daily.searchDailyUserCount(refreshPeanlUserCount);
+              },
+              editable: true,
+              eventLimit: true, // allow "more" link when too many events
+              events:datainfo
+            });
+        }
+
+
+    function searchDailyList(){
+
+      $.ajax({
+        type: 'post',
+        url: '/DailyOpenDays',
+        success: function (data) {
+
+          if (data && data.data.length) {
+
+            var tempData = []
+            data.data.forEach(function(o,i){
+               var item = {};
+              item.title = "开放";
+              item.start = o;
+              tempData.push(item)
+              if(i+1 ==  data.data.length){
+                rendererMyCalendar(tempData);
+              }
+            })
+          }
+          else {
+
+            rendererMyCalendar([]);
+
+          }
+        }
+      });
+    }
+    searchDailyList();
+
+  });
+
+</script>

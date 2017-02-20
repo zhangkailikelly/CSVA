@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>INSPINIA | Login</title>
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/bootstrap-datetimepicker.min.css" />
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="/css/common.css" />
+  <link rel="stylesheet"  href="/js/upload/css/webuploader.css" >
+  <link rel="stylesheet"  href="/js/upload/css/diyUpload.css"  >
+
+  <!--<link rel="stylesheet" href="css/AdminLTE.css" >-->
+  <!--<link href="font-awesome/css/font-awesome.css" rel="stylesheet">-->
+<style>
+  .form-box {
+    width: 560px;
+  }
+  .upimgLi{
+    position:relative;
+  }
+  .upimgLi .parentFileBox{
+    position: relative;
+    left: 182px;
+    top: -38px;
+  }
+  .stadiumAddFormWrap{
+
+    background-color: #f5f5f5;
+  }
+</style>
+
+
+</head>
+
+<body class="gray-bg">
+
+<div class="animated fadeInDown stadiumAddFormWrap">
+
+  <form class="rightCon" id="stadiumAddForm" method="post" action="/stadiumAdd" >
+    <ul class="RightInfo">
+      <li><label></label>添加场馆</li>
+      <li><label>场馆名称</label><input type="text" required name="stadium[name]"  placeholder="场馆名称"></li>
+      <li><label>所在城市</label><input type="text" required name="stadium[city]"  placeholder="所在城市"></li>
+      <li><label>主管单位</label><input type="text" required name="stadium[mainUnit]"  placeholder="主管单位"></li>
+      <li><label>建成时间</label><input type="text" class="myDate" required name="stadium[buildDate]"><i class="add-on glyphicon glyphicon-calendar"></i><em>年</em></li>
+      <li><label>投资金额</label><input type="number" required name="stadium[investmentAmount]"  placeholder="投资金额"><em>万</em></li>
+      <li><label>场馆级别</label><input type="text" required name="stadium[level]"  placeholder="甲级，乙级，丙级"></li>
+      <li><label>座位数</label><input type="number" required name="stadium[seats]"  placeholder="座位数"><em>个</em></li>
+
+      <li><label>园区用地面积</label><input type="number" required name="stadium[parkArea]"  placeholder="平方米"><em>平方米</em></li>
+      <li><label>体育场地面积</label><input type="number" required name="stadium[stadiumArea]"  placeholder="平方米"><em>平方米</em></li>
+      <li><label>包含运动类型</label><input type="text" required name="stadium[sports]"  placeholder="包含的运动类型"></li>
+
+      <li><label>场馆地址</label><input type="text" required name="stadium[address]"  placeholder="场馆地址"></li>
+      <li class="upimgLi"><label>场馆图片</label>
+        <div id="test" class="" style="width:152px;position:relative;left:190px;top:-24px;"></div>
+      </li>
+
+      <li><label>场馆电话</label> <input type="text"   name="stadium[landline]"  placeholder="场馆电话"></li>
+      <li><label>联系人名称</label> <input type="text"   name="stadium[contants]"  placeholder="联系人"></li>
+      <li><label>联系人手机</label> <input type="text"   name="stadium[contantsPhone]"  placeholder="联系人电话"></li>
+      <li><label>运营方</label>
+          <span class="clearfix Radio">
+            <i class="checkbox-inline" style="padding-left:0;"><input type="radio"  name="stadium[operatingUnit]" value="0" checked=""> 场馆自营</i>
+            <i class="checkbox-inline"><input type="radio" name="stadium[operatingUnit]" value="0" checked=""> 其他运营单位</i>
+           </span>
+      </li>
+      <li><label>运营单位</label> <input type="text"  required name="stadium[operatingUnitName]"  placeholder="运营单位名称"></li>
+      <li><label>营业时间</label>
+        <em>平日</em>
+        <input class="myTime" data-date-format="hh:ii " type="text"  required name="stadium[operatTimeNormalStart]" >
+        <em>到</em>
+        <input class="myTime" data-date-format="hh:ii " type="text" required name="stadium[operatTimeNormalEnd]" >
+
+      </li>
+      <li>
+        <label>&nbsp;</label>
+        <em>假日</em>
+        <input class="myTime" data-date-format="hh:ii " type="text"  required name="stadium[operatTimeHdayStart]" >
+        <em>到</em>
+        <input class="myTime" data-date-format="hh:ii " type="text" required name="stadium[operatTimeHdayEnd]" >
+
+      </li>
+      <li><label></label> <button type="submit" id="gameAddBtn" class="btn btn-default">提交审核</button></li>
+    </ul>
+    <input type='hidden' id="tempImgDir" name='tempImgDir' value="">
+  </form>
+</div>
+
+<!-- Mainly scripts -->
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/js/plugins/bootstrap-datetimepicker.min.js"></script>
+<script src="/js/plugins/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="/js/upload/js/webuploader.html5only.min.js"></script>
+<script src="/js/upload/js/diyUpload.js"></script>
+<script>
+  $('.myDate').datetimepicker({
+    format: 'yyyy',
+    language:  'zh-CN',
+    minView: 4,
+    startView: 4,
+    maxView: 4,
+    autoclose:true
+  });
+
+  $('.myTime').width(110).datetimepicker({
+
+    language:  'zh-CN',
+    minView: 1,
+    startView: 1,
+    maxView: 1,
+    autoclose:true
+  });
+
+
+  $("#tempImgDir").val(Math.floor(Math.random()*10000)+"_"+new Date().getTime())
+
+  $('#test').diyUpload({
+    url:'/stadiumUpdatePic/'+$("#tempImgDir").val(),
+    model:"stadium", //传递模型，用于将上传文件，保存在表单中
+    imgCount:4,  //假设上传图片最大上限为4张
+    success:function( data ) {
+      if(data && data.tempDir){
+
+      }
+
+    },
+    error:function( err ) {
+      console.info( err );
+    }
+
+  });
+</script>
+</body>
+
+</html>

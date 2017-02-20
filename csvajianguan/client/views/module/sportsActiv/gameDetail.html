@@ -1,0 +1,81 @@
+
+<label >查看体育赛事</label>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label  class="col-sm-2 control-label">赛事名称</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" readonly="readonly" value="<%= game.name  %>">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">主办单位</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" readonly="readonly" value="<%= game.hostUnit  %>">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">承办单位</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control"  name="game[undertakeUnit]"  readonly="readonly" value="<%= game.undertakeUnit  %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">赛事级别</label>
+    <div class="col-sm-10">
+      <select class="form-control" name="game[level]"  readonly="readonly" value="<%= game.level  %>">
+        <option value="省级">省级</option>
+        <option value="国家级">国家级</option>
+        <option value="国际级">国际级</option>
+        <option value="其他级别">其他级别</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">起始时间</label>
+    <div class="col-sm-4">
+      <input type="text" required="" readonly="readonly"  name="game[startDate]" class="form-control mydate"  value="<%= new Date(game.startDate).toLocaleDateString()  %>">
+    </div>
+    <label class="col-sm-2 control-label">结束时间</label>
+    <div class="col-sm-4">
+      <input type="text" required=""  readonly="readonly" name="game[endDate]" class="form-control mydate"  value="<%= new Date(game.endDate).toLocaleDateString()  %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">赛事联系人</label>
+    <div class="col-sm-4">
+      <input type="text" name="game[contants]" class="form-control"  readonly="readonly"  value="<%= game.contants  %>">
+    </div>
+    <label class="col-sm-2 control-label">联系电话</label>
+    <div class="col-sm-4">
+      <input type="text" name="game[contantsPhone]" class="form-control"   readonly="readonly" value="<%= game.contantsPhone  %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">观众人数</label>
+    <div class="col-sm-10">
+      <input type="text" required="" name="game[number]"  readonly="readonly" class="form-control" value="<%= game.number  %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">现场图片</label>
+    <div class="col-sm-10">
+     图片呢
+    </div>
+
+  </div>
+
+
+</form>
+
+<SCRIPT>
+  $('.mydate').each(function(){
+  // $(this).datetimepicker('update',new Date($(this).val()));
+   // $(this).val(new Date($(this).val()).toLocaleDateString())
+
+  })
+</SCRIPT>

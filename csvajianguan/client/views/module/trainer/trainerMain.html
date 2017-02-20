@@ -1,0 +1,126 @@
+<section>
+
+  <label >添加体育培训</label>
+  <form class="form-horizontal" id="trainerAddForm" onsubmit="return trainerAdd()">
+    <div class="form-group">
+      <label  class="col-sm-2 control-label">培训名称</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" required="" readonly="readonly" name="service[name]" value="<%= service.name %>">
+      </div>
+      <div class="col-sm-2">
+        <button type="submit" id="trainerAddBtn" class="btn btn-default">添加</button>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">受训者名称</label>
+      <div class="col-sm-3">
+        <input type="text"  required="" name="trainer[name]" class="form-control">
+      </div>
+      <label class="col-sm-2 control-label">受训者身份证号码</label>
+      <div class="col-sm-3">
+        <input type="text" required="" name="trainer[cardID]" class="form-control">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">受训者手机号码</label>
+      <div class="col-sm-3">
+        <input type="text" name="trainer[phone]" class="form-control">
+      </div>
+      <label class="col-sm-2 control-label">受训日期</label>
+      <div class="col-sm-3">
+        <input type="text" name="trainer[onDay]" required class="form-control mydate">
+      </div>
+    </div>
+    <input type="hidden" name="trainer[sportsServiceId]" value="<%= service.id %>">
+
+  </form>
+</section>
+
+<hr/>
+
+<section>
+    <label >查看受训者数据</label>
+    <form class="form-inline" id="trainerSearchForm">
+      <div class="form-group">
+        <label >受训者名称</label>
+        <input type="text" class="form-control" id="trainerName" name="trainer[name]" placeholder="受训者名称">
+      </div>
+      <div class="form-group">
+        <label>受训者身份证号码</label>
+        <input type="text" class="form-control" id="unit" name="trainer[cardID]" placeholder="身份证号码">
+      </div>
+      <div class="form-group">
+        <label>受训者手机号码</label>
+        <input type="text" class="form-control" id="project" name="trainer[phone]" placeholder="手机号">
+      </div>
+      <button type="button" class="btn btn-default" id="trainerSearchBtn"><a>搜索</a></button>
+    </form>
+
+
+</section>
+
+
+<section id="trainerWrap">
+  <% include trainerTable.html %>
+</section>
+
+
+<script>
+  var serviceId = "<%= service.id %>";
+  function trainerAdd(){
+    $.ajax({
+      type: 'POST',
+      url: '/trainerAdd',
+      data: $("#trainerAddForm").serialize(),
+      success: function(data){
+        if(data.state){
+          swal("成功!", "添加成功", "success");
+         $("#trainerSearchBtn").click();
+        }
+        else{
+          alert("oh my gad 失败了");
+        }
+      }
+    });
+    return false;
+  }
+
+
+  (function(global){
+
+    $('#trainerAddForm .mydate').datetimepicker({
+      format: 'yyyy-mm-dd',
+      language:  'zh-CN',
+      minView: 2,
+      startView: 2,
+      maxView: 2,
+      autoclose:true
+    });
+
+  $("#trainerSearchBtn").click(function(){
+    searchtrainer(serviceId,'')
+  })
+
+  function searchtrainer(serviceId, paramPage){
+    $.ajax({
+      type: 'post',
+      url: '/trainerSearch/'+serviceId,
+      data:$("#trainerSearchForm").serialize() + paramPage,
+      success: function (data) {
+        if (data) {
+          $("#trainerWrap").empty().append(data);
+        }
+        else {
+          alert("oh my gad 失败了");
+        }
+      }
+    });
+  }
+    global.trainer = {}
+    global.trainer.searchtrainer = searchtrainer;
+
+  })(window);
+</script>

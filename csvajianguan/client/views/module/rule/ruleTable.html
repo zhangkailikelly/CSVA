@@ -1,0 +1,65 @@
+<div id="ruleWrap"  class="table-responsive normal mLR tbodyLeft" style="margin-top:20px;">
+    <table class="table tableColor tablebor NoMB" id="ruleTable">
+      <thead  class="tabelH">
+      <th>规则名称</th>
+      <th>起始时间</th>
+      <th>结束时间</th>
+      <th>是否为当前规则</th>
+      <th>操作</th>
+      </thead>
+      <tbody>
+
+      <% rules.forEach(function(o,i){ %>
+          <tr>
+            <td><%= o.name %></td>
+            <td><%= new Date(o.startDate).toLocaleDateString() %></td>
+            <td><%= new Date(o.endDate).toLocaleDateString() %></td>
+            <td><%= o.isCurrent==1 ? '是' : '否' %></td>
+            <td>
+              <span class="viewDataBtn"><a name='<%= o.id %>'>查看运营数据</a></span>
+            </td>
+          </tr>
+      <% }) %>
+      <% if( !rules.length ){ %>
+          <tr><td aling="center" colspan="5">没有数据</td></tr>
+      <% }%>
+
+      </tbody>
+    </table>
+
+     <% if(rules.length ){ %>
+           <% include ruleTablePagination.html %>
+     <% }%>
+</div>
+
+
+
+
+<script>
+  $("#ruleTable .viewDataBtn").click(function(){
+    var stadiumId =  $(this).find("a").attr("name");
+    alert(stadiumId);
+
+  })
+
+//  function gameDelete(id) {
+//    $.ajax({
+//      type: 'delete',
+//      url: '/gameDelete/' + id,
+//      success: function (data) {
+//        if (data.state) {
+//          updateTable();
+//        }
+//        else {
+//          alert("oh my gad 失败了");
+//        }
+//      }
+//    });
+//  }
+
+
+</script>
+
+
+
+

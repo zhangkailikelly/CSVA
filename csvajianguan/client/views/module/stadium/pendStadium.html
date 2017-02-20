@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>INSPINIA | Login</title>
+
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/bootstrap-datetimepicker.min.css" />
+  <link href="css/animate.css" rel="stylesheet">
+  <!--<link href="css/AdminLTE.css" rel="stylesheet">-->
+  <link href="css/common.css" rel="stylesheet">
+
+  <link  href="js/upload/css/webuploader.css" rel="stylesheet" >
+  <link  href="js/upload/css/diyUpload.css"  rel="stylesheet">
+  <!--<link href="font-awesome/css/font-awesome.css" rel="stylesheet">-->
+  <style>
+    .form-box {
+      width: 560px;
+    }
+  </style>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="js/utils/utils.js"></script>
+  <script src="/js/upload/js/webuploader.html5only.min.js"></script>
+  <script src="/js/upload/js/diyUpload.js"></script>
+
+</head>
+
+<body class="gray-bg">
+
+<% include stadiumView.html %>
+
+<!-- Mainly scripts -->
+
+
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/js/plugins/bootstrap-datetimepicker.min.js"></script>
+<script src="/js/plugins/bootstrap-datetimepicker.zh-CN.js"></script>
+
+
+<script>
+
+  $('.myDate').datetimepicker({
+    format: 'yyyy',
+    language:  'zh-CN',
+    minView: 4,
+    startView: 4,
+    maxView: 4,
+    autoclose:true
+  });
+  $('.myDate').datetimepicker('update', new Date('<%= stadium.buildDate %>'));
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "Rule",
+  "plural": "rules",
+  "base": "PersistedModel",
+  "properties": {
+    "name":{"type":"string","required":true},
+    "startDate":{"type":"string","required":true},
+    "endDate":{"type":"string","required":true},
+    "isCurrent":{"type":"number","required":true}
+  },
+  "methods": [
+    {
+      "currentRule": {
+        "isStatic": true,
+        "http": {
+          "verb": "get"
+        }
+      }
+    }
+  ]
+}

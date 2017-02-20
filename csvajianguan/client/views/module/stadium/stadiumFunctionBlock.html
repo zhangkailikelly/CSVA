@@ -1,0 +1,57 @@
+<div class="location">
+  <h3>&gt;<label> 运营数据 </label></h3>
+</div>
+<div class="YYData animated fadeInDown clearfix" id="sfblock">
+  <div class="YYDataCon">
+    <p class="pull-left"><img src="images/YY1.png" /></p>
+    <span class="yiji" target="/dailyIndex">日常数据</span>
+
+  </div>
+
+  <div class="YYDataCon">
+    <p class="pull-left"><img src="images/YY2.png" /></p>
+    <span class="yiji">活动承载</span>
+    <div style="margin-left:20px">
+      <span class="erji" target="/gamesMain">体育赛事</span>
+      <span class="erji"  target="/gamesMain/2">群体活动</spanspan>
+      <span class="erji" target="/gamesMain/3">其他文体活动</span>
+    </div>
+  </div>
+
+  <div class="YYDataCon">
+    <p class="pull-left"><img src="images/YY3.png" /></p>
+    <span class="yiji">体育服务</span>
+  <div style="margin-left:20px">
+    <span class="erji" target="serviceMain/1">体育训练</span>
+    <span class="erji" target="serviceMain/2">运动健身指导</span>
+    <span class="erji" target="serviceMain/3">专业训练</span>
+  </div>
+  </div>
+</div>
+
+<script>
+  (function(global){
+
+    var currentStadium ={};
+    var sid = '<%= currentStadium.id %>';
+    var sname = '<%= currentStadium.name %>';
+    if(sid && sname ){
+      currentStadium.id = sid;
+      currentStadium.name= sname;
+      global.currentStadium = currentStadium;
+
+      $("#currentStaidum").text("当前场馆："+sname)
+    }
+    else{
+      global.currentStadium = null;
+      $("#currentStaidum").text();
+    }
+
+    $("#sfblock span").click(function(i,o){
+       if($(this).attr("target")){
+         loadPage($(this).attr("target"));
+       }
+    })
+  })(window)
+</script>
+

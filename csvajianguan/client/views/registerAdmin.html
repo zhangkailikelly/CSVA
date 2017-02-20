@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>INSPINIA | Login</title>
+
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/AdminLTE.css" rel="stylesheet">
+  <!--<link href="font-awesome/css/font-awesome.css" rel="stylesheet">-->
+
+
+
+</head>
+
+<body class="gray-bg">
+
+<div class=" form-box text-center loginscreen animated fadeInDown">
+  <div>
+
+
+      <p>协会端注册.</p>
+
+    <%- message %>
+    <form class="m-t" role="form" method="post" action="/register" onsubmit="return AuthPassword()">
+      <input type="hidden" name="user[mark]" value="1">
+      <div class="form-group">
+        <input type="text" class="form-control" name="user[username]" placeholder="用户名" required="">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" name="user[email]" placeholder="邮箱" required="">
+      </div>
+      <div class="form-group">
+      <input type="password" class="form-control" id="password" name="user[password]" placeholder="密码" required="">
+    </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password_again" placeholder="确认密码" required="">
+      </div>
+      <div class="form-group">
+
+        <button type="submit" class="btn btn-primary btn-block">注册</button>
+      </div>
+      <div class="form-group">
+        <a href='/login' class="btn bg-yellow btn-block">登录</a>
+      </div>
+
+
+
+    </form>
+
+  </div>
+</div>
+
+<!-- Mainly scripts -->
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script>
+  function AuthPassword(){
+    if( $("#password").val() !=  $("#password_again").val() ){
+      alert("两次登录的密码不一致");
+      return false;
+    }
+  }
+</script>
+</body>
+
+</html>

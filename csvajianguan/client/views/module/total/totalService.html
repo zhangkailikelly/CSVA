@@ -1,0 +1,53 @@
+
+<% if(serviceType == 1){ %>
+<div class="location">
+  <h3>&gt; <label> 体育培训 </label></h3>
+</div>
+<% }else if(serviceType == 2){ %>
+<div class="location">
+  <h3>&gt; <label> 运动健身指导 </label></h3>
+</div>
+<% }else if(serviceType == 3){ %>
+<div class="location">
+  <h3>&gt; <label> 专业训练 </label></h3>
+</div>
+<% } %>
+
+<form class="form-horizontal">
+  <% if(serviceType == 1){ %>
+
+      <div class="form-group MT">
+        <label class="col-sm-2 control-label">培训人次</label>
+        <div class="col-sm-4">
+          <input type="number" required="" readonly="readonly"  value="<%= services %>"  class="form-control">
+        </div>
+        <label class="col-sm-1 control-label">次</label>
+      </div>
+
+  <% }else if(serviceType == 2){ %>
+
+      <div class="form-group MT">
+        <label class="col-sm-2 control-label">参与人次</label>
+        <div class="col-sm-4">
+          <input type="number" required="" readonly="readonly"  value="<%= services %>"  class="form-control">
+        </div>
+        <label class="col-sm-1 control-label">次</label>
+      </div>
+
+  <% }else if(serviceType == 3){ %>
+
+      <div class="form-group MT">
+        <label class="col-sm-2 control-label">累计天数</label>
+        <div class="col-sm-4">
+          <input type="number" required="" readonly="readonly"  value="<%= services %>"  class="form-control">
+        </div>
+        <label class="col-sm-1 control-label">天</label>
+      </div>
+
+  <% } %>
+<div class="mLR">
+  <label >数据来源于</label>
+  <p>1.体育服务</p>
+</div>
+
+</form>

@@ -1,0 +1,57 @@
+<div class="location">
+  <h3>&gt; <label> 收入增长 </label></h3>
+</div>
+<form class="form-horizontal" id="receiveNumsForm" >
+
+  <div class="form-group MT">
+    <label class="col-sm-2 control-label">今年经营收入</label>
+    <div class="col-sm-4">
+      <input type="number"  readonly="readonly" id="curYearIncome" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">万</label>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">去年经营收入</label>
+    <div class="col-sm-4">
+      <input type="number"  readonly="readonly"  id="lastYearIncome" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">万</label>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">增长率</label>
+    <div class="col-sm-4">
+      <input type="text"  id="paymentGrow" readonly="readonly" class="form-control">
+    </div>
+    <label class="col-sm-1 control-label">%</label>
+  </div>
+
+
+</form>
+
+<script>
+  (function(global){
+
+    //计算比例
+    function CaleGrow(){
+      if($("#lastYearIncome").val()){
+        $("#paymentGrow").val( ($("#curYearIncome").val() / $("#lastYearIncome").val() *100).toFixed(2) );
+      }
+    }
+
+    //今年收入
+    global.util.postAjax("/paymentGrow/1",'',function(data){
+      $("#curYearIncome").val(data.money);
+      CaleGrow();
+
+    });
+
+    //去年收入
+    global.util.postAjax("/paymentGrow/-1",'',function(data){
+      $("#lastYearIncome").val(data.money);
+      CaleGrow();
+    });
+
+  })(window)
+</script>

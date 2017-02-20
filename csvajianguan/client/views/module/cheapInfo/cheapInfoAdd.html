@@ -1,0 +1,102 @@
+
+<% if(cheapInfo){ %>
+<div class="location">
+  <h3>&gt; <label> 修改优惠信息 </label></h3>
+</div>
+<% } else { %>
+<div class="location">
+  <h3>&gt; <label> 添加优惠信息 </label></h3>
+</div>
+<% } %>
+
+<form class="form-horizontal" id="cheapInfoAddForm" onsubmit="return cheapInfoAdd()">
+
+  <% if(cheapInfo){ %>
+     <input type="hidden" name="cheapInfo[id]" value="<%= cheapInfo.id %>" >
+  <% } %>
+
+  <div class="form-group MT noMR">
+    <label  class="col-sm-2 control-label">标题</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" required="" name="cheapInfo[title]" value="<%= cheapInfo ? cheapInfo.title : '' %>"  placeholder="优惠信息标题">
+    </div>
+  </div>
+
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">开放时间</label>
+    <div class="col-sm-4">
+      <input type="text"  required name="cheapInfo[startDate]" value="<%= cheapInfo ? new Date(cheapInfo.startDate).toLocaleString() : '' %>" class="form-control mydate">
+    </div>
+    <label class="col-sm-2 control-label">到</label>
+    <div class="col-sm-4">
+      <input type="text" required name="cheapInfo[endDate]" value="<%= cheapInfo ? new Date(cheapInfo.endDate).toLocaleString() : '' %>" class="form-control mydate">
+    </div>
+  </div>
+
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">是否免费</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="cheapInfoFee" value="<%= cheapInfo ? cheapInfo.fee : '' %>"  name="cheapInfo[fee]">
+        <option value="1">免费</option>
+        <option value="2">优惠</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group noMR">
+    <label class="col-sm-2 control-label">说明</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" name="cheapInfo[des]" value="" id=""  rows="10">
+        <%= cheapInfo ? cheapInfo.des : '' %>
+      </textarea>
+    </div>
+  </div>
+
+  <div class="form-group noMR">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" id="cheapInfoAddBtn" class="btn btn-default">保存</button>
+    </div>
+  </div>
+
+
+</form>
+
+<script>
+
+
+  $("#cheapInfoFee").val( $("#cheapInfoFee").attr("value") );
+  function cheapInfoAdd(){
+    $.ajax({
+      type: 'POST',
+      url: '/cheapInfoAdd',
+      data: $("#cheapInfoAddForm").serialize(),
+      success: function(data){
+        if(data.state){
+          //loadPage("/cheapInfoList");
+          swal("info","保存成功","success")
+        }
+        else{
+          alert("oh my gad 失败了");
+        }
+      }
+    });
+
+    //最终总是返回false,阻止表单自动提交，因为上面的ajax已经提交了
+    return false;
+  }
+
+  //$(this).val(new Date($(this).val()).toLocaleDateString())
+
+  $(".mydate").each(function(){
+
+    $(this).datetimepicker({
+      format: 'yyyy-mm-dd hh:ii',
+      language:  'zh-CN',
+      startView: 1,
+      autoclose:true,
+
+    });
+  })
+
+
+</script>

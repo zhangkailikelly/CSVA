@@ -1,0 +1,87 @@
+<div class="table-responsive normal mLR tbodyLeft">
+    <table class="table tableColor tablebor NoMB" id="gameTable">
+      <thead class="tabelH">
+      <th>赛事名称</th>
+      <th>赛事级别</th>
+      <th>起始时间</th>
+      <th>结束时间</th>
+      <th>观众人数</th>
+      <th>操作</th>
+      </thead>
+      <tbody>
+
+      <% games.forEach(function(o,i){ %>
+          <tr>
+            <td><%= o.name %></td>
+            <td><%= o.level ? o.level:"" %></td>
+            <td><%= new Date(o.startDate).toLocaleDateString() %></td>
+            <td><%= new Date(o.endDate).toLocaleDateString() %></td>
+            <td><%= o.number %></td>
+            <td>
+              <button class="btn btn-info btn-xs detBtn"><a name='<%= o.id %>'>查看</a></button>
+              <% if( userMark == 0 ){ %>
+              <button class="btn btn-warning btn-xs delBtn"><a name='<%= o.id %>'>删除</a></button>
+              <% } %>
+
+            </td>
+          </tr>
+      <% }) %>
+      <% if( !games.length ){ %>
+          <tr><td aling="center" colspan="6">没有数据</td></tr>
+      <% }%>
+
+      </tbody>
+    </table>
+
+     <% if(games.length ){ %>
+           <% include gameTablePagination.html %>
+     <% }%>
+</div>
+
+
+
+
+<script>
+  $("#gameTable .btn").click(function(){
+    var gameId =  $(this).find("a").attr("name");
+   if( $(this).hasClass("detBtn") ){
+     loadPage("/gameDetail/"+gameId);
+   }else if( $(this).hasClass("delBtn")){
+     swal({
+       title: "删除确定?",
+       text: "删除后将不可恢复",
+       type: "warning",
+       showCancelButton: true,
+       confirmButtonText: "一定要删!",
+       cancelButtonText: "取消",
+       closeOnConfirm: false
+     },
+       function(){
+         gameDelete(gameId);
+         swal("Deleted!", "Your imaginary file has been deleted.", "success");
+       });
+
+   }
+  })
+
+  function gameDelete(id) {
+    $.ajax({
+      type: 'delete',
+      url: '/gameDelete/' + id,
+      success: function (data) {
+        if (data.state) {
+          updateTable();
+        }
+        else {
+          alert("oh my gad 失败了");
+        }
+      }
+    });
+  }
+
+
+</script>
+
+
+
+

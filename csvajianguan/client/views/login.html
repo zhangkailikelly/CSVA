@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>体育场馆申报系统 登录</title>
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
+
+  <script>
+
+    (function(){
+    //  debugger;
+      var curHash = window.location.hash;
+      var hasHash = curHash.substr(1)
+
+     // debugger;
+      if(window.location.pathname != "/login"){
+        window.location.href = window.location.origin+"/login?to="+hasHash;
+      }
+    })();
+  </script>
+</head>
+<body>
+<!-- <div class="text-center loginscreen animated fadeInDown">
+  <p class="Login_Title"> </p>
+  <form class="m-t" role="form" onsubmit="return loginSubmit(this)">
+    <div class="loginBox">
+      <div class="LoginCon">
+        <span id="message"></span>
+        <div class="form-group">
+          <input type="email" class="person form-control" placeholder="Email" name="user[email]" required="">
+        </div>
+        <div class="form-group">
+          <input type="password" class="lock form-control" placeholder="Password" name="user[password]" required="">
+        </div>
+        <div class="form-group clearfix SearPass">
+          <div class="checkbox pull-left" style="margin:0">
+            <label>
+              <input type="checkbox"> 记住我
+            </label>
+          </div>
+          <a href="#" class="pull-right">忘记密码?</a>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block ButColor">登录</button>
+        </div>
+
+        <div class="LoginB">
+          <a href='/register'>免费注册</a><span>，加入中国体育场馆协会</span>
+        </div>
+      </div>
+    </div>
+  </form>
+</div> -->
+<div class="loginBG">
+  <div class="text-center loginscreen">
+    <div class="Login_Title"><p class="TitleChina">中国体育场馆协会数据中心</p><p class="TitleEnglish">China Association for Data Center Stadiums</p></div>
+    <form class="m-" role="form" onsubmit="return loginSubmit(this)">
+      <div class="loginBox">
+        <div class="LoginCon">
+          <span id="message"></span>
+          <div class="form-group ">
+
+              <img src="images/person.png" />
+              <input type="email" class="person form-control" placeholder="请输入账号" name="user[email]" required="">
+
+          </div>
+          <div class="form-group">
+
+              <img src="images/lock.png" />
+              <input type="password" class="lock form-control" placeholder="请输入密码" name="user[password]" required="">
+
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">登 录</button>
+          </div>
+
+          <div class="LoginB">
+            <a href="javascript:;">忘记密码?</a> | <a href='/register'>注册新账号</a><span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="footer"> 版权所有:  中国体育场馆协会<span style="margin-left:30px;">技术支持：华亿创新</span></div>
+<script src='js/utils/utils.js'></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+  function loginSubmit(this_){
+
+      window.util.postAjax("/login", $(this_).serialize(),function(data){
+         if(data.state){
+           var pathName = "/";
+           if(data.currentUser.mark == 1){
+             pathName = "/Manager";
+           }
+          // debugger;
+           var toPage = window.location.href.indexOf("?to=");
+           if(toPage > 0){
+            console.log( window.location.href.substr(toPage));
+             pathName = "#"+window.location.href.substr(toPage+4);
+             if(data.currentUser.mark == 1){
+               pathName = "/Manager#"+window.location.href.substr(toPage+4);
+             }
+
+           }
+          // console.log(window.location.origin)
+           window.location.href = window.location.origin+pathName;
+
+         }
+        else{
+           $("#message").text(data.message)
+         }
+      })
+    return false;
+  }
+</script>
+</body>
+</html>
