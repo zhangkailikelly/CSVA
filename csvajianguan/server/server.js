@@ -46,7 +46,7 @@ app.use(session({
       saveUninitialized: true,
        store: new mongoStore({
 
-         url:"mongodb://139.129.131.105:27017/jianguan"
+         url:"地址在我的gitlab里"
 
        })
  }));
