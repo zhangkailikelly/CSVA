@@ -9,30 +9,39 @@ class Login extends React.Component{
         super(...arg)
     }
     componentDidMount(){
-        $(function () {
-            $("#sub").click(function () {
-                $.ajax({
-                    beforeSend: function () {
-                    },
-                    url: "/index",
-                    type: "get",
-                    data: '',
-                    success: function (datas) {
-                        if (datas == 1) {
-                            alert(4)
-                            window.location.href = window.location.href + "manage";
-                        } else {
-                            alert(333)
-                            window.location.href = window.location.href + "users";
-                        }
-                    },
-                    complete: function () {
+        // $(function () {
+        //     $("#sub").click(function () {
+        //         $.ajax({
+        //             beforeSend: function () {
+        //             },
+        //             url: "/index",
+        //             type: "get",
+        //             data: '',
+        //             success: function (datas) {
+        //                 if (datas == 1) {
+        //                     window.location.href = window.location.href + "manage";
+        //                 } else {
+        //                     window.location.href = window.location.href + "users";
+        //                 }
+        //             },
+        //             complete: function () {
 
-                    }
-                })
-            })
+        //             }
+        //         })
+        //     })
 
-        })
+        // })
+        var _this=this;
+        $("#sub").click(function(){
+                if($(_this.refs.account).val()=="admin"&&$(_this.refs.password).val()=="admin"){
+                     window.location.href = window.location.href + "manage"
+                 }else if($(_this.refs.account).val()=="users"&&$(_this.refs.password).val()=="123"){
+                    window.location.href = window.location.href + "users"
+                 }else{
+                    alert("用户名或密码错误")
+                 }
+        }) 
+        
     }
     render(){
         return (<div>
@@ -48,11 +57,11 @@ class Login extends React.Component{
                                 <span id="message"></span>
                                 <div className="form-group">
                                     <img src={person}/>
-                                    <input type="email" className="person form-control" placeholder="请输入账号" name="user[email]" required/>
+                                    <input type="email" ref="account" className="person form-control" placeholder="请输入账号" name="user[email]" required/>
                                 </div>
                                 <div className="form-group">
                                     <img src={lock}/>
-                                    <input type="password" className="lock form-control" placeholder="请输入密码" name="user[password]"
+                                    <input type="password" ref="password" className="lock form-control" placeholder="请输入密码" name="user[password]"
                                            required/>
                                 </div>
 
