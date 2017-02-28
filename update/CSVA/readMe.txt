@@ -1,5 +1,6 @@
-1.Æô¶¯:npm start
-2.admin
+1.npm install
+2.npm start
+3.admin
   admin
-3.users
+4.users
   123
