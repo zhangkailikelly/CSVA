@@ -2,166 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="851789f9-fea5-4568-8f19-1a25e134709a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-25/npm-debug.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/debug.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/dist/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/dist/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/dist/login.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/dist/manage.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/dist/manage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/dist/manage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/dist/users.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/dist/users.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/dist/users.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/dist/vendors.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/dist/vendors.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap-datetimepicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap-datetimepicker.zh-CN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/css/bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/css/bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/css/bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/css/bootstrap-theme.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/css/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/css/bootstrap.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/dist/js/npm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/.jscsrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/affix.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/alert.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/button.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/modal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/popover.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/scrollspy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/tab.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/transition.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/.csscomb.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/.csslintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/alerts.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/badges.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/bootstrap.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/breadcrumbs.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/button-groups.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/buttons.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/carousel.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/close.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/code.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/component-animations.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/dropdowns.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/forms.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/glyphicons.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/grid.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/input-groups.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/jumbotron.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/labels.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/list-group.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/media.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/alerts.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/background-variant.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/border-radius.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/buttons.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/center-block.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/clearfix.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/forms.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/gradients.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/grid-framework.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/grid.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/hide-text.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/image.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/labels.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/list-group.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/nav-divider.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/nav-vertical-align.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/opacity.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/pagination.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/panels.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/progress-bar.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/reset-filter.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/reset-text.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/resize.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/responsive-visibility.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/size.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/tab-focus.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/table-row.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/text-emphasis.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/text-overflow.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/mixins/vendor-prefixes.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/modals.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/navbar.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/navs.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/normalize.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/pager.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/pagination.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/panels.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/popovers.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/print.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/progress-bars.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/responsive-embed.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/responsive-utilities.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/scaffolding.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/tables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/theme.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/thumbnails.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/tooltip.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/type.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/utilities.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/variables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/less/wells.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/fullcalendar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/fullcalendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/fullcalendar.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/fullcalendar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/fullcalendar.print.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lang/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/animated-overlay.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-bg_flat_15_cd0a0a_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-bg_glass_50_3baae3_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-icons_2694e8_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-icons_3d80b3_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-icons_72a7cf_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/images/ui-icons_ffffff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/cupertino/jquery-ui.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/jquery-ui.custom.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/fullcalendar-2.7.0/lib/moment.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/lib/leftsidebar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/views/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/views/manage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/views/users.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/app.html" afterPath="$PROJECT_DIR$/update/11-29/CSVA/public/manage-template.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update/11-25/public/components/Calendar.jsx" afterPath="$PROJECT_DIR$/update/11-25/public/components/Calendar.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/components/Calendar.jsx" afterPath="$PROJECT_DIR$/update/11-29/CSVA/public/components/Calendar.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/components/Profit/AddScore.jsx" afterPath="$PROJECT_DIR$/update/11-29/CSVA/public/components/Profit/AddScore.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/components/Stadium/Cheapmation.jsx" afterPath="$PROJECT_DIR$/update/11-29/CSVA/public/components/Stadium/Cheapmation.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/components/head.jsx" afterPath="$PROJECT_DIR$/update/11-29/CSVA/public/components/head.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/css/common.css" afterPath="$PROJECT_DIR$/update/11-29/CSVA/public/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update/11-29/CSVA/public/webpack.config.build.js" afterPath="$PROJECT_DIR$/update/11-29/CSVA/public/webpack.config.build.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CSVA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -211,6 +52,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/csvajianguan/node_modules" />
+    <handled-path value="$PROJECT_DIR$/update/CSVA/node_modules" />
+    <handled-path value="$PROJECT_DIR$/update/CSVA/public/node_modules" />
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -251,52 +97,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CSVA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CSVA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CSVA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CSVA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="update" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="11-29" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CSVA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CSVA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CSVA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="update" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -308,7 +108,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/慕课网项目-react" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/dev1/nodejs/node" />
@@ -350,6 +150,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -387,11 +193,13 @@
       <option name="presentableId" value="Default" />
       <updated>1488245027428</updated>
       <workItem from="1488245029604" duration="9659000" />
+      <workItem from="1488263354635" duration="39000" />
+      <workItem from="1488331677336" duration="269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9659000" />
+    <option name="totallyTimeSpent" value="9967000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -406,22 +214,22 @@
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23019432" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23019432" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -440,182 +248,24 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/lib/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/tab.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-25/views/users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/components/Calendar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-25/public/components/Calendar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/views/users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="71" selection-start-line="4" selection-start-column="3" selection-end-line="8" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/users-template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/manage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/dist/manage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/views/manage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/manage-template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <marker date="1488252863251" expanded="true" signature="31:228" ph="..." />
-            <marker date="1488252863251" expanded="true" signature="38:184" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/components/head.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="20" column="169" selection-start-line="20" selection-start-column="169" selection-end-line="20" selection-end-column="169" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/components/Stadium/Cheapmation.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="32" />
-          <folding>
-            <element signature="e#207#314#0" expanded="false" />
-            <element signature="e#331#496#0" expanded="false" />
-            <element signature="e#513#1697#0" expanded="false" />
-            <element signature="e#703#948#0" expanded="false" />
-            <element signature="e#973#1645#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/components/SportsService/ServiceMajor.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-567">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="83" column="15" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="15" />
-          <folding>
-            <element signature="e#1992#2055#0" expanded="false" />
-            <element signature="e#2292#2341#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/components/Profit/AddScore.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="15" column="92" selection-start-line="15" selection-start-column="92" selection-end-line="15" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/webpack.config.build.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
-          <folding>
-            <element signature="e#500#1223#0" expanded="false" />
-            <element signature="e#1378#1451#0" expanded="false" />
-            <element signature="e#3042#3167#0" expanded="false" />
-            <marker date="1488253111783" expanded="true" signature="159:3484" ph="{...}" />
-            <marker date="1488253111783" expanded="true" signature="1349:3473" ph="[...]" />
-            <marker date="1488253111783" expanded="true" signature="2525:3001" ph="{&quot;title&quot;: &quot;users&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/lib/jquery.min.js" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/views/index.html" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/lib/bootstrap/js/tab.js" />
+    <entry file="file://$PROJECT_DIR$/update/11-25/views/users.html" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/components/Calendar.jsx" />
+    <entry file="file://$PROJECT_DIR$/update/11-25/public/components/Calendar.jsx" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/views/users.html" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/users-template.html" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/manage.html" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/dist/manage.html" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/views/manage.html" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/manage-template.html" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/views/index.html" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/components/head.jsx" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/components/Stadium/Cheapmation.jsx" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/components/SportsService/ServiceMajor.jsx" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/users.js" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/components/Profit/AddScore.jsx" />
+    <entry file="file://$PROJECT_DIR$/update/11-29/CSVA/public/webpack.config.build.js" />
   </component>
 </project>
